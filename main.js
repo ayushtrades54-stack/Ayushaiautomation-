@@ -10,8 +10,7 @@ function toggleMenu() {
 // Background automation flow animation
 const canvas = document.createElement("canvas");
 canvas.id = "bg-canvas";
-document.body.appendChild(canvas);
-
+document.body.prepend(canvas);
 const ctx = canvas.getContext("2d");
 let w, h;
 
