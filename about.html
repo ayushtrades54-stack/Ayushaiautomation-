@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us – Ayush AI Automation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Ayush AI Automation – a premium AI-powered DM Automation agency helping businesses turn conversations into conversions.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 20, 40, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 36px;
+  height: 36px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  color: #cfe8ff;
+}
+
+.cta-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+@media (max-width: 768px) {
+  header {
+    padding: 8px 12px;
+  }
+
+  .nav-links {
+    display: none; /* later hamburger add karenge */
+  }
+
+  .cta-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+    :root {
+      --bg-main: #020617;
+      --bg-glass: rgba(255,255,255,0.05);
+      --border-glass: rgba(255,255,255,0.12);
+      --primary: #38bdf8;
+      --text-main: #e5e7eb;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617 70%);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px;
+      background: rgba(2,6,23,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-cta {
+      margin-left: 30px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #020617;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      padding: 140px 20px 120px;
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(56,189,248,0.15), transparent 60%);
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 450;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      color: var(--text-muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-glass);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-glass);
+      border-radius: 24px;
+      padding: 32px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 34px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #020617;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(10,20,40,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.logo img {
+  width: 34px;
+}
+
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ig-btn {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #0b132b;
+  padding: 10px 0;
+}
+
+.mobile-menu a {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.mobile-menu .cta {
+  background: #00b3ff;
+  margin: 10px;
+  border-radius: 20px;
+  text-align: center;
+}
+.ig-btn {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #405de6, #833ab4, #fd1d1d);
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 500;
+}
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Ayush AI Automation">
+      <span>Ayush AI Automation</span>
+    </div>
+
+    <div class="right-actions">
+      <a href="https://instagram.com/ayush.automation" target="_blank" class="ig-btn">Instagram</a>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://wa.me/919477293867" class="cta"> WhatsApp</a><a href="booking.html" class="cta">Book a Setup</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Building the Future of AI-Powered Conversations</h1>
+  <p class="section-sub">
+    Ayush AI Automation is a next-generation automation agency focused on helping
+    businesses convert more leads, save time, and scale faster using intelligent
+    DM and messaging systems.
+  </p>
+</div>
+
+<section>
+  <h2>Who We Are</h2>
+  <p class="section-sub">
+    We are a specialized AI automation agency helping brands replace manual
+    conversations with smart, structured, and conversion-focused AI systems.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>
+        To become a global leader in conversational automation and redefine
+        how businesses communicate, sell, and support customers using AI.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>
+        To empower entrepreneurs, creators, and businesses with affordable,
+        powerful, and scalable AI DM systems that work 24/7.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>What We Believe</h3>
+      <p>
+        Automation is not about replacing humans. It’s about freeing human time
+        to focus on growth, strategy, and creativity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Why Ayush AI Automation</h2>
+  <p class="section-sub">
+    We combine technology, strategy, and sales psychology to build systems
+    that don’t just reply — they convert.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Conversion-Focused Design</h3>
+      <p>
+        Every message flow is built with a clear goal: qualify, nurture,
+        and convert leads into paying customers.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Platform-Safe Automation</h3>
+      <p>
+        We use approved tools and best practices to keep your Instagram and
+        WhatsApp accounts secure.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Affordable & Scalable</h3>
+      <p>
+        Enterprise-level automation systems at a price accessible to
+        startups and growing businesses.
+      </p>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>Our Core Values</h2>
+  <p class="section-sub">
+    The principles that guide how we build, communicate, and deliver results
+    for every client.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Speed & Efficiency</h3>
+      <p>
+        We believe in fast execution and systems that save time for business owners.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Trust & Transparency</h3>
+      <p>
+        Clear communication, honest pricing, and long-term relationships.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Innovation</h3>
+      <p>
+        We continuously evolve our automation strategies using the latest AI tools.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Growth-Oriented</h3>
+      <p>
+        Everything we build is focused on increasing leads, conversions, and revenue.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>How We Work</h2>
+  <p class="section-sub">
+    A structured approach to building high-performing automation systems.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Strategy First</h3>
+      <p>
+        We analyze your business, audience, and offers before designing any flow.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>System Design</h3>
+      <p>
+        Custom conversation journeys are created for lead capture and qualification.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Implementation</h3>
+      <p>
+        Automation is deployed on Instagram and WhatsApp using secure platforms.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Optimization</h3>
+      <p>
+        We continuously refine the system to improve response quality and conversions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="text-align:center;">
+  <h2>Let’s Build Your AI Sales System</h2>
+  <p class="section-sub">
+    Partner with Ayush AI Automation and turn your DMs into a 24/7 revenue engine.
+  </p>
+  <a href="https://wa.me/919477293867" class="btn-primary">Start on WhatsApp</a>
+</section>
+
+<footer style="border-top:1px solid var(--border-glass);padding:50px 20px;text-align:center;">
+  <p><strong>Ayush AI Automation</strong></p>
+  <p>Instagram & WhatsApp DM Automation Agency</p>
+  <p>
+    <a href="index.html">Home</a> |
+    <a href="services.html">Services</a> |
+    <a href="pricing.html">Pricing</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a>
+  </p>
+  <p style="color:var(--text-muted);margin-top:10px;">
+    © 2026 Ayush AI Automation. All rights reserved.
+  </p>
+</footer>
+
+<a href="https://wa.me/919477293867"
+   style="
+     position:fixed;
+     bottom:20px;
+     right:20px;
+     width:56px;
+     height:56px;
+     background:#25D366;
+     color:white;
+     border-radius:50%;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     font-size:28px;
+     text-decoration:none;
+     box-shadow:0 0 20px rgba(37,211,102,0.6);
+     z-index:999;">
+  💬
+</a>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+</body>
+</html>

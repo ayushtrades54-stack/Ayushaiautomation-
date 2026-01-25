@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pricing – Ayush AI Automation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simple and transparent pricing for AI-powered Instagram & WhatsApp DM Automation. ₹999/month with Free Setup till April.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #020617;
+      --bg-glass: rgba(255,255,255,0.05);
+      --border-glass: rgba(255,255,255,0.12);
+      --primary: #38bdf8;
+      --primary-soft: #7dd3fc;
+      --text-main: #e5e7eb;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617 70%);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px;
+      background: rgba(2,6,23,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-glass);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-cta {
+      margin-left: 30px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #020617;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      padding: 140px 20px 120px;
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(56,189,248,0.15), transparent 60%);
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 450;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      color: var(--text-muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-glass);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-glass);
+      border-radius: 24px;
+      padding: 32px;
+    }
+
+    .price-box {
+      text-align: center;
+      border: 2px solid var(--primary);
+      box-shadow: 0 0 30px rgba(56,189,248,0.25);
+    }
+
+    .price {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 34px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #020617;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(10,20,40,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.logo img {
+  width: 34px;
+}
+
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ig-btn {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #0b132b;
+  padding: 10px 0;
+}
+
+.mobile-menu a {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.mobile-menu .cta {
+  background: #00b3ff;
+  margin: 10px;
+  border-radius: 20px;
+  text-align: center;
+}
+.ig-btn {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #405de6, #833ab4, #fd1d1d);
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 500;
+}
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Ayush AI Automation">
+      <span>Ayush AI Automation</span>
+    </div>
+
+    <div class="right-actions">
+   <a href="https://instagram.com/ayush.automation" target="_blank" class="ig-btn">Instagram</a>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://wa.me/919477293867" class="cta">WhatsApp</a><a href="booking.html" class="cta">Book a Setup</a>
+  </div>
+</header>
+<div class="hero">
+  <h1>Simple, Transparent Pricing for AI-Powered Growth</h1>
+  <p class="section-sub">
+    One powerful plan that gives you a complete AI sales assistant for your
+    Instagram & WhatsApp DMs.
+  </p>
+</div>
+
+<section>
+  <h2>AI DM Automation Plan</h2>
+  <p class="section-sub">
+    Everything you need to turn conversations into conversions, without hiring
+    a full-time sales team.
+  </p>
+
+  <div class="grid" style="max-width:500px;margin:auto;">
+    <div class="card price-box">
+      <h3>Complete AI DM Automation System</h3>
+      <p class="price">₹999 / Month</p>
+      <p><strong>Free Setup Till April</strong></p>
+      <p>
+        Instagram DM Automation<br>
+        WhatsApp Business Automation<br>
+        Lead Qualification System<br>
+        Appointment Booking Automation<br>
+        Automated Follow-Ups & Nurture<br>
+        Ongoing Support & Optimization
+      </p>
+      <a href="https://wa.me/919477293867" class="btn-primary">Get Started on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What You Get for ₹999</h2>
+  <p class="section-sub">
+    A complete sales infrastructure that usually costs thousands with traditional agencies.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>24/7 Instant Replies</h3>
+      <p>Every inquiry is answered in seconds, even when you are offline.</p>
+    </div>
+    <div class="card">
+      <h3>Professional Conversation Flows</h3>
+      <p>Pre-designed scripts built on sales psychology and conversion strategy.</p>
+    </div>
+    <div class="card">
+      <h3>Lead Filtering & Segmentation</h3>
+      <p>AI separates serious buyers from casual browsers automatically.</p>
+    </div>
+    <div class="card">
+      <h3>Booking & Follow-Ups</h3>
+      <p>Automated scheduling and reminders to reduce no-shows and increase closes.</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>Manual DMs vs AI Automation</h2>
+  <p class="section-sub">
+    See the difference between handling conversations manually and using a
+    structured AI-powered system.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Manual Reply System</h3>
+      <p>
+        ❌ Slow response time<br>
+        ❌ Missed messages<br>
+        ❌ No proper follow-ups<br>
+        ❌ Inconsistent communication<br>
+        ❌ Time-consuming for founders<br>
+        ❌ Limited scalability
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Ayush AI Automation System</h3>
+      <p>
+        ✅ Instant 24/7 replies<br>
+        ✅ Zero missed leads<br>
+        ✅ Automated follow-ups<br>
+        ✅ Professional structured flows<br>
+        ✅ Saves hours daily<br>
+        ✅ Scales to unlimited conversations
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Who Is This Plan For?</h2>
+  <p class="section-sub">
+    This pricing is designed for anyone who wants a powerful automation system
+    without paying expensive agency fees.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Coaches & Consultants</h3>
+      <p>Automate discovery calls, program details, and lead qualification.</p>
+    </div>
+    <div class="card">
+      <h3>Creators & Influencers</h3>
+      <p>Handle high DM volume and convert followers into buyers.</p>
+    </div>
+    <div class="card">
+      <h3>Local Businesses</h3>
+      <p>Instant replies, bookings, and service inquiries on autopilot.</p>
+    </div>
+    <div class="card">
+      <h3>E-commerce Brands</h3>
+      <p>Product queries, order updates, and upsells via AI DMs.</p>
+    </div>
+    <div class="card">
+      <h3>Agencies & Service Providers</h3>
+      <p>Lead capture, qualification, and call booking without manual work.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Common Questions</h2>
+  <p class="section-sub">
+    Answers to the most common doubts before getting started.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Is DM automation safe?</h3>
+      <p>
+        Yes. We use platform-approved tools and safe message limits to protect
+        your Instagram and WhatsApp accounts.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Will it sound robotic?</h3>
+      <p>
+        No. All flows are written in natural, human-like language customized
+        to your brand tone.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>How long does setup take?</h3>
+      <p>
+        Typically 24–48 hours after onboarding and content approval.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Can I cancel anytime?</h3>
+      <p>
+        Yes. The monthly plan is flexible and can be stopped anytime.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="text-align:center;">
+  <h2>Start Your AI DM Automation Today</h2>
+  <p class="section-sub">
+    Replace manual chatting with a professional AI-powered sales system and
+    start converting more leads automatically.
+  </p>
+  <a href="https://wa.me/919477293867" class="btn-primary">Start on WhatsApp</a>
+</section>
+
+<footer style="border-top:1px solid var(--border-glass);padding:50px 20px;text-align:center;">
+  <p><strong>Ayush AI Automation</strong></p>
+  <p> Instagram & WhatsApp DM Automation Agency</p>
+  <p>
+    <a href="index.html">Home</a> |
+    <a href="services.html">Services</a> |
+    <a href="pricing.html">Pricing</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a>
+  </p>
+  <p style="color:var(--text-muted);margin-top:10px;">
+    © 2026 Ayush AI Automation. All rights reserved.
+  </p>
+</footer>
+
+<a href="https://wa.me/919477293867"
+   style="
+     position:fixed;
+     bottom:20px;
+     right:20px;
+     width:56px;
+     height:56px;
+     background:#25D366;
+     color:white;
+     border-radius:50%;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     font-size:28px;
+     text-decoration:none;
+     box-shadow:0 0 20px rgba(37,211,102,0.6);
+     z-index:999;">
+  💬
+</a>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+</body>
+</html>
