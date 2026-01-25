@@ -7,44 +7,48 @@
 
 <style>
 body{
-font-family:Inter, sans-serif;
-background:radial-gradient(circle at top,#0f172a,#020617 70%);
-color:white;
-margin:0;
+    font-family:Inter, sans-serif;
+    background:radial-gradient(circle at top,#0f172a,#020617 70%);
+    color:white;
+    margin:0;
 }
 
 .container{
-max-width:700px;
-margin:120px auto;
-padding:30px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-border-radius:20px;
-backdrop-filter:blur(12px);
+    max-width:700px;
+    margin:120px auto;
+    padding:30px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+    backdrop-filter:blur(12px);
 }
 
 h1{text-align:center;}
 p{text-align:center;color:#94a3b8;}
 
 input,textarea,select{
-width:100%;
-padding:14px;
-margin-top:12px;
-border-radius:10px;
-border:1px solid rgba(255,255,255,0.15);
-background:rgba(255,255,255,0.03);
-color:white;
+    width:100%;
+    padding:14px;
+    margin-top:12px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.03);
+    color:white;
 }
 
 button{
-margin-top:20px;
-width:100%;
-padding:14px;
-border:none;
-border-radius:999px;
-background:linear-gradient(135deg,#38bdf8,#0ea5e9);
-font-weight:700;
-cursor:pointer;
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:999px;
+    background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+button:hover{
+    transform:scale(1.05);
 }
 </style>
 </head>
@@ -56,35 +60,37 @@ cursor:pointer;
 <p>Fill this form and our team will contact you shortly.</p>
 
 <form action="https://formsubmit.co/ayushtrades54@gmail.com" method="POST">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_subject" value="New Automation Client Lead">
-<input type="hidden" name="_template" value="table">
+    <!-- FormSubmit hidden fields -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New Automation Client Lead">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="thankyou.html">
 
-<input type="text" name="Name" placeholder="Your Name" required>
-<input type="text" name="Business" placeholder="Business Name" required>
-<input type="text" name="Instagram" placeholder="Instagram Username">
-<input type="tel" name="WhatsApp" placeholder="WhatsApp Number" required>
+    <!-- User inputs -->
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="text" name="Business_Name" placeholder="Business Name" required>
+    <input type="text" name="Instagram_Username" placeholder="Instagram Username">
+    <input type="tel" name="WhatsApp_Number" placeholder="WhatsApp Number" required>
 
-<select name="Monthly Leads">
-<option value="">Monthly Leads</option>
-<option>0–50</option>
-<option>50–200</option>
-<option>200–500</option>
-<option>500+</option>
-</select>
+    <select name="Monthly_Leads" required>
+        <option value="">Monthly Leads</option>
+        <option>0–50</option>
+        <option>50–200</option>
+        <option>200–500</option>
+        <option>500+</option>
+    </select>
 
-<select name="Budget">
-<option value="">Monthly Budget</option>
-<option>₹1k–₹3k</option>
-<option>₹3k–₹10k</option>
-<option>₹10k+</option>
-</select>
+    <select name="Monthly_Budget" required>
+        <option value="">Monthly Budget</option>
+        <option>₹1k–₹3k</option>
+        <option>₹3k–₹10k</option>
+        <option>₹10k+</option>
+    </select>
 
-<textarea name="Goal" rows="4" placeholder="What do you want to automate? (DMs, Calls, Sales, Support etc.)"></textarea>
+    <textarea name="Automation_Goal" rows="4" placeholder="What do you want to automate? (DMs, Calls, Sales, Support etc.)"></textarea>
 
-<button type="submit">Submit & Get Started</button>
+    <button type="submit">Submit & Get Started</button>
 </form>
-
 </div>
 
 </body>
