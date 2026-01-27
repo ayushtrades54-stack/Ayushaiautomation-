@@ -1,0 +1,463 @@
+/* ---------------------- */
+/* General Reset & Body   */
+/* ---------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0f0f1a; /* dark background */
+  color: #e0e0e0;           /* light text */
+  line-height: 1.6;
+}
+
+/* ---------------------- */
+/* Navbar                 */
+/* ---------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #111122;
+  border-bottom: 1px solid #333;
+  z-index: 999;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #00ffe0;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #00ffe0;
+}
+
+.nav-cta {
+  background-color: #00ffe0;
+  color: #0f0f1a;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ---------------------- */
+/* Page Hero              */
+/* ---------------------- */
+.page-hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background: linear-gradient(135deg, #0f0f1a, #111122);
+}
+
+.page-hero h1 {
+  color: #00ffe0;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* ---------------------- */
+/* Sections               */
+/* ---------------------- */
+section {
+  padding: 40px 20px;
+}
+
+h2 {
+  color: #00ffe0;
+  margin-bottom: 20px;
+}
+
+/* Service / Coach Cards */
+.service-card,
+.card,
+.step,
+.faq-item {
+  background-color: #111122;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid #00ffe0;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.service-card:hover,
+.card:hover,
+.step:hover,
+.faq-item:hover {
+  background-color: #1a1a2e;
+}
+
+/* Buttons */
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #00ffe0;
+  color: #0f0f1a;
+}
+
+.btn-primary:hover {
+  background-color: #00ccaa;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #00ffe0;
+  border: 2px solid #00ffe0;
+}
+
+.btn-secondary:hover {
+  background-color: #00ffe0;
+  color: #0f0f1a;
+}
+
+/* Forms */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+form label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #888;
+}
+
+form button {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: #111122;
+  padding: 30px 20px;
+  text-align: center;
+  color: #ccc;
+  border-top: 1px solid #333;
+}
+
+.footer a {
+  color: #00ffe0;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+/* Floating Social Buttons */
+.social-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+.whatsapp-float,
+.instagram-float {
+  background-color: #00ffe0;
+  color: #0f0f1a;
+  padding: 10px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.whatsapp-float:hover,
+.instagram-float:hover {
+  background-color: #00ccaa;
+}
+
+/* ---------------------- */
+/* Responsive             */
+/* ---------------------- */
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #111122;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    border-radius: 0 0 0 8px;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+#automation-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* content ke peeche */
+  pointer-events: none; /* clicks ke liye block na kare */
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+#hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* background ke liye */
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* text canvas ke upar dikhaye */
+  color: #e0e0e0;
+}
+
+.hero-content h1 {
+  color: #00ffe0;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content h2 {
+  color: #00ffe0;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Pricing Section */
+.pricing-section {
+  background-color: #0f0f1a;
+  color: #e0e0e0;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.pricing-section h2 {
+  font-size: 2.5rem;
+  color: #00ffe0;
+  margin-bottom: 10px;
+}
+
+.pricing-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.pricing-cards .card {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0 0 20px rgba(0,255,224,0.2);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.pricing-cards .card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-cards .card h3 {
+  color: #00ffe0;
+  margin-bottom: 15px;
+}
+
+.pricing-cards .card .price {
+  font-size: 1.8rem;
+  color: #00ffe0;
+  margin-bottom: 15px;
+}
+
+.pricing-cards .card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.pricing-cards .card ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.pricing-cards .card ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00ffe0;
+}
+
+.pricing-cards .card .btn-primary {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: #00ffe0;
+  color: #000;
+  padding: 12px 0;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pricing-cards .card .btn-primary:hover {
+  background-color: #00d4b0;
+  color: #fff;
+}
+
+.pricing-note {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #00ffe0;
+}
+
+.floating-btn {
+  position: fixed;
+  right: 15px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  color: #000;
+  font-weight: bold;
+  z-index: 999;
+  text-decoration: none;
+  background-color: #00ffe0;
+  transition: all 0.3s ease;
+}
+
+.instagram-btn { bottom: 80px; }
+.whatsapp-btn { bottom: 20px; }
+
+.floating-btn:hover {
+  background-color: #00d4b0;
+  color: #fff;
+}
+
+
+
+
+
+/* Hero & CTA Buttons */
+.btn-primary, .btn-secondary {
+  background-color: #00ffe0; /* logo ke neon blue */
+  color: #000; /* text readable */
+  padding: 12px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  background-color: #00d4b0; /* slightly darker neon on hover */
+  color: #fff;
+}
