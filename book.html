@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ayush AI Automation | Book a Call</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="automation-bg"></canvas>
+<!-- Navbar -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="brand">
+      <img src="logo.png" alt="Ayush AI Automation Logo" class="logo">
+      <span class="brand-name">Ayush AI Automation</span>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="coaches.html">For Coaches</a>
+      <a href="process.html">Process</a>
+      <a href="demo.html">Demo</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="book.html" class="nav-cta active">Book a Call</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <h1>Book Your Automation Setup</h1>
+  <p>Fill out the form below and our team will get in touch with you to set up your DM & lead automation system.</p>
+</section>
+
+<!-- Booking Form -->
+<section class="booking-form">
+  <form action="https://formsubmit.co/ayushtrades54@gmail.com" method="POST">
+    
+    <!-- Hidden inputs for FormSubmit -->
+    <input type="hidden" name="_subject" value="New Automation Booking Request">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" placeholder="Your full name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" placeholder="you@example.com" required>
+    </div>
+
+    <div class="form-group">
+      <label for="whatsapp">WhatsApp Number</label>
+      <input type="tel" name="whatsapp" id="whatsapp" placeholder="+91 9XXXXXXXXX" required>
+    </div>
+
+    <div class="form-group">
+      <label for="instagram">Instagram Handle</label>
+      <input type="text" name="instagram" id="instagram" placeholder="@yourhandle" required>
+    </div>
+
+    <div class="form-group">
+      <label for="monthlyRevenue">Monthly Revenue (Approx)</label>
+      <input type="text" name="monthlyRevenue" id="monthlyRevenue" placeholder="₹" required>
+    </div>
+
+    <div class="form-group">
+      <label for="budget">Marketing / Automation Budget</label>
+      <select name="budget" id="budget" required>
+        <option value="">Select your budget</option>
+        <option value="₹5k-10k">₹5k - ₹10k</option>
+        <option value="₹10k-20k">₹10k - ₹20k</option>
+        <option value="₹20k-50k">₹20k - ₹50k</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="goal">Goal</label>
+      <select name="goal" id="goal" required>
+        <option value="">Select your goal</option>
+        <option value="More Leads">More Leads</option>
+        <option value="More Booked Calls">More Booked Calls</option>
+        <option value="Full Automation">Full Automation</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn-primary">Submit Booking</button>
+    <a href="https://wa.me/919477293867" class="btn-secondary">Contact via WhatsApp</a>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-contact">
+    <p>Email: <a href="mailto:ayushtrades54@gmail.com">ayushtrades54@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/919477293867">+91 94772 93867</a></p>
+  </div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a> | 
+    <a href="terms.html">Terms & Conditions</a>
+  </div>
+  <p>&copy; 2026 Ayush AI Automation. All rights reserved.</p>
+</footer>
+
+<!-- Floating Social Buttons -->
+<div class="social-float">
+  <a href="https://wa.me/919477293867" class="whatsapp-float" target="_blank">WhatsApp</a>
+  <a href="https://instagram.com" class="instagram-float" target="_blank">Instagram</a>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
