@@ -1,28 +1,12 @@
-// ===== HAMBURGER TOGGLE =====
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
-  if (menu.style.display === "flex") {
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "flex";
-  }
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 }
 
-// ===== BACKGROUND FLOW ANIMATION =====
-let canvas = document.getElementById("bg-canvas");
-if (!canvas) {
-  canvas = document.createElement("canvas");
-  canvas.id = "bg-canvas";
-  document.body.appendChild(canvas);
-}
-
-canvas.style.position = "fixed";
-canvas.style.top = "0";
-canvas.style.left = "0";
-canvas.style.width = "100%";
-canvas.style.height = "100%";
-canvas.style.zIndex = "-10";
-canvas.style.pointerEvents = "none";
+// BACKGROUND PARTICLE NETWORK
+const canvas = document.createElement("canvas");
+canvas.id = "bg-canvas";
+document.body.appendChild(canvas);
 
 const ctx = canvas.getContext("2d");
 let w, h;
@@ -52,7 +36,7 @@ function animate() {
     if (p.y < 0 || p.y > h) p.vy *= -1;
 
     ctx.beginPath();
-    ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
     ctx.fillStyle = "rgba(124,58,237,0.8)";
     ctx.fill();
 
@@ -73,4 +57,5 @@ function animate() {
 
   requestAnimationFrame(animate);
 }
+
 animate();
