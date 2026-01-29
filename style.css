@@ -485,3 +485,39 @@ form button {
   background-color: #00d4b0; /* slightly darker neon on hover */
   color: #fff;
 }
+
+
+
+
+
+
+.thankyou-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #0f172a;
+  color: #fff;
+  padding: 20px;
+}
+
+.thankyou-container h1 {
+  color: #22c55e;
+  margin-bottom: 10px;
+}
+
+.thankyou-container p {
+  color: #cbd5f5;
+  margin-bottom: 25px;
+}
+
+.home-btn {
+  padding: 12px 24px;
+  background: #22c55e;
+  color: #020617;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
