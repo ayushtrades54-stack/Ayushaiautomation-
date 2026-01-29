@@ -498,26 +498,34 @@ form button {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #0f172a;
-  color: #fff;
+  background: #020617;
+  color: #e0f2fe;
   padding: 20px;
 }
 
 .thankyou-container h1 {
-  color: #22c55e;
+  color: #38bdf8; /* light blue */
   margin-bottom: 10px;
 }
 
 .thankyou-container p {
-  color: #cbd5f5;
+  color: #bae6fd;
   margin-bottom: 25px;
+  font-size: 15px;
 }
 
 .home-btn {
-  padding: 12px 24px;
-  background: #22c55e;
+  padding: 12px 26px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
   color: #020617;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+  transition: 0.3s;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.9);
 }
