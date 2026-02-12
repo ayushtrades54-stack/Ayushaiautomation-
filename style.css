@@ -1494,3 +1494,63 @@ section, .hero, .page-hero {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
+
+
+.audit-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+}
+
+.audit-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.audit-benefits {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.benefit-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(128, 0, 255, 0.3);
+    transform: translateX(5px);
+}
+
+.check-icon {
+    color: #8000ff;
+    font-size: 24px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.audit-cta {
+    margin-top: 50px;
+}
+
+.cta-disclaimer {
+    margin-top: 15px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
