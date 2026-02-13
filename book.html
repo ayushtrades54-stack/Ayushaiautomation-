@@ -36,6 +36,9 @@
 <!-- BOOK.HTML - Hero Section and Form Content -->
 <!-- Copy paste this AFTER your navbar -->
 
+<!-- UPDATED BOOK.HTML - Hero Section and Form with FormSubmit.co -->
+<!-- Copy paste this AFTER your navbar -->
+
   <!-- Page Hero -->
   <section class="page-hero">
     <h1>Book Your Free Strategy Call 📞</h1>
@@ -49,11 +52,21 @@
       <!-- Form Header -->
       <div class="form-header">
         <h2>Fill Your Details</h2>
-        <p>We'll reach out within 24 hours to schedule your call</p>
+        <p>You'll receive call confirmation via email within 2 hours</p>
       </div>
 
       <!-- Booking Form -->
-      <form id="booking-form" class="booking-form" action="thankyou.html" method="GET">
+      <form id="booking-form" 
+            class="booking-form" 
+            action="https://formsubmit.co/ayushtrades54@gmail.com" 
+            method="POST">
+        
+        <!-- FormSubmit.co Hidden Fields -->
+        <input type="hidden" name="_subject" value="New Call Booking - DM Automation">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_next" value="https://ayushaiautomation.vercel.app/thankyou.html">
         
         <!-- Name Field -->
         <div class="form-group">
@@ -115,6 +128,47 @@
           <span class="error-message" id="business-error"></span>
         </div>
 
+        <!-- Monthly Budget -->
+        <div class="form-group">
+          <label for="budget">Monthly Budget for Automation *</label>
+          <select id="budget" name="budget" required>
+            <option value="">Select Budget Range</option>
+            <option value="5k-10k">₹5,000 - ₹10,000</option>
+            <option value="10k-20k">₹10,000 - ₹20,000</option>
+            <option value="20k-30k">₹20,000 - ₹30,000</option>
+            <option value="30k+">₹30,000+</option>
+          </select>
+          <span class="error-message" id="budget-error"></span>
+        </div>
+
+        <!-- Preferred Date -->
+        <div class="form-group">
+          <label for="preferred-date">Preferred Call Date *</label>
+          <input type="date" 
+                 id="preferred-date" 
+                 name="preferred_date" 
+                 required>
+          <span class="error-message" id="date-error"></span>
+        </div>
+
+        <!-- Preferred Time Slot -->
+        <div class="form-group">
+          <label for="time-slot">Preferred Time Slot *</label>
+          <select id="time-slot" name="time_slot" required>
+            <option value="">Select Time</option>
+            <option value="10am-11am">10:00 AM - 11:00 AM</option>
+            <option value="11am-12pm">11:00 AM - 12:00 PM</option>
+            <option value="12pm-1pm">12:00 PM - 1:00 PM</option>
+            <option value="2pm-3pm">2:00 PM - 3:00 PM</option>
+            <option value="3pm-4pm">3:00 PM - 4:00 PM</option>
+            <option value="4pm-5pm">4:00 PM - 5:00 PM</option>
+            <option value="5pm-6pm">5:00 PM - 6:00 PM</option>
+            <option value="6pm-7pm">6:00 PM - 7:00 PM</option>
+            <option value="7pm-8pm">7:00 PM - 8:00 PM</option>
+          </select>
+          <span class="error-message" id="time-error"></span>
+        </div>
+
         <!-- Message (Optional) -->
         <div class="form-group">
           <label for="message">Additional Notes (Optional)</label>
@@ -153,31 +207,36 @@
     const phoneInput = document.getElementById('phone');
     const instagramInput = document.getElementById('instagram');
     const businessType = document.getElementById('business-type');
+    const budgetSelect = document.getElementById('budget');
+    const dateInput = document.getElementById('preferred-date');
+    const timeSlot = document.getElementById('time-slot');
     const submitBtn = document.getElementById('submit-btn');
+
+    // Set minimum date to today
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const minDate = tomorrow.toISOString().split('T')[0];
+    dateInput.setAttribute('min', minDate);
 
     // Validation functions
     function validateName(name) {
-      // At least 2 characters, letters and spaces only
       const nameRegex = /^[a-zA-Z\s]{2,50}$/;
       return nameRegex.test(name.trim());
     }
 
     function validateEmail(email) {
-      // Standard email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email.trim());
     }
 
     function validatePhone(phone) {
-      // Indian mobile number: starts with 6-9, exactly 10 digits
       const phoneRegex = /^[6-9][0-9]{9}$/;
       return phoneRegex.test(phone.trim());
     }
 
     function validateInstagram(handle) {
-      // Remove @ if present
       handle = handle.trim().replace('@', '');
-      // Instagram username: 1-30 characters, letters, numbers, periods, underscores
       const instaRegex = /^[a-zA-Z0-9._]{1,30}$/;
       return instaRegex.test(handle);
     }
@@ -198,12 +257,12 @@
       input.style.borderColor = 'rgba(59, 130, 246, 0.3)';
     }
 
-    // Real-time validation on blur
+    // Real-time validation
     nameInput.addEventListener('blur', function() {
       if (!this.value.trim()) {
         showError('name', 'Name is required');
       } else if (!validateName(this.value)) {
-        showError('name', 'Please enter a valid name (letters only, 2-50 characters)');
+        showError('name', 'Enter valid name (letters only, 2-50 characters)');
       } else {
         clearError('name');
       }
@@ -213,14 +272,13 @@
       if (!this.value.trim()) {
         showError('email', 'Email is required');
       } else if (!validateEmail(this.value)) {
-        showError('email', 'Please enter a valid email address');
+        showError('email', 'Enter valid email address');
       } else {
         clearError('email');
       }
     });
 
     phoneInput.addEventListener('input', function() {
-      // Only allow numbers
       this.value = this.value.replace(/[^0-9]/g, '');
     });
 
@@ -228,7 +286,7 @@
       if (!this.value.trim()) {
         showError('phone', 'WhatsApp number is required');
       } else if (!validatePhone(this.value)) {
-        showError('phone', 'Enter valid 10-digit mobile number starting with 6-9');
+        showError('phone', 'Enter valid 10-digit number starting with 6-9');
       } else {
         clearError('phone');
       }
@@ -238,76 +296,92 @@
       if (!this.value.trim()) {
         showError('instagram', 'Instagram handle is required');
       } else if (!validateInstagram(this.value)) {
-        showError('instagram', 'Enter valid Instagram username (no spaces or special characters)');
+        showError('instagram', 'Enter valid Instagram username');
       } else {
         clearError('instagram');
-        // Remove @ if user added it
         this.value = this.value.trim().replace('@', '');
       }
     });
 
     businessType.addEventListener('change', function() {
       if (!this.value) {
-        showError('business', 'Please select your business type');
+        showError('business', 'Select your business type');
       } else {
         clearError('business');
       }
     });
 
-    // Form submission
+    budgetSelect.addEventListener('change', function() {
+      if (!this.value) {
+        showError('budget', 'Select your budget range');
+      } else {
+        clearError('budget');
+      }
+    });
+
+    dateInput.addEventListener('change', function() {
+      if (!this.value) {
+        showError('date', 'Select preferred date');
+      } else {
+        clearError('date');
+      }
+    });
+
+    timeSlot.addEventListener('change', function() {
+      if (!this.value) {
+        showError('time', 'Select preferred time slot');
+      } else {
+        clearError('time');
+      }
+    });
+
+    // Form submission validation
     bookingForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Clear all previous errors
-      clearError('name');
-      clearError('email');
-      clearError('phone');
-      clearError('instagram');
-      clearError('business');
-
       let hasError = false;
 
-      // Validate all fields
-      if (!nameInput.value.trim()) {
-        showError('name', 'Name is required');
-        hasError = true;
-      } else if (!validateName(nameInput.value)) {
-        showError('name', 'Please enter a valid name');
+      // Validate all required fields
+      if (!nameInput.value.trim() || !validateName(nameInput.value)) {
+        showError('name', 'Enter valid name');
         hasError = true;
       }
 
-      if (!emailInput.value.trim()) {
-        showError('email', 'Email is required');
-        hasError = true;
-      } else if (!validateEmail(emailInput.value)) {
-        showError('email', 'Please enter a valid email address');
+      if (!emailInput.value.trim() || !validateEmail(emailInput.value)) {
+        showError('email', 'Enter valid email');
         hasError = true;
       }
 
-      if (!phoneInput.value.trim()) {
-        showError('phone', 'WhatsApp number is required');
-        hasError = true;
-      } else if (!validatePhone(phoneInput.value)) {
-        showError('phone', 'Enter valid 10-digit mobile number');
+      if (!phoneInput.value.trim() || !validatePhone(phoneInput.value)) {
+        showError('phone', 'Enter valid WhatsApp number');
         hasError = true;
       }
 
-      if (!instagramInput.value.trim()) {
-        showError('instagram', 'Instagram handle is required');
-        hasError = true;
-      } else if (!validateInstagram(instagramInput.value)) {
-        showError('instagram', 'Enter valid Instagram username');
+      if (!instagramInput.value.trim() || !validateInstagram(instagramInput.value)) {
+        showError('instagram', 'Enter valid Instagram handle');
         hasError = true;
       }
 
       if (!businessType.value) {
-        showError('business', 'Please select your business type');
+        showError('business', 'Select business type');
         hasError = true;
       }
 
-      // If any error, stop submission
+      if (!budgetSelect.value) {
+        showError('budget', 'Select budget range');
+        hasError = true;
+      }
+
+      if (!dateInput.value) {
+        showError('date', 'Select preferred date');
+        hasError = true;
+      }
+
+      if (!timeSlot.value) {
+        showError('time', 'Select time slot');
+        hasError = true;
+      }
+
       if (hasError) {
-        // Scroll to first error
+        e.preventDefault();
         const firstError = document.querySelector('.error-message[style*="block"]');
         if (firstError) {
           firstError.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -318,26 +392,20 @@
       // Show loading state
       const btnText = submitBtn.querySelector('.btn-text');
       submitBtn.disabled = true;
-      btnText.innerHTML = 'Processing...';
+      btnText.textContent = 'Submitting...';
       submitBtn.style.opacity = '0.7';
 
-      // Simulate submission (replace with actual backend call)
-      setTimeout(() => {
-        // Redirect to thank you page
-        window.location.href = 'thankyou.html';
-      }, 1000);
+      // Form will submit to FormSubmit.co
     });
 
     // Clear error on focus
-    [nameInput, emailInput, phoneInput, instagramInput, businessType].forEach(input => {
+    [nameInput, emailInput, phoneInput, instagramInput, businessType, budgetSelect, dateInput, timeSlot].forEach(input => {
       input.addEventListener('focus', function() {
-        const errorId = this.id;
-        clearError(errorId);
+        clearError(this.id);
       });
     });
-        </script>
+              </script>
   
-
 
 
 
