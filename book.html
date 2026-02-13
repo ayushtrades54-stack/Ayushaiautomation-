@@ -30,84 +30,320 @@
   </div>
 </header>
 
-<!-- Page Hero -->
-<section class="page-hero">
-  <h1>Book a call and confirm your Automation Setup</h1>
-  <p>Fill out the form below and our team will get in touch with you in the call and start set up your DM & lead automation system.</p>
-<p>Note: Please fill the correct WhatsApp number so we can start</p>
+
+
+
+<!-- BOOK.HTML - Hero Section and Form Content -->
+<!-- Copy paste this AFTER your navbar -->
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>Book Your Free Strategy Call 📞</h1>
+    <p>Let's automate your Instagram & WhatsApp DMs and turn conversations into booked calls</p>
+  </section>
+
+  <!-- Booking Form Section -->
+  <section class="booking-section">
+    <div class="booking-container">
+      
+      <!-- Form Header -->
+      <div class="form-header">
+        <h2>Fill Your Details</h2>
+        <p>We'll reach out within 24 hours to schedule your call</p>
+      </div>
+
+      <!-- Booking Form -->
+      <form id="booking-form" class="booking-form" action="thankyou.html" method="GET">
+        
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" 
+                 id="name" 
+                 name="name" 
+                 placeholder="Enter your full name" 
+                 required>
+          <span class="error-message" id="name-error"></span>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" 
+                 id="email" 
+                 name="email" 
+                 placeholder="your@email.com" 
+                 required>
+          <span class="error-message" id="email-error"></span>
+        </div>
+
+        <!-- WhatsApp Number -->
+        <div class="form-group">
+          <label for="phone">WhatsApp Number *</label>
+          <input type="tel" 
+                 id="phone" 
+                 name="phone" 
+                 placeholder="10-digit mobile number (e.g., 9876543210)" 
+                 maxlength="10"
+                 required>
+          <span class="error-message" id="phone-error"></span>
+        </div>
+
+        <!-- Instagram Handle -->
+        <div class="form-group">
+          <label for="instagram">Instagram Handle *</label>
+          <input type="text" 
+                 id="instagram" 
+                 name="instagram" 
+                 placeholder="@yourusername or yourusername" 
+                 required>
+          <span class="error-message" id="instagram-error"></span>
+        </div>
+
+        <!-- Business Type -->
+        <div class="form-group">
+          <label for="business-type">I am a *</label>
+          <select id="business-type" name="business_type" required>
+            <option value="">Select Your Role</option>
+            <option value="personal-trainer">Personal Trainer</option>
+            <option value="gym-owner">Gym Owner</option>
+            <option value="online-coach">Online Fitness Coach</option>
+            <option value="nutrition-coach">Nutrition Coach</option>
+            <option value="yoga-instructor">Yoga Instructor</option>
+            <option value="other">Other Fitness Professional</option>
+          </select>
+          <span class="error-message" id="business-error"></span>
+        </div>
+
+        <!-- Message (Optional) -->
+        <div class="form-group">
+          <label for="message">Additional Notes (Optional)</label>
+          <textarea id="message" 
+                    name="message" 
+                    rows="4" 
+                    placeholder="Any specific questions about DM automation?"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn" id="submit-btn">
+          <span class="btn-text">Submit Booking Request</span>
+        </button>
+
+      </form>
+
+      <!-- Alternative Option -->
+      <div class="alternative-contact">
+        <p>Prefer to chat directly?</p>
+        <a href="https://wa.me/919477293867?text=Hi! I want to book a call for Instagram DM automation" 
+           class="whatsapp-btn" 
+           target="_blank">
+          💬 Message on WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Form Validation Script -->
+  <script>
+    // Get form elements
+    const bookingForm = document.getElementById('booking-form');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const instagramInput = document.getElementById('instagram');
+    const businessType = document.getElementById('business-type');
+    const submitBtn = document.getElementById('submit-btn');
+
+    // Validation functions
+    function validateName(name) {
+      // At least 2 characters, letters and spaces only
+      const nameRegex = /^[a-zA-Z\s]{2,50}$/;
+      return nameRegex.test(name.trim());
+    }
+
+    function validateEmail(email) {
+      // Standard email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email.trim());
+    }
+
+    function validatePhone(phone) {
+      // Indian mobile number: starts with 6-9, exactly 10 digits
+      const phoneRegex = /^[6-9][0-9]{9}$/;
+      return phoneRegex.test(phone.trim());
+    }
+
+    function validateInstagram(handle) {
+      // Remove @ if present
+      handle = handle.trim().replace('@', '');
+      // Instagram username: 1-30 characters, letters, numbers, periods, underscores
+      const instaRegex = /^[a-zA-Z0-9._]{1,30}$/;
+      return instaRegex.test(handle);
+    }
+
+    function showError(inputId, message) {
+      const errorSpan = document.getElementById(inputId + '-error');
+      const input = document.getElementById(inputId);
+      errorSpan.textContent = message;
+      errorSpan.style.display = 'block';
+      input.style.borderColor = '#ff4444';
+    }
+
+    function clearError(inputId) {
+      const errorSpan = document.getElementById(inputId + '-error');
+      const input = document.getElementById(inputId);
+      errorSpan.textContent = '';
+      errorSpan.style.display = 'none';
+      input.style.borderColor = 'rgba(59, 130, 246, 0.3)';
+    }
+
+    // Real-time validation on blur
+    nameInput.addEventListener('blur', function() {
+      if (!this.value.trim()) {
+        showError('name', 'Name is required');
+      } else if (!validateName(this.value)) {
+        showError('name', 'Please enter a valid name (letters only, 2-50 characters)');
+      } else {
+        clearError('name');
+      }
+    });
+
+    emailInput.addEventListener('blur', function() {
+      if (!this.value.trim()) {
+        showError('email', 'Email is required');
+      } else if (!validateEmail(this.value)) {
+        showError('email', 'Please enter a valid email address');
+      } else {
+        clearError('email');
+      }
+    });
+
+    phoneInput.addEventListener('input', function() {
+      // Only allow numbers
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    phoneInput.addEventListener('blur', function() {
+      if (!this.value.trim()) {
+        showError('phone', 'WhatsApp number is required');
+      } else if (!validatePhone(this.value)) {
+        showError('phone', 'Enter valid 10-digit mobile number starting with 6-9');
+      } else {
+        clearError('phone');
+      }
+    });
+
+    instagramInput.addEventListener('blur', function() {
+      if (!this.value.trim()) {
+        showError('instagram', 'Instagram handle is required');
+      } else if (!validateInstagram(this.value)) {
+        showError('instagram', 'Enter valid Instagram username (no spaces or special characters)');
+      } else {
+        clearError('instagram');
+        // Remove @ if user added it
+        this.value = this.value.trim().replace('@', '');
+      }
+    });
+
+    businessType.addEventListener('change', function() {
+      if (!this.value) {
+        showError('business', 'Please select your business type');
+      } else {
+        clearError('business');
+      }
+    });
+
+    // Form submission
+    bookingForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Clear all previous errors
+      clearError('name');
+      clearError('email');
+      clearError('phone');
+      clearError('instagram');
+      clearError('business');
+
+      let hasError = false;
+
+      // Validate all fields
+      if (!nameInput.value.trim()) {
+        showError('name', 'Name is required');
+        hasError = true;
+      } else if (!validateName(nameInput.value)) {
+        showError('name', 'Please enter a valid name');
+        hasError = true;
+      }
+
+      if (!emailInput.value.trim()) {
+        showError('email', 'Email is required');
+        hasError = true;
+      } else if (!validateEmail(emailInput.value)) {
+        showError('email', 'Please enter a valid email address');
+        hasError = true;
+      }
+
+      if (!phoneInput.value.trim()) {
+        showError('phone', 'WhatsApp number is required');
+        hasError = true;
+      } else if (!validatePhone(phoneInput.value)) {
+        showError('phone', 'Enter valid 10-digit mobile number');
+        hasError = true;
+      }
+
+      if (!instagramInput.value.trim()) {
+        showError('instagram', 'Instagram handle is required');
+        hasError = true;
+      } else if (!validateInstagram(instagramInput.value)) {
+        showError('instagram', 'Enter valid Instagram username');
+        hasError = true;
+      }
+
+      if (!businessType.value) {
+        showError('business', 'Please select your business type');
+        hasError = true;
+      }
+
+      // If any error, stop submission
+      if (hasError) {
+        // Scroll to first error
+        const firstError = document.querySelector('.error-message[style*="block"]');
+        if (firstError) {
+          firstError.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return false;
+      }
+
+      // Show loading state
+      const btnText = submitBtn.querySelector('.btn-text');
+      submitBtn.disabled = true;
+      btnText.innerHTML = 'Processing...';
+      submitBtn.style.opacity = '0.7';
+
+      // Simulate submission (replace with actual backend call)
+      setTimeout(() => {
+        // Redirect to thank you page
+        window.location.href = 'thankyou.html';
+      }, 1000);
+    });
+
+    // Clear error on focus
+    [nameInput, emailInput, phoneInput, instagramInput, businessType].forEach(input => {
+      input.addEventListener('focus', function() {
+        const errorId = this.id;
+        clearError(errorId);
+      });
+    });
+        </script>
   
-</section>
 
-<!-- Booking Form -->
-<section class="booking-form">
-  <form action="https://formsubmit.co/ayushtrades54@gmail.com" method="POST">
-    
-    <!-- Hidden inputs for FormSubmit -->
-    <input type="hidden" name="_subject" value="New Automation Booking Request">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://ayushaiautomation.vercel.app/thankyou.html">
 
-    <div class="form-group">
-      <label for="name">Full Name</label>
-      <input type="text" name="name" id="name" placeholder="Your full name" required>
-    </div>
 
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" name="email" id="email" placeholder="you@example.com" required>
-    </div>
 
-    <div class="form-group">
-      <label for="whatsapp">WhatsApp Number</label>
-      <input type="tel" name="whatsapp" id="whatsapp" placeholder="+91 9XXXXXXXXX" required>
-    </div>
 
-    <div class="form-group">
-      <label for="instagram">Instagram Handle</label>
-      <input type="text" name="instagram" id="instagram" placeholder="@yourhandle" required>
-    </div>
 
-    <div class="form-group">
-  <label for="platform">Which setup do you want?</label>
-  <select name="platform" id="platform" required>
-    <option value="">Select platform</option>
-    <option value="Instagram Automation">Instagram DM Automation</option>
-    <option value="WhatsApp Automation">WhatsApp Automation</option>
-    <option value="Instagram + WhatsApp">Instagram + WhatsApp Both</option>
-  </select>
-    </div>
-
-    <div class="form-group">
-      <label for="monthlyRevenue">Monthly Revenue (Approx)</label>
-      <input type="text" name="monthlyRevenue" id="monthlyRevenue" placeholder="₹" required>
-    </div>
-
-    <div class="form-group">
-      <label for="budget">Marketing / Automation Budget</label>
-      <select name="budget" id="budget" required>
-        <option value="">Select your budget</option>
-        <option value="₹5k-10k">₹5k - ₹10k</option>
-        <option value="₹10k-20k">₹10k - ₹20k</option>
-        <option value="₹20k-50k">₹20k - ₹50k</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="goal">Goal</label>
-      <select name="goal" id="goal" required>
-        <option value="">Select your goal</option>
-        <option value="More Leads">More Leads</option>
-        <option value="More Booked Calls">More Booked Calls</option>
-        <option value="Full Automation">Full Automation</option>
-      </select>
-    </div>
-
-    <button type="submit" class="btn-primary">Submit Booking</button>
-  </form>
-                 <a href="https://wa.me/919477293867" class="btn-secondary">Contact via WhatsApp</a>
   
-</section>
-
 <!-- Footer -->
 <!-- IMPROVED FOOTER - WHATSAPP, EMAIL, INSTAGRAM ONLY -->
 <!-- Replace your existing footer with this code -->
