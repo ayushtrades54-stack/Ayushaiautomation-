@@ -1748,34 +1748,7 @@ section, .hero, .page-hero {
   flex-shrink: 0;
 }
 
-/* Floating WhatsApp Button */
-. thankyouwhatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 65px;
-  height: 65px;
-  background: linear-gradient(135deg, #25d366, #128c7e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 999;
-  animation: float 3s ease-in-out infinite;
-}
 
-.whatsapp-float:hover {
-  transform: scale(1.15);
-  box-shadow: 0 10px 40px rgba(37, 211, 102, 0.7);
-}
-
-.whatsapp-float::after {
-  content: '💬';
-  font-size: 2rem;
-}
 
 /* =============================================
    ANIMATIONS
