@@ -405,6 +405,173 @@
       });
     });
               </script>
+  <!-- SIMPLE WHATSAPP CONFIRMATION - Add this to your form -->
+<!-- Replace the existing form submit script with this -->
+
+<script>
+  // Form submission with WhatsApp confirmation
+  bookingForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Clear all errors first
+    clearError('name');
+    clearError('email');
+    clearError('phone');
+    clearError('instagram');
+    clearError('business');
+    clearError('budget');
+    clearError('date');
+    clearError('time');
+
+    let hasError = false;
+
+    // Validate all fields (same validation as before)
+    if (!nameInput.value.trim() || !validateName(nameInput.value)) {
+      showError('name', 'Enter valid name');
+      hasError = true;
+    }
+
+    if (!emailInput.value.trim() || !validateEmail(emailInput.value)) {
+      showError('email', 'Enter valid email');
+      hasError = true;
+    }
+
+    if (!phoneInput.value.trim() || !validatePhone(phoneInput.value)) {
+      showError('phone', 'Enter valid WhatsApp number');
+      hasError = true;
+    }
+
+    if (!instagramInput.value.trim() || !validateInstagram(instagramInput.value)) {
+      showError('instagram', 'Enter valid Instagram handle');
+      hasError = true;
+    }
+
+    if (!businessType.value) {
+      showError('business', 'Select business type');
+      hasError = true;
+    }
+
+    if (!budgetSelect.value) {
+      showError('budget', 'Select budget range');
+      hasError = true;
+    }
+
+    if (!dateInput.value) {
+      showError('date', 'Select preferred date');
+      hasError = true;
+    }
+
+    if (!timeSlot.value) {
+      showError('time', 'Select time slot');
+      hasError = true;
+    }
+
+    if (hasError) {
+      const firstError = document.querySelector('.error-message[style*="block"]');
+      if (firstError) {
+        firstError.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return false;
+    }
+
+    // All validation passed - prepare WhatsApp message
+    const formData = {
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      phone: phoneInput.value.trim(),
+      instagram: instagramInput.value.trim().replace('@', ''),
+      business: businessType.value,
+      budget: budgetSelect.value,
+      date: dateInput.value,
+      time: timeSlot.value,
+      message: document.getElementById('message').value.trim()
+    };
+
+    // Create confirmation message for WhatsApp
+    const whatsappMessage = `Hi! I just booked a DM automation call 🚀
+
+📝 My Details:
+• Name: ${formData.name}
+• Email: ${formData.email}
+• WhatsApp: ${formData.phone}
+• Instagram: @${formData.instagram}
+• Type: ${formData.business}
+• Budget: ${formData.budget}
+
+📅 Preferred Schedule:
+• Date: ${formData.date}
+• Time: ${formData.time}
+
+${formData.message ? '📌 Notes: ' + formData.message : ''}
+
+Looking forward to automating my DMs!`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Show loading state
+    const btnText = submitBtn.querySelector('.btn-text');
+    submitBtn.disabled = true;
+    btnText.textContent = 'Processing...';
+    submitBtn.style.opacity = '0.7';
+
+    // Submit form to FormSubmit.co first
+    const formElement = document.getElementById('booking-form');
+    const formDataObj = new FormData(formElement);
+
+    // Send to FormSubmit.co
+    fetch(formElement.action, {
+      method: 'POST',
+      body: formDataObj,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(() => {
+      // Open WhatsApp with pre-filled message
+      window.open(`https://wa.me/919477293867?text=${encodedMessage}`, '_blank');
+      
+      // Wait 1 second then redirect to thank you page
+      setTimeout(() => {
+        window.location.href = 'thankyou.html';
+      }, 1000);
+    })
+    .catch(error => {
+      // If FormSubmit fails, still open WhatsApp
+      console.error('Form submission error:', error);
+      window.open(`https://wa.me/919477293867?text=${encodedMessage}`, '_blank');
+      setTimeout(() => {
+        window.location.href = 'thankyou.html';
+      }, 1000);
+    });
+  });
+</script>
+
+<!-- 
+HOW IT WORKS:
+1. User fills form and clicks submit
+2. Form validates all fields
+3. If valid, form submits to FormSubmit.co (you get email)
+4. Automatically opens WhatsApp with pre-filled message to +91 94772 93867
+5. User just needs to click "Send" in WhatsApp
+6. User redirects to thankyou.html
+7. You receive both: Email + WhatsApp message with all booking details
+
+BENEFITS:
+✅ No API setup needed
+✅ Works immediately
+✅ 100% Free
+✅ User confirms by sending WhatsApp message
+✅ You get email + WhatsApp notification
+✅ Professional flow
+
+USER EXPERIENCE:
+1. Fill form → Click Submit
+2. WhatsApp opens automatically
+3. Pre-filled message ready
+4. Click "Send"
+5. Done! Confirmation sent
+-->
+  
   
 
 
