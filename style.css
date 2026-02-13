@@ -1554,3 +1554,352 @@ section, .hero, .page-hero {
     color: rgba(255, 255, 255, 0.6);
     font-style: italic;
 }
+
+
+
+/* =============================================
+   THANK YOU PAGE STYLES
+   Matching with existing design system
+   ============================================= */
+
+/* Thank You Container */
+.thankyou-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Background Glow Effect */
+.thankyou-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--glow-blue), transparent 70%);
+  opacity: 0.3;
+  z-index: -1;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Success Icon/Emoji Container */
+.thankyou-container::after {
+  content: '✅';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 100px;
+  filter: drop-shadow(0 0 30px var(--primary));
+  animation: bounceIn 0.8s ease;
+  z-index: -1;
+}
+
+/* Main Heading */
+.thankyou-container h1 {
+  color: var(--primary-light);
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  text-shadow: 0 0 40px var(--glow-blue);
+  animation: glow 2s ease-in-out infinite alternate;
+  background: linear-gradient(135deg, var(--primary-light), #60A5FA, var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+}
+
+/* Paragraph Text */
+.thankyou-container p {
+  color: var(--text-main);
+  font-size: 1.3rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  padding: 25px 30px;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 15px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease 0.2s both;
+}
+
+.thankyou-container p br {
+  line-height: 2;
+}
+
+/* Home Button */
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 6px 25px var(--shadow-blue);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1.2s ease 0.4s both;
+}
+
+/* Button Glow Effect */
+.home-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.home-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.home-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 40px var(--shadow-blue);
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+}
+
+.home-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Add icon before text */
+.home-btn::after {
+  content: '🏠';
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.home-btn:hover::after {
+  transform: translateX(5px);
+}
+
+/* Additional Info Card (Optional) */
+.next-steps {
+  margin-top: 50px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(17, 18, 34, 0.8), rgba(26, 42, 80, 0.4));
+  border-radius: 15px;
+  border-left: 4px solid var(--primary);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.4s ease 0.6s both;
+}
+
+.next-steps h3 {
+  color: var(--primary-light);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.next-steps ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.next-steps li {
+  color: var(--text-soft);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+  font-size: 1rem;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.next-steps li:last-child {
+  border-bottom: none;
+}
+
+.next-steps li::before {
+  content: '✓';
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 999;
+  animation: float 3s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 40px rgba(37, 211, 102, 0.7);
+}
+
+.whatsapp-float::after {
+  content: '💬';
+  font-size: 2rem;
+}
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1);
+  }
+  70% {
+    transform: translateX(-50%) scale(0.9);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px var(--glow-blue);
+  }
+  to {
+    text-shadow: 0 0 40px var(--primary), 0 0 60px var(--primary);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* =============================================
+   RESPONSIVE DESIGN
+   ============================================= */
+
+@media (max-width: 768px) {
+  .thankyou-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .thankyou-container p {
+    font-size: 1.1rem;
+    padding: 20px;
+  }
+
+  .thankyou-container::after {
+    font-size: 70px;
+    top: 15%;
+  }
+
+  .home-btn {
+    padding: 14px 30px;
+    font-size: 1rem;
+    width: 90%;
+  }
+
+  .next-steps {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .next-steps h3 {
+    font-size: 1.3rem;
+  }
+
+  .next-steps li {
+    font-size: 0.95rem;
+  }
+
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-float::after {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .thankyou-container h1 {
+    font-size: 2rem;
+  }
+
+  .thankyou-container p {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .thankyou-container::before {
+    width: 400px;
+    height: 400px;
+  }
+  }
