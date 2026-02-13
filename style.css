@@ -1849,17 +1849,7 @@ section, .hero, .page-hero {
     font-size: 0.95rem;
   }
 
-  .whatsapp-float {
-    width: 55px;
-    height: 55px;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .whatsapp-float::after {
-    font-size: 1.7rem;
-  }
-}
+  
 
 @media (max-width: 480px) {
   .thankyou-container h1 {
