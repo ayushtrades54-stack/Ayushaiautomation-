@@ -2,22 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Thank You</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Same CSS -->
+  <title>Thank You - Ayush AI Automation</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Meta Description -->
+  <meta name="description" content="Thank you for booking a call with Ayush AI Automation. We'll contact you shortly!">
 </head>
 <body>
 
+  <!-- Animated Background Canvas -->
+  <canvas id="automation-bg"></canvas>
+
+  <!-- Thank You Container -->
   <div class="thankyou-container">
     <h1>Thank You! 🚀</h1>
-    <p>Your booking request has been submitted successfully.<br>
-       Our team will contact you shortly.</p>
+    
+    <p>
+      Your booking request has been submitted successfully.<br>
+      Our team will contact you shortly via WhatsApp or Email.
+    </p>
+    
+    <!-- Next Steps Card -->
+    <div class="next-steps">
+      <h3>What Happens Next?</h3>
+      <ul>
+        <li>Check your email for confirmation</li>
+        <li>We'll reach out within 24 hours</li>
+        <li>Prepare your Instagram/WhatsApp details</li>
+        <li>Get ready to automate your DMs!</li>
+      </ul>
+    </div>
+    
+    <!-- Back to Home Button -->
     <a href="index.html" class="home-btn">Back to Home</a>
   </div>
 
-  <!-- Same JS -->
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919477293867?text=Hi! I just submitted a booking request" 
+     class="whatsapp-float" 
+     target="_blank" 
+     aria-label="Chat on WhatsApp">
+  </a>
+
+  <!-- Main JavaScript -->
   <script src="main.js"></script>
+
+  <!-- Confetti Effect (Optional) -->
+  <script>
+    // Simple confetti animation on page load
+    window.addEventListener('load', () => {
+      // Add subtle entrance animation
+      document.querySelector('.thankyou-container').style.opacity = '0';
+      setTimeout(() => {
+        document.querySelector('.thankyou-container').style.transition = 'opacity 0.8s ease';
+        document.querySelector('.thankyou-container').style.opacity = '1';
+      }, 100);
+    });
+  </script>
+
 </body>
 </html>
