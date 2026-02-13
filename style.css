@@ -1593,7 +1593,7 @@ section, .hero, .page-hero {
 
 /* Success Icon/Emoji Container */
 .thankyou-container::after {
-  content: '✅';
+  content: '';
   position: absolute;
   top: 20%;
   left: 50%;
@@ -1689,7 +1689,7 @@ section, .hero, .page-hero {
 
 /* Add icon before text */
 .home-btn::after {
-  content: '🏠';
+  content: '';
   font-size: 1.2rem;
   transition: transform 0.3s ease;
 }
@@ -1749,7 +1749,7 @@ section, .hero, .page-hero {
 }
 
 /* Floating WhatsApp Button */
-.whatsapp-float {
+. thankyouwhatsapp-float {
   position: fixed;
   bottom: 30px;
   right: 30px;
