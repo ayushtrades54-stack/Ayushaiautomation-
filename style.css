@@ -2365,3 +2365,65 @@ section, .hero, .page-hero {
   }
 }
 /* ===== END HAMBURGER MENU FIX ===== */
+
+
+
+
+/* =============================================
+   ADDITIONS: Smaller brand + smaller social + draggable
+   ============================================= */
+
+/* Navbar brand chhota */
+.nav-brand {
+  font-size: clamp(0.85rem, 2.5vw, 1.1rem) !important;
+  white-space: nowrap;
+}
+
+/* Social floating buttons chhote */
+.social-float,
+.floating-social,
+.social-buttons,
+.float-btn {
+  transform: scale(0.78);
+  transform-origin: bottom right;
+}
+
+/* Draggable social container */
+#draggable-social {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 9999;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  transition: box-shadow 0.2s;
+}
+
+#draggable-social:active {
+  cursor: grabbing;
+}
+
+#draggable-social .social-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#draggable-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  transition: transform 0.2s;
+}
+
+#draggable-social a:hover {
+  transform: scale(1.1);
+}
