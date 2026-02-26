@@ -642,50 +642,38 @@ window.addEventListener('load', function() {
 
 
 
-
 // =============================================
-// DRAGGABLE SOCIAL BUTTONS - FIXED
+// FINAL FIX: Draggable Social + Navbar Brand
 // =============================================
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Navbar brand chhota
+  // --- Navbar brand fix ---
   const brand = document.querySelector('.nav-brand');
   if (brand) {
-    brand.style.fontSize = 'clamp(0.8rem, 2.2vw, 1rem)';
-    brand.style.whiteSpace = 'nowrap';
+    brand.style.cssText += `
+      font-size: clamp(0.7rem, 1.8vw, 0.95rem) !important;
+      white-space: nowrap !important;
+      letter-spacing: -0.3px !important;
+    `;
   }
 
-  // Site ke existing social links ko wrap karo
-  // (jo page bottom pe float hote hain)
-  const allLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="instagram.com"]');
-  
-  // Sirf woh links lo jo fixed/floating hain (footer wale nahi)
-  let floatLinks = [];
-  allLinks.forEach(a => {
-    const style = window.getComputedStyle(a);
-    if (style.position === 'fixed' || a.closest('[class*="float"], [class*="social"], [id*="float"], [id*="social"]')) {
-      floatLinks.push(a);
+  // --- Hide karo purane social buttons ---
+  document.querySelectorAll('a[href*="wa.me"], a[href*="instagram.com"]').forEach(a => {
+    const parent = a.parentElement;
+    const pStyle = window.getComputedStyle(parent);
+    if (pStyle.position === 'fixed') {
+      parent.style.display = 'none';
     }
   });
 
-  // Agar koi fixed element nahi mila, last 2 links lo (jo page end pe hote hain)
-  if (floatLinks.length === 0) {
-    const socialLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="instagram.com"]');
-    socialLinks.forEach(a => {
-      const parent = a.parentElement;
-      const pStyle = window.getComputedStyle(parent);
-      if (pStyle.position === 'fixed') floatLinks.push(a);
-    });
-  }
-
-  // Wrapper banao aur existing buttons ko move karo usme
-  const wrapper = document.createElement('div');
-  wrapper.id = 'drag-social-wrap';
-  wrapper.style.cssText = `
+  // --- Naya draggable social widget ---
+  const widget = document.createElement('div');
+  widget.id = 'snap-social';
+  widget.style.cssText = `
     position: fixed;
-    bottom: 80px;
-    right: 16px;
+    bottom: 100px;
+    right: 20px;
     z-index: 99999;
     cursor: grab;
     touch-action: none;
@@ -693,81 +681,141 @@ document.addEventListener('DOMContentLoaded', function () {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: transform 0.15s ease;
   `;
 
-  // WhatsApp button
-  const wa = document.createElement('a');
-  wa.href = 'https://wa.me/919477293867';
-  wa.target = '_blank';
-  wa.title = 'WhatsApp';
-  wa.style.cssText = `
-    width: 44px; height: 44px; border-radius: 50%;
-    background: #25D366; display: flex; align-items: center;
-    justify-content: center; box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-    text-decoration: none; color: white;
+  widget.innerHTML = `
+    <a href="https://instagram.com/ayush.automation" target="_blank"
+      style="display:flex;align-items:center;gap:8px;padding:9px 14px 9px 10px;
+      border-radius:25px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+      color:white;text-decoration:none;font-size:13px;font-weight:600;
+      box-shadow:0 4px 14px rgba(0,0,0,0.3);white-space:nowrap;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1.2" fill="white" stroke="none"/>
+      </svg>
+      Instagram
+    </a>
+    <a href="https://wa.me/919477293867" target="_blank"
+      style="display:flex;align-items:center;gap:8px;padding:9px 14px 9px 10px;
+      border-radius:25px;background:#25D366;
+      color:white;text-decoration:none;font-size:13px;font-weight:600;
+      box-shadow:0 4px 14px rgba(0,0,0,0.3);white-space:nowrap;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+      WhatsApp
+    </a>
   `;
-  wa.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>`;
 
-  // Instagram button
-  const ig = document.createElement('a');
-  ig.href = 'https://instagram.com/ayush.automation';
-  ig.target = '_blank';
-  ig.title = 'Instagram';
-  ig.style.cssText = `
-    width: 44px; height: 44px; border-radius: 50%;
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-    text-decoration: none; color: white;
-  `;
-  ig.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>`;
+  document.body.appendChild(widget);
 
-  wrapper.appendChild(ig);
-  wrapper.appendChild(wa);
-  document.body.appendChild(wrapper);
-
-  // Purane floating social hide karo (duplicate avoid)
-  document.querySelectorAll('[class*="social"][style*="fixed"], [class*="float"]').forEach(el => {
-    if (el.id !== 'drag-social-wrap') el.style.display = 'none';
-  });
-
-  // Drag functionality
-  let dragging = false, sx, sy, ox, oy;
+  // --- Snap-to-edge drag logic ---
+  let dragging = false;
+  let startX, startY, origLeft, origTop;
   const navbar = document.querySelector('.navbar');
+
+  function getNavH() {
+    return navbar ? navbar.offsetHeight + 8 : 68;
+  }
+
+  function snapToEdge() {
+    const ww = window.innerWidth;
+    const wh = window.innerHeight;
+    const rect = widget.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+
+    const distLeft = rect.left;
+    const distRight = ww - rect.right;
+    const distTop = rect.top - getNavH();
+    const distBottom = wh - rect.bottom;
+
+    const minDist = Math.min(distLeft, distRight, distTop, distBottom);
+
+    let finalLeft = rect.left;
+    let finalTop = rect.top;
+    const padding = 14;
+
+    if (minDist === distRight) {
+      finalLeft = ww - rect.width - padding;
+    } else if (minDist === distLeft) {
+      finalLeft = padding;
+    } else if (minDist === distBottom) {
+      finalTop = wh - rect.height - padding;
+    } else {
+      finalTop = getNavH() + padding;
+    }
+
+    // Boundary clamp
+    finalLeft = Math.max(padding, Math.min(finalLeft, ww - rect.width - padding));
+    finalTop = Math.max(getNavH() + padding, Math.min(finalTop, wh - rect.height - padding));
+
+    widget.style.transition = 'left 0.3s ease, top 0.3s ease';
+    widget.style.left = finalLeft + 'px';
+    widget.style.top = finalTop + 'px';
+    widget.style.right = 'auto';
+    widget.style.bottom = 'auto';
+  }
 
   function startDrag(cx, cy) {
     dragging = true;
-    sx = cx; sy = cy;
-    const r = wrapper.getBoundingClientRect();
-    ox = r.left; oy = r.top;
-    wrapper.style.cursor = 'grabbing';
-    wrapper.style.transition = 'none';
+    startX = cx;
+    startY = cy;
+    const rect = widget.getBoundingClientRect();
+    origLeft = rect.left;
+    origTop = rect.top;
+    widget.style.transition = 'none';
+    widget.style.cursor = 'grabbing';
   }
 
   function moveDrag(cx, cy) {
     if (!dragging) return;
-    const navH = navbar ? navbar.offsetHeight : 60;
-    let nx = ox + (cx - sx);
-    let ny = oy + (cy - sy);
-    nx = Math.max(5, Math.min(nx, window.innerWidth - wrapper.offsetWidth - 5));
-    ny = Math.max(navH + 5, Math.min(ny, window.innerHeight - wrapper.offsetHeight - 5));
-    wrapper.style.left = nx + 'px';
-    wrapper.style.top = ny + 'px';
-    wrapper.style.right = 'auto';
-    wrapper.style.bottom = 'auto';
+    const navH = getNavH();
+    let newLeft = origLeft + (cx - startX);
+    let newTop = origTop + (cy - startY);
+
+    const maxLeft = window.innerWidth - widget.offsetWidth - 5;
+    const maxTop = window.innerHeight - widget.offsetHeight - 5;
+
+    newLeft = Math.max(5, Math.min(newLeft, maxLeft));
+    newTop = Math.max(navH, Math.min(newTop, maxTop));
+
+    widget.style.left = newLeft + 'px';
+    widget.style.top = newTop + 'px';
+    widget.style.right = 'auto';
+    widget.style.bottom = 'auto';
   }
 
   function endDrag() {
+    if (!dragging) return;
     dragging = false;
-    wrapper.style.cursor = 'grab';
+    widget.style.cursor = 'grab';
+    snapToEdge(); // Chhod do toh nearest edge pe snap ho
   }
 
-  wrapper.addEventListener('mousedown', e => { if (e.target.tagName !== 'A') { startDrag(e.clientX, e.clientY); e.preventDefault(); } });
+  // Mouse
+  widget.addEventListener('mousedown', e => {
+    if (e.target.tagName === 'A' || e.target.closest('a')) return;
+    startDrag(e.clientX, e.clientY);
+    e.preventDefault();
+  });
   document.addEventListener('mousemove', e => moveDrag(e.clientX, e.clientY));
   document.addEventListener('mouseup', endDrag);
 
-  wrapper.addEventListener('touchstart', e => { startDrag(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
-  document.addEventListener('touchmove', e => { if (dragging) { moveDrag(e.touches[0].clientX, e.touches[0].clientY); e.preventDefault(); } }, { passive: false });
+  // Touch
+  widget.addEventListener('touchstart', e => {
+    startDrag(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+
+  document.addEventListener('touchmove', e => {
+    if (dragging) {
+      moveDrag(e.touches[0].clientX, e.touches[0].clientY);
+      e.preventDefault();
+    }
+  }, { passive: false });
+
   document.addEventListener('touchend', endDrag);
 
 });
