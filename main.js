@@ -638,3 +638,127 @@ window.addEventListener('load', function() {
     }, 500);
   }
 });
+
+
+
+
+
+
+// =============================================
+// DRAGGABLE SOCIAL BUTTONS + NAVBAR FIX
+// =============================================
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // --- Navbar brand font fix ---
+  const brand = document.querySelector('.nav-brand');
+  if (brand) {
+    brand.style.fontSize = 'clamp(0.85rem, 2.5vw, 1.1rem)';
+    brand.style.whiteSpace = 'nowrap';
+  }
+
+  // --- Find existing social container ya naya banao ---
+  let socialEl = document.querySelector('.social-float, .floating-social, .social-buttons, .float-btn');
+
+  if (socialEl) {
+    // Existing element ko wrap karo draggable div mein
+    const wrapper = document.createElement('div');
+    wrapper.id = 'draggable-social';
+    socialEl.parentNode.insertBefore(wrapper, socialEl);
+    wrapper.appendChild(socialEl);
+    makeDraggable(wrapper);
+  } else {
+    // Agar koi social container nahi mila — naya banao
+    const wrapper = document.createElement('div');
+    wrapper.id = 'draggable-social';
+    wrapper.innerHTML = `
+      <div class="social-inner">
+        <a href="https://instagram.com/" target="_blank" title="Instagram"
+           style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/" target="_blank" title="WhatsApp"
+           style="background: #25D366;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+        </a>
+      </div>`;
+    document.body.appendChild(wrapper);
+    makeDraggable(wrapper);
+  }
+
+  // --- Drag logic (mouse + touch) ---
+  function makeDraggable(el) {
+    let isDragging = false;
+    let startX, startY, origX, origY;
+    const navbar = document.querySelector('.navbar');
+
+    function getNavbarHeight() {
+      return navbar ? navbar.offsetHeight : 60;
+    }
+
+    function onStart(clientX, clientY) {
+      isDragging = true;
+      startX = clientX;
+      startY = clientY;
+      const rect = el.getBoundingClientRect();
+      origX = rect.left;
+      origY = rect.top;
+      el.style.transition = 'none';
+    }
+
+    function onMove(clientX, clientY) {
+      if (!isDragging) return;
+      const dx = clientX - startX;
+      const dy = clientY - startY;
+      let newLeft = origX + dx;
+      let newTop = origY + dy;
+
+      // Boundaries
+      const navH = getNavbarHeight();
+      const maxLeft = window.innerWidth - el.offsetWidth - 5;
+      const maxTop = window.innerHeight - el.offsetHeight - 5;
+
+      newLeft = Math.max(5, Math.min(newLeft, maxLeft));
+      newTop = Math.max(navH + 5, Math.min(newTop, maxTop)); // nav ke neeche hi rahe
+
+      el.style.position = 'fixed';
+      el.style.left = newLeft + 'px';
+      el.style.top = newTop + 'px';
+      el.style.right = 'auto';
+      el.style.bottom = 'auto';
+    }
+
+    function onEnd() {
+      isDragging = false;
+    }
+
+    // Mouse events
+    el.addEventListener('mousedown', (e) => {
+      if (e.target.tagName === 'A') return; // click allow karo
+      onStart(e.clientX, e.clientY);
+      e.preventDefault();
+    });
+    document.addEventListener('mousemove', (e) => onMove(e.clientX, e.clientY));
+    document.addEventListener('mouseup', onEnd);
+
+    // Touch events
+    el.addEventListener('touchstart', (e) => {
+      const t = e.touches[0];
+      onStart(t.clientX, t.clientY);
+    }, { passive: true });
+    document.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const t = e.touches[0];
+      onMove(t.clientX, t.clientY);
+      e.preventDefault();
+    }, { passive: false });
+    document.addEventListener('touchend', onEnd);
+  }
+
+});
