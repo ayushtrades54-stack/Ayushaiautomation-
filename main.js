@@ -819,3 +819,30 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('touchend', endDrag);
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Loader remove after load
+window.addEventListener("load", function(){
+  setTimeout(() => {
+    document.getElementById("loader").style.opacity = "0";
+    document.getElementById("loader").style.transition = "0.5s";
+
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+    }, 500);
+
+  }, 2000); // minimum 2 sec feel dega
+});
