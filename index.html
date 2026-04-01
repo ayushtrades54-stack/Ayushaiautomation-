@@ -277,6 +277,143 @@
     </a>
 </div>
 -->
+
+
+<!-- ================================================================
+  AYUSH AI AUTOMATION — CHATBOT WIDGET
+  ----------------------------------------------------------------
+  HOW TO ADD TO YOUR WEBSITE:
+  1. Open index.html on GitHub
+  2. Paste everything below just before </body>
+  3. Commit → Vercel auto deploys ✅
+  No backend. No Python. No API key. Pure browser JS.
+================================================================ -->
+
+<button id="aaa-btn" onclick="aaaToggle()" aria-label="Open Chat">
+  <span id="aaa-ic1"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1" fill="#fff" stroke="none"/><circle cx="12" cy="10" r="1" fill="#fff" stroke="none"/><circle cx="15" cy="10" r="1" fill="#fff" stroke="none"/></svg></span>
+  <span id="aaa-ic2" style="display:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+</button>
+
+<div id="aaa-win" role="dialog" aria-hidden="true">
+  <div class="aaa-hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="aaa-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div>
+        <div class="aaa-title">AI Assistant <span class="aaa-dot"></span></div>
+        <div class="aaa-sub">Ask anything about automation</div>
+      </div>
+    </div>
+    <button class="aaa-x" onclick="aaaToggle()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+  </div>
+
+  <div class="aaa-msgs" id="aaa-msgs"></div>
+
+  <div class="aaa-chips">
+    <button class="aaa-chip" onclick="aaaQ('What are your pricing plans?')">💰 Pricing</button>
+    <button class="aaa-chip" onclick="aaaQ('Show me a demo')">🎥 Demo</button>
+    <button class="aaa-chip" onclick="aaaQ('How does it work?')">⚡ How it works</button>
+    <button class="aaa-chip" onclick="aaaQ('I want to get started')">🚀 Get Started</button>
+  </div>
+
+  <div class="aaa-iarea">
+    <textarea id="aaa-inp" class="aaa-inp" rows="1" placeholder="Ask anything…"
+      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();aaaSend()}"
+      oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,90)+'px'"></textarea>
+    <button class="aaa-send" onclick="aaaSend()"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+  </div>
+  <div class="aaa-foot">Powered by <b>Ayush AI Automation</b></div>
+</div>
+
+<style>
+#aaa-btn{position:fixed;bottom:26px;right:26px;width:56px;height:56px;border-radius:50%;border:none;background:linear-gradient(135deg,#3B82F6,#1E40AF);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(59,130,246,.55);z-index:10001;transition:transform .22s,box-shadow .22s;animation:aaaPulse 2.8s ease-in-out infinite;}
+#aaa-btn:hover{transform:scale(1.1);}
+#aaa-btn span{display:flex;align-items:center;justify-content:center;}
+@keyframes aaaPulse{0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,.5),0 6px 22px rgba(59,130,246,.55)}60%{box-shadow:0 0 0 13px rgba(59,130,246,0),0 6px 22px rgba(59,130,246,.55)}}
+#aaa-win{position:fixed;bottom:96px;right:26px;width:370px;height:570px;max-height:calc(100vh - 110px);border-radius:20px;background:rgba(11,16,32,.93);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid rgba(59,130,246,.22);box-shadow:0 28px 65px rgba(0,0,0,.72);display:flex;flex-direction:column;overflow:hidden;z-index:10000;opacity:0;transform:translateY(18px) scale(.96);pointer-events:none;transition:opacity .32s cubic-bezier(.16,1,.3,1),transform .32s cubic-bezier(.16,1,.3,1);}
+#aaa-win.on{opacity:1;transform:none;pointer-events:all;}
+.aaa-hdr{display:flex;align-items:center;justify-content:space-between;padding:13px 15px;background:linear-gradient(135deg,rgba(30,64,175,.32),rgba(59,130,246,.1));border-bottom:1px solid rgba(59,130,246,.16);flex-shrink:0;}
+.aaa-logo{width:36px;height:36px;border-radius:9px;flex-shrink:0;background:linear-gradient(135deg,#3B82F6,#1E40AF);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(59,130,246,.4);}
+.aaa-title{font-size:.88rem;font-weight:700;color:#60A5FA;display:flex;align-items:center;gap:6px;}
+.aaa-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 7px #22c55e;}
+.aaa-sub{font-size:.7rem;color:#9ca3af;margin-top:2px;}
+.aaa-x{background:rgba(255,255,255,.07);border:1px solid rgba(59,130,246,.2);border-radius:8px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#9ca3af;transition:background .16s,color .16s;}
+.aaa-x:hover{background:rgba(59,130,246,.2);color:#fff;}
+.aaa-msgs{flex:1;overflow-y:auto;padding:14px 13px 6px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;}
+.aaa-msgs::-webkit-scrollbar{width:3px;}
+.aaa-msgs::-webkit-scrollbar-thumb{background:rgba(59,130,246,.28);border-radius:3px;}
+.aaa-row{display:flex;gap:7px;align-items:flex-end;opacity:0;animation:aaaIn .28s ease forwards;}
+.aaa-row.u{flex-direction:row-reverse;}
+@keyframes aaaIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.aaa-av{width:27px;height:27px;border-radius:7px;flex-shrink:0;background:linear-gradient(135deg,#3B82F6,#1E40AF);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;color:#fff;}
+.aaa-row.u .aaa-av{background:rgba(255,255,255,.07);border:1px solid rgba(59,130,246,.22);color:#60A5FA;}
+.aaa-bub{max-width:83%;padding:9px 13px;font-size:.84rem;line-height:1.58;border-radius:13px;}
+.aaa-row.b .aaa-bub{background:linear-gradient(135deg,rgba(17,18,34,.9),rgba(26,42,80,.5));border:1px solid rgba(59,130,246,.18);border-left:3px solid rgba(59,130,246,.5);color:#e5e7eb;border-bottom-left-radius:4px;}
+.aaa-row.u .aaa-bub{background:linear-gradient(135deg,#3B82F6,#1E40AF);color:#fff;border-bottom-right-radius:4px;box-shadow:0 4px 14px rgba(59,130,246,.35);}
+.aaa-cta{display:inline-flex;align-items:center;gap:5px;margin-top:9px;padding:6px 14px;border-radius:8px;background:linear-gradient(135deg,#3B82F6,#1E40AF);color:#fff;font-size:.76rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;box-shadow:0 4px 12px rgba(59,130,246,.4);transition:transform .16s;}
+.aaa-cta:hover{transform:translateY(-1px);}
+.aaa-typing{display:flex;gap:5px;padding:3px 0;}
+.aaa-typing span{width:7px;height:7px;border-radius:50%;background:#60A5FA;animation:aaaDot 1.2s infinite ease-in-out;}
+.aaa-typing span:nth-child(2){animation-delay:.2s}.aaa-typing span:nth-child(3){animation-delay:.4s}
+@keyframes aaaDot{0%,80%,100%{transform:scale(.75);opacity:.35}40%{transform:scale(1.1);opacity:1}}
+.aaa-chips{padding:7px 13px 3px;display:flex;gap:6px;flex-wrap:wrap;flex-shrink:0;}
+.aaa-chip{padding:5px 11px;border-radius:999px;border:1px solid rgba(59,130,246,.28);background:rgba(59,130,246,.1);color:#60A5FA;font-size:.72rem;font-weight:600;cursor:pointer;font-family:inherit;white-space:nowrap;transition:background .16s,transform .14s;}
+.aaa-chip:hover{background:rgba(59,130,246,.22);transform:translateY(-1px);}
+.aaa-iarea{padding:7px 13px 9px;border-top:1px solid rgba(59,130,246,.13);display:flex;gap:8px;align-items:flex-end;flex-shrink:0;background:rgba(7,9,15,.4);}
+.aaa-inp{flex:1;background:rgba(18,26,51,.75);border:1px solid rgba(59,130,246,.2);border-radius:11px;padding:8px 11px;font-family:inherit;font-size:.84rem;color:#e5e7eb;resize:none;outline:none;line-height:1.4;max-height:90px;transition:border-color .16s,box-shadow .16s;}
+.aaa-inp::placeholder{color:#9ca3af;opacity:.65;}
+.aaa-inp:focus{border-color:rgba(59,130,246,.5);box-shadow:0 0 0 3px rgba(59,130,246,.1);}
+.aaa-send{width:37px;height:37px;border-radius:10px;border:none;background:linear-gradient(135deg,#3B82F6,#1E40AF);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(59,130,246,.4);transition:transform .16s;}
+.aaa-send:hover{transform:scale(1.07);}.aaa-send:active{transform:scale(.94);}
+.aaa-foot{text-align:center;font-size:.64rem;color:#9ca3af;opacity:.45;padding:3px 0 7px;flex-shrink:0;}
+@media(max-width:480px){#aaa-win{bottom:0;right:0;left:0;width:100%;height:100%;max-height:100%;border-radius:0;}#aaa-btn{bottom:18px;right:18px;}}
+</style>
+
+<script>
+(function(){
+var KB=[
+  {k:["service","what do you do","kya karte ho","tum kya karte ho","automation kya hai","dm automation","lead automation","instagram automation","whatsapp automation","system kya hai","tumhara kaam kya hai","kaise help karte ho"],a:"Good question \u{1F447}\n\nWe help fitness coaches automate their Instagram and WhatsApp DMs \u2014 so incoming messages turn into qualified leads and booked calls automatically.\n\nInstead of manually replying all day, the system handles conversations, filters serious clients, and sends only ready prospects to you.",u:"https://ayushaiautomation.vercel.app/services.html",l:"View Services"},
+  {k:["how it works","kaise kaam karta","automation kaise hota","process kya hai","kaise kaam karega","flow kya hai","dm kaise convert hota","lead kaise aata","working explain karo"],a:"Good question \u{1F447}\n\nWhen someone messages you, the system replies instantly, asks a few smart questions, filters serious leads, and then sends only ready clients to book a call.\n\nSo instead of chatting manually, everything runs automatically in the background.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"See Demo"},
+  {k:["price","cost","fees","pricing","kitna paisa","kitna charge","kitna lagega","monthly cost","setup cost","charges kya hai","price batao","kitna invest karna padega"],a:"Our plans start from \u20B90 (Free plan) and go up based on how advanced automation you need.\n\nMost coaches start free, test the system, and upgrade once they start getting enquiries.\n\nWant me to show which plan fits you best?",u:"https://ayushaiautomation.vercel.app/pricing.html",l:"View Pricing"},
+  {k:["plans","plan kya hai","kaunsa plan","plan explain karo","pricing plans","options kya hai","different plans","kaun sa best hai","which plan"],a:"We have 4 levels \u{1F447}\n\nFree \u2192 basic replies\nStarter \u2192 organize leads\nGrowth \u2192 convert leads into calls\nFull Funnel \u2192 generate + convert automatically\n\nYou don't need everything at once \u2014 start simple and upgrade as you grow.",u:"https://ayushaiautomation.vercel.app/pricing.html",l:"View All Plans"},
+  {k:["free plan","free automation","0 rupees","free ka kya hai","free me kya milega","free setup","trial hai kya","free version","without payment"],a:"Yes, we offer a Free Plan \u{1F447}\n\nIt handles basic DM replies like pricing, coaching questions, and late-night responses \u2014 so you stop repeating the same answers daily.\n\nPerfect to test automation before upgrading.",u:"https://ayushaiautomation.vercel.app/pricing.html",l:"View Free Plan"},
+  {k:["results","client milega","leads aayega","kya result milega","kitne clients milenge","conversion hoga","works or not","output kya hai","benefit kya hai","kya fayda hoga"],a:"Most coaches start seeing qualified leads within a few days after setup.\n\nOver time, with optimization, the system improves and helps you get more booked calls consistently.\n\nIt's not just replies \u2014 it's a full conversion system.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"See Demo"},
+  {k:["scam","fake","real hai kya","trust","legit hai","fraud","genuine hai","safe hai kya","koi risk","ye sach hai kya","kaam karta hai ya scam"],a:"Totally fair question \u{1F447}\n\nThis is not a scam. We use real automation systems and platform-approved tools already used by fitness coaches.\n\nYou can even see a live demo before deciding.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"See Live Demo"},
+  {k:["demo","trial","example","dikhao","kaise dikhega","live demo","test karna hai","demo milega","show me demo"],a:"You can experience the full automation live on WhatsApp \u{1F447}\n\nIn just 10\u201315 minutes, you'll see exactly how your leads will interact, how questions flow, and how calls get booked.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"Request Demo"},
+  {k:["setup time","kitna time lagega","kab tak ready hoga","kitne din lagenge","how long setup","kab live hoga"],a:"Setup usually takes 24\u201372 hours depending on your plan and customization.\n\nOnce live, the automation starts working immediately \u2014 replying, qualifying, and filtering leads for you.",u:"https://ayushaiautomation.vercel.app/process.html",l:"See Our Process"},
+  {k:["tools","software","kaunsa tool","manychat","kya use karte ho","which tools you use"],a:"We use ManyChat for automation and Google Sheets for lead tracking.\n\nBoth are reliable, safe, and widely used tools that keep your system running 24/7.",u:"https://ayushaiautomation.vercel.app/faq.html",l:"Read FAQ"},
+  {k:["support","help milega","issue aaya toh","after setup help","koi problem hua toh","help karoge kya"],a:"Yes, you get ongoing support \u{1F447}\n\nWe continuously monitor and optimize your system every month \u2014 fixing issues, improving replies, and increasing conversions over time.",u:"https://ayushaiautomation.vercel.app/process.html",l:"See Process"},
+  {k:["guarantee","result guarantee","risk hai kya","refund milega","koi guarantee hai","agar kaam na kare toh"],a:"We offer a 14-day performance guarantee \u{1F447}\n\nIf your system doesn't start generating qualified leads, we'll rebuild and optimize it completely \u2014 free of cost.",u:"https://ayushaiautomation.vercel.app/pricing.html",l:"View Pricing"},
+  {k:["get started","kaise shuru kare","start karna hai","setup kaise milega","kaise join kare"],a:"Getting started is simple \u{1F447}\n\nYou can request a demo or book a call. We'll guide you step-by-step and set everything up based on your coaching style and goals.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"Get Started"},
+  {k:["kya chahiye","requirements kya hai","kya dena padega","setup ke liye kya chahiye","kya access dena padega"],a:"To get started, we need your Instagram access, approval on flows, and payment.\n\nOnce everything is ready, we build and launch your automation system.",u:"https://ayushaiautomation.vercel.app/process.html",l:"See Process"},
+  {k:["technical knowledge","coding chahiye","difficult hai","non technical","beginner friendly","easy hai kya"],a:"No technical knowledge needed \u{1F447}\n\nThe system is beginner-friendly and we handle the setup for you. You just focus on coaching \u2014 we handle the automation.",u:"https://ayushaiautomation.vercel.app/about.html",l:"About Us"},
+  {k:["customization","custom banega","mere hisaab se hoga","personalized","flow change","custom system"],a:"Yes \u2014 everything is customized \u{1F447}\n\nWe build your automation based on your coaching style, audience, and offer \u2014 not generic templates.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"Request Demo"},
+  {k:["lead qualification","qualification kya hai","kaise filter karega","serious lead kaise pata","lead filter system"],a:"Good question \u{1F447}\n\nThe system asks a few smart questions like goal, budget, and readiness.\n\nBased on answers, it filters serious leads and only sends real buyers to you \u2014 saving your time.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"See Demo"},
+  {k:["follow up","followup","reminder bhejega","ghosting ka kya","auto follow up","lead wapas kaise"],a:"If someone stops replying, the system automatically sends reminders \u{1F447}\n\nThis reduces ghosting and brings back interested leads without you manually chasing them.",u:"https://ayushaiautomation.vercel.app/pricing.html",l:"View Plans"},
+  {k:["call booking","appointment kaise book","call kaise aayega","booking system","schedule kaise hoga"],a:"Once a lead is qualified, the system automatically sends your booking link.\n\nSo you only talk to people who are ready \u2014 not random time-wasters.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"See Demo"},
+  {k:["comment automation","comment to dm","post comment dm","comment se lead","reel se dm"],a:"When someone comments on your post, the system automatically sends them a DM and starts a conversation.\n\nThis turns content engagement into actual leads.",u:"https://ayushaiautomation.vercel.app/pricing.html",l:"View Plans"},
+  {k:["story reply","story automation","story se lead"],a:"If someone replies to your story, the system instantly starts a conversation and guides them towards becoming a lead.",u:"https://ayushaiautomation.vercel.app/pricing.html",l:"View Plans"},
+  {k:["whatsapp shift","dm to whatsapp","whatsapp pe aayega","shift kaise hota"],a:"Serious leads are moved to WhatsApp for deeper qualification and faster decision-making.\n\nThis keeps your Instagram clean and conversations more focused.",u:"https://ayushaiautomation.vercel.app/pricing.html",l:"View Plans"},
+  {k:["re engagement","old leads","inactive lead","purane leads","lost lead"],a:"The system automatically re-engages old or inactive leads.\n\nSo you don't lose potential clients who showed interest earlier.",u:"https://ayushaiautomation.vercel.app/pricing.html",l:"View Plans"},
+  {k:["hot lead","notification milega","serious client alert","kaise pata chalega ready client"],a:"You get notified when a highly interested lead appears.\n\nSo you can jump in at the right time and close faster.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"See Demo"},
+  {k:["manual reply","khud reply kar sakta","control rahega","manual takeover"],a:"Yes, you always have full control \u{1F447}\n\nYou can jump into the conversation anytime and reply manually whenever you want.",u:"https://ayushaiautomation.vercel.app/faq.html",l:"Read FAQ"},
+  {k:["va vs automation","assistant vs bot","kyu automation","hire va or automation"],a:"A VA replies manually and can miss messages.\n\nAutomation replies instantly 24/7, never forgets follow-ups, and filters serious leads automatically.\n\nThat's why it performs better at scale.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"See Demo"},
+  {k:["spam","random message","spam karega","log irritate","mass message"],a:"No spam \u{1F447}\n\nThe system only replies when someone messages or interacts with you first.\n\nNo random messaging or unsafe behavior.",u:"https://ayushaiautomation.vercel.app/faq.html",l:"Read FAQ"},
+  {k:["ai hai kya","bot lagta hai","real hai ya bot","client ko pata chalega","automation detect"],a:"The conversation feels natural and human-like.\n\nMost clients don't even realize it's automated \u2014 and you take over when needed.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"See Demo"},
+  {k:["mehenga hai","expensive","cost zyada","afford nahi","budget low","itna paisa kyu","worth hai kya","investment sahi"],a:"I get it \u{1F447}\n\nMost coaches feel this at first.\n\nBut the goal is simple \u2014 even 1\u20132 extra clients can recover the cost.\n\nAfter that, it becomes pure profit + time saved daily.",u:"https://ayushaiautomation.vercel.app/pricing.html",l:"View Pricing"},
+  {k:["baad me karunga","later","abhi nahi","sochunga","not now"],a:"Makes sense \u{1F447}\n\nBut most coaches delay this and keep losing leads daily without realizing it.\n\nEven setting up a basic system now can start capturing those missed opportunities immediately.",u:"https://ayushaiautomation.vercel.app/demo.html",l:"Request Demo"},
+  {k:["trust kaise kare","proof ha
+
+
+
+
+  
+
+
+
+
+
+
+  
   <script src="main.js"></script>
 </body>
 </html>
