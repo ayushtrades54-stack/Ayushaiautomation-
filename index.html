@@ -280,7 +280,159 @@
 
 
 
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  AYUSH AI CHATBOT – FLOATING LAUNCHER                    ║
+     ║  Paste this entire block just before </body> in          ║
+     ║  your index.html file. That's it, nothing else needed.   ║
+     ╚══════════════════════════════════════════════════════════╝ -->
 
+<style>
+/* ── Floating Chat Button ───────────────────────────────── */
+#aaa-launcher {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  pointer-events: none; /* children handle events */
+}
+
+/* Tooltip bubble */
+#aaa-bubble {
+  pointer-events: auto;
+  background: rgba(10, 17, 38, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 229, 255, 0.38);
+  border-radius: 12px;
+  padding: 9px 15px;
+  font-size: 0.83rem;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  color: #e2e8f0;
+  white-space: nowrap;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.4s, transform 0.4s;
+  /* enter animation */
+  animation: aaa-slide-in 0.5s 1.2s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+/* arrow pointing down-right */
+#aaa-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 20px;
+  width: 11px; height: 11px;
+  background: rgba(10, 17, 38, 0.92);
+  border-right: 1px solid rgba(0, 229, 255, 0.38);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.38);
+  transform: rotate(45deg);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+#aaa-bubble:hover { border-color: rgba(0, 229, 255, 0.7); }
+#aaa-bubble.hide  { opacity: 0; transform: scale(0.85); pointer-events: none; }
+
+/* Main button */
+#aaa-btn {
+  pointer-events: auto;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00c6d7, #6d28d9);
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 28px rgba(0, 229, 255, 0.42);
+  transition: transform 0.25s, box-shadow 0.25s;
+  text-decoration: none;
+  position: relative;
+  /* enter animation */
+  animation: aaa-pop-in 0.55s 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+#aaa-btn:hover  { transform: scale(1.1);  box-shadow: 0 10px 36px rgba(0,229,255,0.55); }
+#aaa-btn:active { transform: scale(0.94); }
+#aaa-btn svg    { width: 26px; height: 26px; }
+
+/* Pulse ring */
+#aaa-btn::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 229, 255, 0.45);
+  animation: aaa-ring 2.6s ease-out infinite;
+}
+
+/* Notification dot */
+#aaa-notif {
+  position: absolute;
+  top: 1px; right: 1px;
+  width: 13px; height: 13px;
+  background: #f43f5e;
+  border-radius: 50%;
+  border: 2px solid var(--bg-dark, #0b1020);
+  box-shadow: 0 0 6px rgba(244,63,94,0.7);
+  animation: aaa-notif-pulse 2s ease infinite;
+}
+
+/* Keyframes */
+@keyframes aaa-pop-in {
+  from { opacity:0; transform: scale(0) rotate(-30deg); }
+  to   { opacity:1; transform: scale(1) rotate(0deg);   }
+}
+@keyframes aaa-slide-in {
+  from { opacity:0; transform: translateX(20px) scale(0.9); }
+  to   { opacity:1; transform: translateX(0)    scale(1);   }
+}
+@keyframes aaa-ring {
+  0%   { transform: scale(1);   opacity: 0.9; }
+  100% { transform: scale(1.6); opacity: 0;   }
+}
+@keyframes aaa-notif-pulse {
+  0%,100% { transform: scale(1); }
+  50%      { transform: scale(1.2); }
+}
+
+/* Mobile adjustment — move up so it clears WhatsApp float */
+@media (max-width: 768px) {
+  #aaa-launcher { bottom: 90px; right: 16px; }
+  #aaa-btn      { width: 52px; height: 52px; }
+  #aaa-bubble   { font-size: 0.78rem; }
+}
+</style>
+
+<div id="aaa-launcher">
+  <!-- Tooltip -->
+  <div id="aaa-bubble" onclick="document.getElementById('aaa-bubble').classList.add('hide')">
+    💬 Got questions? Ask AI 👋
+  </div>
+
+  <!-- Main button → opens chat.html -->
+  <a href="chat.html" id="aaa-btn" aria-label="Open AI Chat Assistant">
+    <!-- Chat icon -->
+    <svg fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.8">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M8 10h8M8 14h5M20 12a8 8 0 11-16 0 8 8 0 0116 0z"/>
+    </svg>
+    <!-- Red dot -->
+    <span id="aaa-notif" aria-hidden="true"></span>
+  </a>
+</div>
+
+<script>
+  // Auto-hide tooltip after 5s
+  setTimeout(function() {
+    var b = document.getElementById('aaa-bubble');
+    if (b) b.classList.add('hide');
+  }, 5000);
+</script>
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║  END OF CHATBOT LAUNCHER – above is all you need to add ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+  
 
 
 
