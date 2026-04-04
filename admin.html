@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAA Bot Admin Panel</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@400;600;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a26;
+    --border: #2a2a3a;
+    --accent: #7c6cff;
+    --accent2: #00e5a0;
+    --danger: #ff5c5c;
+    --text: #e8e8f0;
+    --muted: #6b6b88;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Syne', sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  .header {
+    padding: 16px 24px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-left { display: flex; align-items: center; gap: 12px; }
+  .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent2); box-shadow: 0 0 12px var(--accent2); }
+  .header h1 { font-size: 16px; font-weight: 800; letter-spacing: -0.3px; }
+  .header-badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    background: rgba(124,108,255,0.15);
+    color: var(--accent);
+    border: 1px solid rgba(124,108,255,0.3);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .btn-save-all {
+    background: var(--accent2);
+    color: #000;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .btn-save-all:hover { opacity: 0.85; }
+
+  /* Layout */
+  .layout {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 57px);
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    padding: 12px 0;
+  }
+  .sidebar-section {
+    padding: 6px 12px 4px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .intent-item {
+    display: flex;
+    align-items: center;
+    padding: 9px 16px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--muted);
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    gap: 8px;
+  }
+  .intent-item:hover { background: var(--surface2); color: var(--text); }
+  .intent-item.active {
+    background: rgba(124,108,255,0.1);
+    border-left-color: var(--accent);
+    color: var(--text);
+  }
+  .intent-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
+  .intent-item.active .intent-dot { background: var(--accent); }
+
+  /* Search bar */
+  .sidebar-search {
+    padding: 8px 12px;
+    position: sticky;
+    top: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-search input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-family: var(--mono);
+    font-size: 12px;
+    outline: none;
+  }
+  .sidebar-search input:focus { border-color: var(--accent); }
+
+  /* Main editor */
+  .editor {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+  }
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--muted);
+    gap: 8px;
+    font-family: var(--mono);
+  }
+  .empty-state .icon { font-size: 40px; }
+  .empty-state p { font-size: 13px; }
+
+  .intent-editor { display: none; }
+  .intent-editor.visible { display: block; }
+
+  .editor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .editor-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .editor-title h2 {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .intent-key-badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    background: rgba(0,229,160,0.1);
+    color: var(--accent2);
+    border: 1px solid rgba(0,229,160,0.25);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  /* Sections */
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* Answer textarea */
+  .answer-textarea {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 14px;
+    border-radius: 8px;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.7;
+    min-height: 200px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .answer-textarea:focus { border-color: var(--accent); }
+
+  /* Keywords */
+  .keywords-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    min-height: 40px;
+    padding: 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: text;
+    margin-bottom: 10px;
+  }
+  .keyword-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(124,108,255,0.12);
+    border: 1px solid rgba(124,108,255,0.25);
+    color: var(--accent);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 12px;
+    cursor: default;
+    user-select: none;
+  }
+  .keyword-tag .remove-kw {
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1;
+    transition: color 0.15s;
+  }
+  .keyword-tag .remove-kw:hover { color: var(--danger); }
+
+  .phrase-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0,229,160,0.08);
+    border: 1px solid rgba(0,229,160,0.2);
+    color: var(--accent2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 12px;
+    cursor: default;
+    user-select: none;
+  }
+  .phrase-tag .remove-ph {
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1;
+    transition: color 0.15s;
+  }
+  .phrase-tag .remove-ph:hover { color: var(--danger); }
+
+  .add-tag-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+    min-width: 120px;
+    flex: 1;
+  }
+  .add-tag-input::placeholder { color: var(--muted); }
+
+  /* Link / CTA inputs */
+  .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .input-group label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+  .text-input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 9px 12px;
+    border-radius: 6px;
+    font-family: var(--mono);
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .text-input:focus { border-color: var(--accent); }
+
+  /* Action buttons */
+  .action-row { display: flex; gap: 10px; margin-top: 8px; }
+  .btn {
+    padding: 9px 16px;
+    border-radius: 6px;
+    border: none;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-success { background: var(--accent2); color: #000; }
+  .btn-success:hover { opacity: 0.85; }
+  .btn-danger { background: transparent; color: var(--danger); border: 1px solid var(--danger); }
+  .btn-danger:hover { background: rgba(255,92,92,0.1); }
+  .btn-ghost { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Test panel */
+  .test-panel {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 360px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
+    z-index: 200;
+    transform: translateY(calc(100% - 48px));
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  .test-panel.open { transform: translateY(0); }
+  .test-panel-header {
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+  }
+  .test-panel-header h3 { font-size: 13px; font-weight: 700; }
+  .test-toggle { font-size: 18px; color: var(--muted); }
+  .test-body { padding: 16px; }
+  .test-input-row { display: flex; gap: 8px; margin-bottom: 12px; }
+  .test-msg-input {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: var(--mono);
+    font-size: 12px;
+    outline: none;
+  }
+  .test-msg-input:focus { border-color: var(--accent); }
+  .test-result {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    min-height: 80px;
+    max-height: 200px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    color: var(--muted);
+  }
+  .test-result .matched-intent {
+    color: var(--accent2);
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .test-result .answer-preview {
+    color: var(--text);
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .test-debug {
+    margin-top: 8px;
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  /* Toast */
+  .toast {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background: var(--accent2);
+    color: #000;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: all 0.25s;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+  .toast.error { background: var(--danger); color: #fff; }
+
+  /* Add new intent */
+  .add-intent-btn {
+    margin: 8px 12px;
+    width: calc(100% - 24px);
+    background: transparent;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+    padding: 8px;
+    border-radius: 6px;
+    font-family: var(--sans);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .add-intent-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-left">
+    <div class="logo-dot"></div>
+    <h1>AAA Bot Admin</h1>
+    <span class="header-badge">data.json Editor</span>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <span id="intent-count" style="font-family:var(--mono);font-size:11px;color:var(--muted)"></span>
+    <button class="btn-save-all" onclick="saveAll()">💾 Export JSON</button>
+  </div>
+</div>
+
+<!-- Layout -->
+<div class="layout">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-search">
+      <input type="text" id="sidebar-search" placeholder="Search intents..." oninput="filterSidebar(this.value)">
+    </div>
+    <div class="sidebar-section">Intents</div>
+    <div id="intent-list"></div>
+    <button class="add-intent-btn" onclick="addNewIntent()">+ Add New Intent</button>
+  </div>
+
+  <!-- Editor -->
+  <div class="editor" id="editor">
+    <div class="empty-state" id="empty-state">
+      <div class="icon">⚡</div>
+      <p>Select an intent from the sidebar to edit</p>
+    </div>
+    <div class="intent-editor" id="intent-editor">
+
+      <div class="editor-header">
+        <div class="editor-title">
+          <h2 id="editor-title">Intent Name</h2>
+          <span class="intent-key-badge" id="editor-key">key</span>
+        </div>
+        <div class="action-row" style="margin-top:0">
+          <button class="btn btn-success" onclick="saveCurrentIntent()">✓ Save Intent</button>
+          <button class="btn btn-danger" onclick="deleteCurrentIntent()">✕ Delete</button>
+        </div>
+      </div>
+
+      <!-- Answer -->
+      <div class="section">
+        <div class="section-title">Answer (what bot replies)</div>
+        <textarea class="answer-textarea" id="edit-answer" placeholder="Type the bot's answer here..."></textarea>
+        <div style="margin-top:10px" class="input-row">
+          <div class="input-group">
+            <label>Link URL (optional)</label>
+            <input type="text" class="text-input" id="edit-link" placeholder="https://...">
+          </div>
+          <div class="input-group">
+            <label>CTA Button Text (optional)</label>
+            <input type="text" class="text-input" id="edit-cta" placeholder="View Plans">
+          </div>
+        </div>
+      </div>
+
+      <!-- Phrases -->
+      <div class="section">
+        <div class="section-title">Exact Phrases (high priority matching)</div>
+        <div class="keywords-container" id="phrases-container" onclick="document.getElementById('phrase-input').focus()">
+          <input type="text" class="add-tag-input" id="phrase-input"
+            placeholder="Type a phrase and press Enter..."
+            onkeydown="handlePhraseInput(event)">
+        </div>
+        <small style="font-family:var(--mono);font-size:10px;color:var(--muted)">
+          💡 These are multi-word phrases. Add common ways users ask this question. Press Enter to add.
+        </small>
+      </div>
+
+      <!-- Keywords -->
+      <div class="section">
+        <div class="section-title">Keywords (individual word matching)</div>
+        <div class="keywords-container" id="keywords-container" onclick="document.getElementById('keyword-input').focus()">
+          <input type="text" class="add-tag-input" id="keyword-input"
+            placeholder="Type keyword and press Enter..."
+            onkeydown="handleKeywordInput(event)">
+        </div>
+        <small style="font-family:var(--mono);font-size:10px;color:var(--muted)">
+          💡 Single words or short terms. Include Hindi/Hinglish/Telugu/Tamil variations. Press Enter to add.
+        </small>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Test Panel -->
+<div class="test-panel" id="test-panel">
+  <div class="test-panel-header" onclick="toggleTestPanel()">
+    <h3>🧪 Test Bot Matching</h3>
+    <span class="test-toggle" id="test-toggle">▲</span>
+  </div>
+  <div class="test-body">
+    <div class="test-input-row">
+      <input type="text" class="test-msg-input" id="test-input"
+        placeholder="Type a message to test..."
+        onkeydown="if(event.key==='Enter') testMessage()">
+      <button class="btn btn-primary" onclick="testMessage()" style="padding:8px 14px;font-size:12px">Test</button>
+    </div>
+    <div class="test-result" id="test-result">
+      <span style="color:var(--muted)">Result will appear here...</span>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+<script>
+// ── State ──────────────────────────────────────────────────
+let dataJson    = {};
+let currentKey  = null;
+let testPanelOpen = false;
+
+// ── Load data.json ─────────────────────────────────────────
+async function loadData() {
+  try {
+    const res = await fetch("data.json");
+    dataJson  = await res.json();
+    renderSidebar();
+    updateCount();
+  } catch (e) {
+    showToast("❌ Could not load data.json", true);
+  }
+}
+
+// ── Sidebar ────────────────────────────────────────────────
+function renderSidebar(filter = "") {
+  const list = document.getElementById("intent-list");
+  list.innerHTML = "";
+  const keys = Object.keys(dataJson).filter(k => k !== "_meta");
+  const filtered = filter
+    ? keys.filter(k => k.toLowerCase().includes(filter.toLowerCase()))
+    : keys;
+
+  filtered.forEach(key => {
+    const item = document.createElement("div");
+    item.className = "intent-item" + (key === currentKey ? " active" : "");
+    item.innerHTML = `<div class="intent-dot"></div><span>${key.replace(/_/g," ")}</span>`;
+    item.onclick = () => openIntent(key);
+    list.appendChild(item);
+  });
+}
+
+function filterSidebar(val) { renderSidebar(val); }
+
+function updateCount() {
+  const keys = Object.keys(dataJson).filter(k => k !== "_meta");
+  document.getElementById("intent-count").textContent = `${keys.length} intents`;
+}
+
+// ── Open Intent ────────────────────────────────────────────
+function openIntent(key) {
+  currentKey = key;
+  const intent = dataJson[key];
+  if (!intent) return;
+
+  document.getElementById("empty-state").style.display = "none";
+  document.getElementById("intent-editor").className = "intent-editor visible";
+  document.getElementById("editor-title").textContent = key.replace(/_/g," ").toUpperCase();
+  document.getElementById("editor-key").textContent = key;
+  document.getElementById("edit-answer").value = intent.answer || "";
+  document.getElementById("edit-link").value   = intent.link || "";
+  document.getElementById("edit-cta").value    = intent.cta || "";
+
+  renderTags("keywords", intent.keywords || []);
+  renderTags("phrases",  intent.phrases  || []);
+  renderSidebar(document.getElementById("sidebar-search").value);
+}
+
+// ── Tag rendering ──────────────────────────────────────────
+function renderTags(type, items) {
+  const container = document.getElementById(type + "-container");
+  const input     = document.getElementById(type.replace("keywords","keyword").replace("phrases","phrase") + "-input");
+  // Clear existing tags
+  Array.from(container.children).forEach(c => {
+    if (!c.classList.contains("add-tag-input")) c.remove();
+  });
+  // Add tags
+  items.forEach(item => {
+    const tag = createTag(item, type);
+    container.insertBefore(tag, input);
+  });
+}
+
+function createTag(text, type) {
+  const tag = document.createElement("div");
+  tag.className = type === "phrases" ? "phrase-tag" : "keyword-tag";
+  const cls = type === "phrases" ? "remove-ph" : "remove-kw";
+  tag.innerHTML = `<span>${text}</span><span class="${cls}" onclick="removeTag(this,'${type}')">×</span>`;
+  tag.dataset.value = text;
+  return tag;
+}
+
+function removeTag(el, type) {
+  el.parentElement.remove();
+  syncTagsToData(type);
+}
+
+function syncTagsToData(type) {
+  if (!currentKey) return;
+  const container = document.getElementById(type + "-container");
+  const tags = Array.from(container.querySelectorAll("[data-value]")).map(t => t.dataset.value);
+  if (type === "keywords") dataJson[currentKey].keywords = tags;
+  if (type === "phrases")  dataJson[currentKey].phrases  = tags;
+}
+
+// ── Tag inputs ─────────────────────────────────────────────
+function handleKeywordInput(e) {
+  if (e.key === "Enter" || e.key === ",") {
+    e.preventDefault();
+    const val = e.target.value.trim().toLowerCase().replace(/,$/, "");
+    if (!val) return;
+    addTag(val, "keywords");
+    e.target.value = "";
+  }
+}
+
+function handlePhraseInput(e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    const val = e.target.value.trim().toLowerCase();
+    if (!val) return;
+    addTag(val, "phrases");
+    e.target.value = "";
+  }
+}
+
+function addTag(text, type) {
+  const container = document.getElementById(type + "-container");
+  const input     = document.getElementById(type.replace("keywords","keyword").replace("phrases","phrase") + "-input");
+  // Check duplicate
+  const existing  = Array.from(container.querySelectorAll("[data-value]")).map(t => t.dataset.value);
+  if (existing.includes(text)) return;
+  const tag = createTag(text, type);
+  container.insertBefore(tag, input);
+  syncTagsToData(type);
+}
+
+// ── Save intent ────────────────────────────────────────────
+function saveCurrentIntent() {
+  if (!currentKey) return;
+  syncTagsToData("keywords");
+  syncTagsToData("phrases");
+  dataJson[currentKey].answer = document.getElementById("edit-answer").value;
+  dataJson[currentKey].link   = document.getElementById("edit-link").value  || null;
+  dataJson[currentKey].cta    = document.getElementById("edit-cta").value   || null;
+  showToast("✓ Intent saved!");
+}
+
+// ── Delete intent ──────────────────────────────────────────
+function deleteCurrentIntent() {
+  if (!currentKey) return;
+  if (!confirm(`Delete intent "${currentKey}"? This cannot be undone.`)) return;
+  delete dataJson[currentKey];
+  currentKey = null;
+  document.getElementById("empty-state").style.display = "flex";
+  document.getElementById("intent-editor").className   = "intent-editor";
+  renderSidebar();
+  updateCount();
+  showToast("Intent deleted");
+}
+
+// ── Add new intent ─────────────────────────────────────────
+function addNewIntent() {
+  const key = prompt("Enter intent key (use_underscore_format):");
+  if (!key) return;
+  const clean = key.toLowerCase().replace(/\s+/g,"_").replace(/[^a-z0-9_]/g,"");
+  if (!clean) { showToast("Invalid key", true); return; }
+  if (dataJson[clean]) { showToast("Intent already exists", true); return; }
+  dataJson[clean] = {
+    keywords: [],
+    phrases:  [],
+    answer:   "Type the bot response here...",
+    link:     null,
+    cta:      null,
+  };
+  renderSidebar();
+  updateCount();
+  openIntent(clean);
+  showToast("✓ New intent created");
+}
+
+// ── Export JSON ────────────────────────────────────────────
+function saveAll() {
+  if (currentKey) saveCurrentIntent();
+  const json   = JSON.stringify(dataJson, null, 2);
+  const blob   = new Blob([json], { type: "application/json" });
+  const url    = URL.createObjectURL(blob);
+  const a      = document.createElement("a");
+  a.href       = url;
+  a.download   = "data.json";
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast("✓ data.json exported!");
+}
+
+// ── Test panel ─────────────────────────────────────────────
+function toggleTestPanel() {
+  testPanelOpen = !testPanelOpen;
+  document.getElementById("test-panel").classList.toggle("open", testPanelOpen);
+  document.getElementById("test-toggle").textContent = testPanelOpen ? "▼" : "▲";
+  if (testPanelOpen) document.getElementById("test-input").focus();
+}
+
+async function testMessage() {
+  const msg = document.getElementById("test-input").value.trim();
+  if (!msg) return;
+  const resultEl = document.getElementById("test-result");
+  resultEl.innerHTML = '<span style="color:var(--muted)">Analyzing...</span>';
+
+  // Use CHATBOT engine
+  try {
+    const resp  = CHATBOT.process(msg);
+    const debug = CHATBOT.debugMatch(msg);
+
+    let html = `<span class="matched-intent">✓ Matched: ${resp.intent}</span>`;
+    html += `<div class="answer-preview">${resp.text.substring(0,200)}${resp.text.length > 200 ? "..." : ""}</div>`;
+    html += `<div class="test-debug">`;
+    html += `\nLanguage detected: ${debug.lang}`;
+    html += `\nTokens: ${debug.tokens.join(", ")}`;
+    html += `\n\nTop matches:`;
+    debug.top5.forEach(([k, v]) => {
+      html += `\n  ${k}: ${v.total} (phrase:${v.phraseScore} kw:${v.keywordScore})`;
+    });
+    html += `</div>`;
+    resultEl.innerHTML = html;
+  } catch(e) {
+    resultEl.innerHTML = `<span style="color:var(--danger)">Error: ${e.message}</span>`;
+  }
+}
+
+// ── Toast ──────────────────────────────────────────────────
+function showToast(msg, isError = false) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.className   = "toast" + (isError ? " error" : "");
+  setTimeout(() => t.classList.add("show"), 10);
+  setTimeout(() => t.classList.remove("show"), 2500);
+}
+
+// ── Init ───────────────────────────────────────────────────
+window.addEventListener("load", async () => {
+  await CHATBOT.init();
+  await loadData();
+  // Open first intent by default
+  const firstKey = Object.keys(dataJson).find(k => k !== "_meta");
+  if (firstKey) openIntent(firstKey);
+});
+</script>
+</body>
+</html>
