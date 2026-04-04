@@ -2571,3 +2571,17 @@ section, .hero, .page-hero {
 
 
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a, input, textarea, div {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  -webkit-tap-highlight-color: transparent;
+}
