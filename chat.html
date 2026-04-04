@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>AI Assistant – Ayush AI Automation</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ── Tokens (match your site) ─────────────────────── */
+    :root {
+      --bg:         #0b1020;
+      --bg2:        #121a33;
+      --cyan:       #00e5ff;
+      --cyan-dim:   rgba(0,229,255,0.12);
+      --cyan-glow:  rgba(0,229,255,0.35);
+      --purple:     #a855f7;
+      --blue:       #3b82f6;
+      --blue-dark:  #1e40af;
+      --text:       #e2e8f0;
+      --text-soft:  #8892a4;
+      --border:     rgba(0,229,255,0.1);
+      --border-hot: rgba(0,229,255,0.38);
+      --surface:    rgba(18,28,58,0.75);
+      --radius:     18px;
+      --header-h:   64px;
+      --input-h:    72px;
+    }
+
+    /* ── Reset ────────────────────────────────────────── */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html, body { height:100%; overflow:hidden; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      background-image:
+        radial-gradient(ellipse 80% 60% at 10% 0%,   rgba(0,229,255,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(168,85,247,0.05) 0%, transparent 60%);
+    }
+
+    /* ── Shell ────────────────────────────────────────── */
+    .shell {
+      display: flex;
+      flex-direction: column;
+      height: 100dvh;
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Ambient blobs ────────────────────────────────── */
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .blob-1 { width:420px; height:420px; background:rgba(0,229,255,0.055); top:-160px; left:-120px; }
+    .blob-2 { width:340px; height:340px; background:rgba(168,85,247,0.055); bottom:-100px; right:-80px; }
+
+    /* ── Header ───────────────────────────────────────── */
+    .header {
+      flex-shrink: 0;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 18px;
+      background: rgba(11,16,32,0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 20;
+    }
+
+    .back-btn {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border-hot);
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .back-btn:hover { background: var(--cyan-glow); transform: scale(1.08); }
+    .back-btn svg   { width:15px; height:15px; }
+
+    .header-logo {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid var(--cyan-glow);
+      box-shadow: 0 0 10px var(--cyan-dim);
+      flex-shrink: 0;
+    }
+
+    .header-info { flex:1; min-width:0; }
+    .header-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      background: linear-gradient(120deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .header-sub {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 0.74rem; color: var(--text-soft); margin-top: 1px;
+    }
+    .dot-live {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #22c55e; box-shadow: 0 0 5px #22c55e;
+      animation: pulse-live 2s ease infinite;
+    }
+    @keyframes pulse-live { 0%,100%{opacity:1} 50%{opacity:0.45} }
+
+    .header-badge {
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border: 1px solid rgba(168,85,247,0.4);
+      border-radius: 20px;
+      background: rgba(168,85,247,0.1);
+      color: var(--purple);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      flex-shrink: 0;
+    }
+
+    /* ── Messages ─────────────────────────────────────── */
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 14px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      scroll-behavior: smooth;
+      position: relative;
+      z-index: 1;
+    }
+    .messages::-webkit-scrollbar { width: 3px; }
+    .messages::-webkit-scrollbar-thumb { background: var(--border-hot); border-radius: 3px; }
+    .messages { scrollbar-width: thin; scrollbar-color: var(--border-hot) transparent; }
+
+    /* ── Welcome ──────────────────────────────────────── */
+    .welcome {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 32px 16px 20px; gap: 14px;
+      animation: fadeUp 0.5s ease both;
+    }
+    .welcome-img {
+      width: 68px; height: 68px; border-radius: 50%; object-fit: cover;
+      border: 2px solid var(--border-hot);
+      box-shadow: 0 0 28px var(--cyan-glow);
+    }
+    .welcome-title {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem;
+      background: linear-gradient(120deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-align: center;
+    }
+    .welcome-desc {
+      font-size: 0.85rem; color: var(--text-soft); text-align: center;
+      max-width: 280px; line-height: 1.65;
+    }
+    .welcome-chips {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 7px;
+      margin-top: 4px;
+    }
+    .welcome-chip {
+      padding: 6px 13px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.78rem; color: var(--text-soft);
+      background: var(--surface);
+      cursor: pointer; transition: all 0.18s;
+    }
+    .welcome-chip:hover {
+      border-color: var(--border-hot); color: var(--cyan); background: var(--cyan-dim);
+      transform: translateY(-1px);
+    }
+
+    /* date separator */
+    .date-sep {
+      text-align: center; font-size: 0.72rem; color: var(--text-soft);
+      display: flex; align-items: center; gap: 10px; letter-spacing: 0.4px;
+    }
+    .date-sep::before, .date-sep::after {
+      content:''; flex:1; height:1px; background: var(--border);
+    }
+
+    /* ── Bubble row ───────────────────────────────────── */
+    .msg {
+      display: flex; align-items: flex-end; gap: 8px;
+      max-width: 86%;
+      animation: fadeUp 0.28s cubic-bezier(0.34,1.4,0.64,1) both;
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(10px) scale(0.97); }
+      to   { opacity:1; transform:translateY(0)    scale(1); }
+    }
+    .msg.bot  { align-self: flex-start; }
+    .msg.user { align-self: flex-end;   flex-direction: row-reverse; }
+
+    .av {
+      width: 30px; height: 30px; border-radius: 50%;
+      object-fit: cover; flex-shrink: 0;
+      border: 1.5px solid var(--border-hot);
+      box-shadow: 0 0 8px var(--cyan-dim);
+    }
+
+    .bubble {
+      padding: 11px 15px;
+      border-radius: var(--radius);
+      font-size: 0.9rem; line-height: 1.68;
+      white-space: pre-wrap; word-break: break-word;
+      position: relative;
+    }
+
+    /* bot */
+    .msg.bot .bubble {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.28);
+    }
+    .msg.bot .bubble::after {
+      content:'';
+      position:absolute; inset:-1px;
+      border-radius:inherit; border-bottom-left-radius:4px;
+      background: linear-gradient(130deg, rgba(0,229,255,0.07), transparent 55%);
+      pointer-events:none;
+    }
+
+    /* user */
+    .msg.user .bubble {
+      background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+      border: 1px solid rgba(96,165,250,0.3);
+      border-bottom-right-radius: 4px;
+      box-shadow: 0 4px 18px rgba(59,130,246,0.28);
+      color: #fff;
+    }
+
+    /* CTA link inside bubble */
+    .cta-link {
+      display: inline-flex; align-items: center; gap: 7px;
+      margin-top: 11px;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, rgba(0,229,255,0.13), rgba(0,229,255,0.06));
+      border: 1px solid var(--border-hot);
+      border-radius: 40px;
+      color: var(--cyan); font-size: 0.82rem; font-weight: 600;
+      text-decoration: none; cursor: pointer;
+      transition: all 0.18s;
+      font-family: 'Syne', sans-serif; letter-spacing: 0.3px;
+    }
+    .cta-link:hover {
+      background: var(--cyan-dim);
+      box-shadow: 0 0 14px var(--cyan-dim);
+      transform: translateY(-1px);
+    }
+    .cta-link svg { width:13px; height:13px; flex-shrink:0; }
+
+    /* ── Typing ───────────────────────────────────────── */
+    .typing-row {
+      display: flex; align-items: flex-end; gap: 8px;
+      align-self: flex-start;
+      animation: fadeUp 0.25s ease both;
+    }
+    .typing-dots {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-bottom-left-radius: 4px;
+      border-radius: var(--radius);
+      padding: 13px 16px;
+      display: flex; gap: 5px; align-items: center;
+    }
+    .typing-dots span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--cyan);
+      animation: dot-bounce 1.2s ease infinite;
+    }
+    .typing-dots span:nth-child(2) { animation-delay:.15s; }
+    .typing-dots span:nth-child(3) { animation-delay:.3s;  }
+    @keyframes dot-bounce {
+      0%,60%,100% { transform:translateY(0);   opacity:0.45; }
+      30%          { transform:translateY(-6px); opacity:1; }
+    }
+
+    /* ── Quick replies ────────────────────────────────── */
+    .quick-row {
+      display: flex; flex-wrap: wrap; gap: 7px;
+      align-self: flex-start; padding-left: 38px;
+      animation: fadeUp 0.3s 0.1s ease both;
+    }
+    .qchip {
+      padding: 6px 14px;
+      border: 1px solid var(--border-hot); border-radius: 20px;
+      background: var(--cyan-dim); color: var(--cyan);
+      font-size: 0.8rem; font-weight: 500;
+      cursor: pointer; transition: all 0.16s; white-space: nowrap;
+    }
+    .qchip:hover { background: var(--cyan-glow); transform:translateY(-2px); box-shadow:0 4px 10px var(--cyan-dim); }
+
+    /* ── Input bar ────────────────────────────────────── */
+    .input-bar {
+      flex-shrink: 0;
+      height: var(--input-h);
+      display: flex; align-items: center; gap: 10px;
+      padding: 0 14px;
+      background: rgba(11,16,32,0.92);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border-top: 1px solid var(--border);
+      position: relative; z-index: 20;
+    }
+
+    .chat-input {
+      flex: 1; height: 44px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      padding: 0 16px; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+    .chat-input::placeholder { color: var(--text-soft); }
+    .chat-input:focus {
+      border-color: var(--border-hot);
+      box-shadow: 0 0 0 3px var(--cyan-dim);
+    }
+
+    .send-btn {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, #00c6d7, #3b82f6);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(0,229,255,0.32);
+    }
+    .send-btn:hover  { transform:scale(1.08); box-shadow:0 6px 22px rgba(0,229,255,0.48); }
+    .send-btn:active { transform:scale(0.94); }
+    .send-btn svg    { width:19px; height:19px; }
+
+    /* ── Mobile tweaks ────────────────────────────────── */
+    @media (max-width:480px) {
+      :root { --header-h:58px; --input-h:66px; }
+      .header { padding: 0 12px; gap:9px; }
+      .messages { padding:14px 10px 8px; gap:10px; }
+      .msg { max-width:91%; }
+      .header-badge { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<div class="shell">
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="back-btn" title="Back to Home">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </a>
+    <img src="logo.png" alt="logo" class="header-logo">
+    <div class="header-info">
+      <div class="header-name">Ayush AI Automation</div>
+      <div class="header-sub">
+        <span class="dot-live"></span>
+        AI Assistant · Always Online
+      </div>
+    </div>
+    <div class="header-badge">✦ AI</div>
+  </header>
+
+  <!-- Messages -->
+  <main class="messages" id="msgs">
+
+    <!-- Welcome card -->
+    <div class="welcome" id="welcomeEl">
+      <img src="logo.png" alt="" class="welcome-img">
+      <div class="welcome-title">Ayush AI Automation</div>
+      <p class="welcome-desc">Ask me anything about Instagram &amp; WhatsApp automation for fitness coaches 🤖</p>
+      <div class="welcome-chips" id="welcomeChips">
+        <span class="welcome-chip" data-q="What is the pricing?">💰 Pricing</span>
+        <span class="welcome-chip" data-q="Show me a demo">🎥 Demo</span>
+        <span class="welcome-chip" data-q="How does the system work?">⚙️ How it works</span>
+        <span class="welcome-chip" data-q="Is it safe for Instagram?">🛡️ Is it safe?</span>
+        <span class="welcome-chip" data-q="How to get started?">🚀 Get Started</span>
+        <span class="welcome-chip" data-q="What if I get no results?">📊 Results</span>
+      </div>
+    </div>
+
+    <div class="date-sep" id="dateSep" style="display:none">Today</div>
+
+  </main>
+
+  <!-- Input bar -->
+  <footer class="input-bar">
+    <input
+      type="text"
+      class="chat-input"
+      id="chatInput"
+      placeholder="Ask anything about automation…"
+      autocomplete="off"
+      maxlength="300"
+      enterkeyhint="send"
+    >
+    <button class="send-btn" id="sendBtn" aria-label="Send">
+      <svg fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </footer>
+
+</div>
+
+<!-- Chatbot Engine -->
+<script src="script.js"></script>
+<script>
+  const msgsEl     = document.getElementById("msgs");
+  const inputEl    = document.getElementById("chatInput");
+  const sendBtn    = document.getElementById("sendBtn");
+  const welcomeEl  = document.getElementById("welcomeEl");
+  const dateSep    = document.getElementById("dateSep");
+  let   firstMsg   = true;
+  let   isBusy     = false;
+
+  const LOGO = "logo.png";
+
+  // ─── helpers ──────────────────────────────────────────────
+  function esc(s) {
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+  function fmt(s) {
+    return esc(s)
+      .replace(/•\s(.+)/g, '<span style="display:block;padding-left:10px">• $1</span>')
+      .replace(/\n/g, "<br>");
+  }
+  function scrollEnd() {
+    setTimeout(() => msgsEl.scrollTo({ top: msgsEl.scrollHeight, behavior:"smooth" }), 60);
+  }
+  function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+  // ─── append user ───────────────────────────────────────────
+  function addUser(text) {
+    const d = document.createElement("div");
+    d.className = "msg user";
+    d.innerHTML = `<div class="bubble">${esc(text)}</div>`;
+    msgsEl.appendChild(d);
+    scrollEnd();
+  }
+
+  // ─── typing indicator ──────────────────────────────────────
+  function showTyping() {
+    const el = document.createElement("div");
+    el.className = "typing-row"; el.id = "typingEl";
+    el.innerHTML = `
+      <img src="${LOGO}" class="av" alt="">
+      <div class="typing-dots"><span></span><span></span><span></span></div>`;
+    msgsEl.appendChild(el); scrollEnd();
+  }
+  function hideTyping() { document.getElementById("typingEl")?.remove(); }
+
+  // ─── append bot bubble ─────────────────────────────────────
+  function addBot(text, link, cta) {
+    const d = document.createElement("div");
+    d.className = "msg bot";
+    const ctaHtml = link && cta
+      ? `<br><a class="cta-link" href="${link}" target="_blank" rel="noopener">
+           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 12h12"/>
+           </svg>${esc(cta)}
+         </a>`
+      : "";
+    d.innerHTML = `<img src="${LOGO}" class="av" alt=""><div class="bubble">${fmt(text)}${ctaHtml}</div>`;
+    msgsEl.appendChild(d); scrollEnd();
+  }
+
+  // ─── quick reply chips ─────────────────────────────────────
+  const QUICK = [
+    { l:"💰 Pricing",    q:"What is the pricing?" },
+    { l:"🎥 Demo",       q:"Show me a demo" },
+    { l:"🚀 Get Started",q:"How to get started?" },
+  ];
+  function addQuick() {
+    const row = document.createElement("div");
+    row.className = "quick-row";
+    QUICK.forEach(o => {
+      const c = document.createElement("span");
+      c.className = "qchip"; c.textContent = o.l;
+      c.onclick = () => { row.remove(); send(o.q); };
+      row.appendChild(c);
+    });
+    msgsEl.appendChild(row); scrollEnd();
+  }
+
+  // ─── main send logic ───────────────────────────────────────
+  async function send(override) {
+    const raw = override || inputEl.value.trim();
+    if (!raw || isBusy) return;
+    isBusy = true;
+    if (!override) inputEl.value = "";
+
+    if (firstMsg) {
+      welcomeEl.style.display = "none";
+      dateSep.style.display   = "";
+      firstMsg = false;
+    }
+
+    addUser(raw);
+
+    const delay = 850 + Math.random() * 950;
+    showTyping();
+    await sleep(delay);
+    hideTyping();
+
+    const resp = CHATBOT.process(raw);
+
+    // Split on double newline for "starter + body" AI feel
+    const parts = resp.text.split("\n\n");
+    if (parts.length >= 2 && parts[0].length < 55) {
+      addBot(parts[0], null, null);
+      await sleep(380 + Math.random() * 320);
+      showTyping();
+      await sleep(550 + Math.random() * 450);
+      hideTyping();
+      addBot(parts.slice(1).join("\n\n"), resp.link, resp.cta);
+    } else {
+      addBot(resp.text, resp.link, resp.cta);
+    }
+
+    // Quick chips after fallback or 25% of the time
+    if (resp.text.includes("Are you asking about") || Math.random() < 0.25) {
+      await sleep(320);
+      addQuick();
+    }
+
+    isBusy = false;
+  }
+
+  // ─── events ───────────────────────────────────────────────
+  sendBtn.onclick = () => send();
+  inputEl.onkeydown = e => { if (e.key==="Enter" && !e.shiftKey) { e.preventDefault(); send(); } };
+
+  document.getElementById("welcomeChips").querySelectorAll(".welcome-chip").forEach(c => {
+    c.onclick = () => send(c.dataset.q);
+  });
+
+  // ─── init + auto greeting ──────────────────────────────────
+  CHATBOT.init().then(() => {
+    setTimeout(() => {
+      addBot(
+        "Hey! 👋 Welcome to Ayush AI Automation\n\nI'm your AI assistant — here to answer anything about Instagram & WhatsApp automation for fitness coaches.\n\nWhat would you like to know?",
+        null, null
+      );
+    }, 700);
+    inputEl.focus();
+  });
+</script>
+
+</body>
+</html>
