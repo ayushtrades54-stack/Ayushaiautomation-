@@ -1,0 +1,1090 @@
+{
+  "_meta": {
+    "version": "4.0",
+    "language_support": ["english", "hindi", "hinglish", "telugu", "tamil"],
+    "last_updated": "2026"
+  },
+
+  "greeting": {
+    "keywords": [
+      "hello","hi","hey","hii","helo","heloo","helllo","heyy","hiii","hiiii",
+      "namaste","namaskar","namsate","nmste","salam","assalam","assalamualaikum",
+      "good morning","good evening","good afternoon","good night","gm","gn",
+      "sup","wassup","whatsup","whats up","yo","bhai","bro","yaar","dost",
+      "hy","hai","haii","haiii","kya haal","kaise ho","kaisa hai","kaise hain",
+      "start","help","help me","assist","chatbot","bot","anyone there","u there",
+      "are you there","is anyone here","hello there","greetings",
+      "vanakkam","namaskaram","meeru ela unnaru","ela unnav","enti","em cheppali",
+      "hai da","machan","anna","welcome","wakambe","hlo","hlw"
+    ],
+    "phrases": [
+      "kya haal hai","kaise ho aap","hi there","hey there","good to see you",
+      "anyone available","talk to someone","need help","i need help"
+    ],
+    "answer": "Hey! Welcome to Ayush AI Automation 👋\n\nI'm your AI assistant — ask me anything about Instagram and WhatsApp DM automation.\n\nI can help you with:\n💰 Pricing & Plans\n⚙️ How the system works\n📈 Getting more clients\n🚀 Getting started\n\nWhat would you like to know?",
+    "link": null,
+    "cta": null
+  },
+
+  "pricing_overview": {
+    "keywords": [
+      "price","pricing","cost","charges","fees","rate","rates","charge",
+      "kitna","paisa","paise","rupees","rupee","inr","rs","money","amount",
+      "lagega","lagenge","lagti","lagta","lagna","karega","hoga","hogi",
+      "how much","payment","pay","budget","subscription","monthly","mahina",
+      "mehenga","sasta","costly","expensive","affordable","cheap",
+      "fee","total","investment","spend","spending","paise dene","dena hoga",
+      "entha","ela","entaku","cost em","price em","charge em",
+      "ethanai","eppadi","vilai","thogai","selavu",
+      "kitna banta hai","kitna padega","kitna dena hoga","paise kitne","charges kya",
+      "rate kya hai","monthly kitna","mahine ka kitna","total kitna",
+      "prize","prise","pryce","cozt","chost","charg","montly","monthy"
+    ],
+    "phrases": [
+      "kitne paise lagenge","kitna paisa lagega","charge kitna hoga","fees kitni hai",
+      "how much does it cost","how much will it cost","what is the price",
+      "what are the charges","what is the fee","monthly charge kya hai",
+      "subscription kitna hai","kitne ka hai","kitne mein milega","total cost kya hai",
+      "price kya hai","pricing kya hai","kitna price hai","cost kya hai",
+      "price batao","charges batao","fees batao","kitna lagega bhai",
+      "entha avutundi","ela cheyali","enti price","cost entha",
+      "ethanai aagum","vilai enna","selavu enna"
+    ],
+    "answer": "Here's the pricing — straightforward and risk-free to start:\n\n💚 FREE Plan — ₹0/month\n→ Basic DM replies, handle common FAQs automatically\n\n🔵 Starter Plan — ₹999/month\n→ Lead filtering + organized automation system\n\n🚀 Growth Plan — ₹1,999/month\n→ Full follow-up + booking funnel + everything included\n\nNote: Paid plans also need a ManyChat subscription to keep the system running 24/7.\n\nMost coaches start FREE, see results, then upgrade 📈\nYou can check the full plan breakdown here: https://ayushaiautomation.in/pricing.html\n\nWant help choosing the right plan for your situation?",
+    "link": "https://ayushaiautomation.in/pricing.html",
+    "cta": "View Full Pricing"
+  },
+
+  "free_plan": {
+    "keywords": [
+      "free","free plan","trial","zero","no cost","bina paise","without paying",
+      "free mein","free version","freemium","basic plan","zero investment",
+      "try","test","pehle try","no charge","no payment","nothing to pay",
+      "free try karna","test karna","free me kya","no money","free milega",
+      "free ga","free lo","free undi","free ah","free va","bedhalamga",
+      "fre","freeee","tryy","no fees","without money","zero rupees"
+    ],
+    "phrases": [
+      "is it free","kya free hai","free mein milega","free me hoga","start free",
+      "free mein kya milega","free wala plan kya hai","bina paisa ke",
+      "without any payment","zero cost mein","try before buy",
+      "can i try for free","free trial available hai kya","no cost option",
+      "free plan mein kya milega","free plan features kya hain"
+    ],
+    "answer": "Yes! You can start completely FREE — ₹0, no card needed 🎉\n\n✅ What FREE gives you:\n• Auto-reply to common DMs\n• Automatically send program details\n• Handle basic FAQs 24/7\n\n❌ Not included in FREE:\n• Lead filtering\n• Follow-up sequences\n• Booking funnel\n\nPerfect for testing the system and saving time on repetitive replies.\nUpgrade only when you're ready — zero pressure 😊\n\nSee all plan details here: https://ayushaiautomation.in/pricing.html",
+    "link": "https://ayushaiautomation.in/pricing.html",
+    "cta": "Start Free Now"
+  },
+
+  "starter_plan": {
+    "keywords": [
+      "starter","starter plan","999","rs 999","rupees 999","inr 999",
+      "basic paid","entry level","first plan","cheapest plan","lowest plan",
+      "minimum plan","beginner plan","pehla paid","entry plan","small plan",
+      "999 ka","nine nine nine","beginner","cheap plan","low cost plan"
+    ],
+    "phrases": [
+      "starter plan kya hai","starter mein kya milega","999 wala plan",
+      "cheapest paid plan","entry level plan details","starter plan features",
+      "first paid option","basic paid plan kya hai","999 ka plan batao"
+    ],
+    "answer": "Starter Plan — ₹999/month 🔵\n\nPerfect for coaches just getting serious about automation:\n• Instagram DM automation setup\n• Basic lead qualification questions\n• Smart conversation flow\n• Serious vs casual lead filtering\n• Monthly review call with Ayush\n\n💡 Best for coaches who are getting DMs but spending too much time replying manually.\n\nYou can see full details here: https://ayushaiautomation.in/pricing.html",
+    "link": "https://ayushaiautomation.in/pricing.html",
+    "cta": "View Starter Plan"
+  },
+
+  "growth_plan": {
+    "keywords": [
+      "growth","growth plan","1999","rs 1999","rupees 1999","inr 1999",
+      "advanced plan","premium","best plan","top plan","full plan",
+      "complete plan","everything plan","max plan","pro plan","top tier",
+      "sabse acha","best wala","premium plan","most features",
+      "1999 ka","nineteen ninety nine","advanced","ultimate plan"
+    ],
+    "phrases": [
+      "growth plan kya hai","growth mein kya milega","1999 wala plan",
+      "best plan kaunsa hai","top plan details","premium plan features",
+      "full automation plan","complete system kya hai","everything included plan",
+      "growth plan batao","sabse acha plan kaunsa hai"
+    ],
+    "answer": "Growth Plan — ₹1,999/month 🚀\n\nThe complete conversion machine:\n• Instagram + WhatsApp automation both\n• Advanced lead filtering & scoring\n• Auto follow-up sequences\n• Full booking funnel\n• Hot lead real-time alerts\n• Re-engagement for cold/dead leads\n• Monthly optimization session\n• Priority support\n\n💡 Best for coaches seriously wanting to scale — want DMs to run on autopilot while they focus on coaching.\n\nFull details here: https://ayushaiautomation.in/pricing.html",
+    "link": "https://ayushaiautomation.in/pricing.html",
+    "cta": "View Growth Plan"
+  },
+
+  "plans_comparison": {
+    "keywords": [
+      "plans","compare","comparison","difference","which plan","options",
+      "levels","packages","tiers","kaunsa","konsa","better","sahi",
+      "suggest","recommend","which one","which is best","what to choose",
+      "plan suggest","best for me","right plan","which plan should","plan choose"
+    ],
+    "phrases": [
+      "which plan is best for me","kaunsa plan lena chahiye","plan suggest karo",
+      "difference between plans","free vs starter","starter vs growth","free vs paid",
+      "plans ki comparison","plans batao","sahi plan kaunsa hai","konsa plan lu",
+      "plan comparison karo","plans mein kya difference hai","best plan for me"
+    ],
+    "answer": "3 plans — pick what fits you right now:\n\n📌 FREE (₹0) — Basic auto-replies, no lead filtering\n📌 STARTER (₹999/mo) — Organise + filter leads\n📌 GROWTH (₹1,999/mo) — Reply → Filter → Follow-up → Book\n\n🎯 Simple formula:\n• Just starting out? → FREE\n• DMs coming but chaotic? → STARTER\n• Want to scale seriously? → GROWTH\n\nMost coaches start FREE and upgrade within 2 weeks after seeing real results.\n\nSee the full comparison here: https://ayushaiautomation.in/pricing.html",
+    "link": "https://ayushaiautomation.in/pricing.html",
+    "cta": "Compare All Plans"
+  },
+
+  "demo": {
+    "keywords": [
+      "demo","show","example","proof","working","live","sample","preview",
+      "experience","real","see","watch","dikhao","dekh","dekhna",
+      "how does it look","demonstration","try it","test it","see it live",
+      "chudali","chupinchu","choodadam","paarkalam","kaatum",
+      "demoo","dem0","show me","watch it","live demo","working example"
+    ],
+    "phrases": [
+      "show me demo","demo dikhao","live demo dekh sakta hun","demo kaise milega",
+      "can i see demo","demo available hai","see how it works",
+      "show me how it works","real example dikhao","working demo chahiye",
+      "bot ka demo","system ka demo","demo request karna","experience karna chahta"
+    ],
+    "answer": "Yes! You can experience the live demo right now — before making any decision 🎯\n\nWhat the demo shows you:\n• Exactly how the bot replies in real conversations\n• What smart qualifying questions it asks\n• How it filters serious people from time-wasters\n• How it moves leads towards booking a call\n\nYou'll experience it as a real client would — not just screenshots.\n\nClick here to see it live: https://ayushaiautomation.in/demo.html",
+    "link": "https://ayushaiautomation.in/demo.html",
+    "cta": "See Live Demo"
+  },
+
+  "how_it_works": {
+    "keywords": [
+      "how","works","kaam","process","flow","explain","working","mechanism",
+      "system","step","steps","understand","samjhao","batao","kya hota",
+      "inside","backend","logic","procedure","method","ela","ela chestundi",
+      "eppadi","velai seiyum","seyal",
+      "explain it","how system","process explain","what happens","working explain",
+      "system explain","how does","kaise kaam"
+    ],
+    "phrases": [
+      "how it works","how does it work","kaise kaam karta hai","system kaise kaam karta",
+      "explain karo system","process kya hai","flow kya hai","step by step batao",
+      "andar se kya hota hai","poora process samjhao","working explain karo",
+      "dm automation ka process","kya karta hai ye system","system samjhao",
+      "ela pani chestundi","eppadi velai seiyum"
+    ],
+    "answer": "Here's exactly how the system works, step by step:\n\n1️⃣ Someone messages you on Instagram/WhatsApp\n2️⃣ Bot instantly replies — within seconds, 24/7\n3️⃣ Asks smart qualifying questions (goal, timeline, budget)\n4️⃣ Analyses answers — tags them serious or time-waster\n5️⃣ Serious leads get pushed towards booking\n6️⃣ You only talk to ready, qualified people\n\n🎯 Result: Zero random chats wasted — only real conversations reach you.\n\nSee the full process breakdown here: https://ayushaiautomation.in/process.html",
+    "link": "https://ayushaiautomation.in/process.html",
+    "cta": "See Full Process"
+  },
+
+  "instagram_automation": {
+    "keywords": [
+      "instagram","insta","ig","instagram dm","ig dm","insta dm",
+      "instagram bot","ig bot","insta bot","instagram automation",
+      "instagram leads","ig leads","auto reply","instagram reply",
+      "instagram system","instagram handle","dm management","instagram dms",
+      "instgram","instagr","instagrm","ig auto","instagram auto"
+    ],
+    "phrases": [
+      "instagram automation kya hai","ig dm automation","instagram bot kaise kaam karta",
+      "instagram pe automation","insta dm bot","auto reply instagram",
+      "instagram leads kaise milenge","instagram dm system","ig automation setup",
+      "instagram pe kaise chalega","instagram automation details"
+    ],
+    "answer": "Instagram DM Automation — your 24/7 salesman that never sleeps 💪\n\nWhat happens automatically:\n• New DM arrives → bot instantly replies (seconds, not hours)\n• Asks smart questions — goal, timeline, budget\n• Filters serious buyers from time-wasters\n• Pushes ready buyers towards your booking link\n• Sends follow-ups to people who go cold\n\n✅ You only talk to people who are already pre-qualified and interested.\n\nLearn more here: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Instagram Automation"
+  },
+
+  "whatsapp_automation": {
+    "keywords": [
+      "whatsapp","wa","wp","whatsapp automation","wa automation","wp automation",
+      "whatsapp bot","wa bot","wp bot","whatsapp system","whatsapp lead",
+      "whatsapp setup","whatsapp auto reply","whatsapp follow up","whatsapp dm",
+      "whatsapp message automation","whatsapp reminder",
+      "whtasapp","watsapp","whats app","wp auto","wa auto"
+    ],
+    "phrases": [
+      "whatsapp automation kya hai","whatsapp bot kaise kaam karta","wa pe automation",
+      "whatsapp pe kaise chalega","whatsapp leads","whatsapp auto reply setup",
+      "whatsapp follow up system","wa automation details","wp automation kya hai"
+    ],
+    "answer": "WhatsApp Automation — qualify and close leads faster than ever ⚡\n\nWhat it does:\n• Instantly replies — zero wait time\n• Asks goal-based qualifying questions\n• Checks budget and readiness\n• Filters serious vs time-wasters\n• Auto follow-up sequences included\n\n✅ Only genuinely interested people reach you — no random wasted chats.\n\nSetup cost: ₹2,499 one-time + ₹1,499/month support & optimization.\n\nSee full details: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View WhatsApp Automation"
+  },
+
+  "setup_time": {
+    "keywords": [
+      "setup","time","days","hours","kitna time","kitne din","delivery",
+      "when","kab","ready","start","live","deploy","launch","install",
+      "implementation","how long","fast","quick","jaldi","slow","speed",
+      "enni rojulu","enni gantalu","eppatiki","eppadi","enga varaikum",
+      "setup kab","kab hoga","kab live","setup fast","quick setup"
+    ],
+    "phrases": [
+      "setup time kitna hai","kitne din mein ready hoga","how long does setup take",
+      "kab live hoga","kab start hoga","kitne time mein ho jaega",
+      "setup kitni jaldi hoga","delivery time kya hai","implementation time",
+      "kitne ghante lagenge","setup fast hai kya","jaldi ho jaega kya",
+      "kab se shuru hoga","live kab hoga","setup ke baad kab use kar sakta"
+    ],
+    "answer": "Setup is fast — here's the exact timeline:\n\n📱 Instagram Automation: 24–72 hours\n💬 WhatsApp or Full System: 48–72 hours\n\nWhat happens during setup:\n1. You share account access (safe, via ManyChat OAuth — no password sharing)\n2. We build and customise your conversation flows\n3. You approve the flows\n4. System goes live ✅\n\nOnce live — runs completely on its own. You don't touch anything.\n\nSee the full setup process: https://ayushaiautomation.in/process.html",
+    "link": "https://ayushaiautomation.in/process.html",
+    "cta": "See Setup Process"
+  },
+
+  "safety_trust": {
+    "keywords": [
+      "safe","safety","scam","fraud","fake","dhoka","dhokha","real","legit",
+      "trust","trustworthy","legitimate","genuine","authentic","secure",
+      "ban","account ban","instagram ban","suspend","risk","danger",
+      "bharosa","believe","proof","sach","genuine","verified",
+      "nijanga","nammakam","safe ga","scam aa","naijam",
+      "scamm","faud","fraudd","is it real","real or fake","can i trust"
+    ],
+    "phrases": [
+      "is it safe","kya safe hai","account ban hoga kya","ban risk hai kya",
+      "kya ye scam hai","real hai ya fake","kaise trust karu","proof do",
+      "genuine hai kya","is this legit","account safe rahega kya",
+      "instagram guidelines ke andar hai kya","safe method hai kya",
+      "koi risk nahi hai kya","account jaega kya","suspend hoga kya",
+      "sach mein kaam karta hai","trust kar sakta hun","scam toh nahi"
+    ],
+    "answer": "100% safe — here's why you can trust this:\n\n✅ Uses ManyChat — used by 1M+ businesses worldwide\n✅ Only replies when someone messages YOU first — no spam, no bulk messaging\n✅ Fully within Instagram's official guidelines\n✅ Zero ban risk — no aggressive outreach\n✅ No password sharing needed — secure OAuth access only\n\n🛡️ Best part: See the live demo first, decide after. Zero commitment needed.\n\nExperience it live here: https://ayushaiautomation.in/demo.html",
+    "link": "https://ayushaiautomation.in/demo.html",
+    "cta": "See Live Demo"
+  },
+
+  "results": {
+    "keywords": [
+      "results","clients","leads","booked","calls","conversion","outcome",
+      "success","work","kaam karta","proof","testimonials","reviews",
+      "guarantee","milenge","kitne","how many","will i get",
+      "does it work","kya milega","kya hoga","performance","effective",
+      "results vasthaya","clients vastharaa","ela untundi","guarantee unda",
+      "case study","real results","actual results","proof of work"
+    ],
+    "phrases": [
+      "will i get clients","clients milenge kya","leads milenge kya",
+      "does it really work","kya results milenge","conversion rate kya hai",
+      "kya guarantee hai","real results dikhaao","case study hai kya",
+      "testimonials hain kya","reviews dikhao","success rate kya hai",
+      "kitne clients milenge","what results can i expect","proof of results",
+      "kya kaam karta hai sach mein","agar result nahi aaya toh"
+    ],
+    "answer": "The system is engineered for maximum conversions. Results depend on:\n• Your content quality and consistency\n• Your audience size\n• Your offer strength\n\nWhat we guarantee:\n• Drastically reduces ghosting\n• Filters out time-wasters automatically\n• Pushes serious leads towards booking\n\n🛡️ Our 14-day guarantee: If you have traffic but ZERO leads in 14 days — we rebuild the entire system for FREE. No questions asked.\n\nSee proof and examples here: https://ayushaiautomation.in/demo.html",
+    "link": "https://ayushaiautomation.in/demo.html",
+    "cta": "See Proof & Results"
+  },
+
+  "lead_qualification": {
+    "keywords": [
+      "lead","leads","qualify","qualification","filter","serious","quality",
+      "real clients","genuine leads","fake leads","time waster","non serious",
+      "filter kaise","serious kaun","identify","tag","score","rank",
+      "bad leads","good leads","hot leads","cold leads","warm leads",
+      "lead filter","client filter","screening",
+      "qualifying","qualifier","qualify leads","filter leads","serious clients"
+    ],
+    "phrases": [
+      "how does lead filtering work","lead qualification kaise hota hai",
+      "serious clients kaise identify hote hain","filter kaise kaam karta hai",
+      "time wasters kaise hata hote hain","genuine leads kaise milenge",
+      "qualification system kya hai","lead scoring kaise hota hai",
+      "serious vs casual kaise pata chalta hai","real clients kaise milenge"
+    ],
+    "answer": "The system qualifies leads through smart conversation — completely automatically:\n\nIt asks questions like:\n❓ What's your fitness goal?\n❓ When are you looking to start?\n❓ Are you ready to invest in yourself?\n\nBased on answers:\n🟢 Serious → tagged, pushed towards booking\n🔴 Not ready → nurturing sequence starts automatically\n\n✅ Result: You ONLY talk to people who are pre-qualified — zero time wasted on freebie seekers.\n\nSee how it filters leads: https://ayushaiautomation.in/process.html",
+    "link": "https://ayushaiautomation.in/process.html",
+    "cta": "See How Filtering Works"
+  },
+
+  "followup": {
+    "keywords": [
+      "follow up","followup","follow-up","reminder","ghosting","ghosted",
+      "sequence","drip","nurture","lost lead","cold lead","recover",
+      "reply nahi kiya","vapas nahi aaya","chala gaya","disappeared",
+      "auto reminder","automatic followup","message sequence","baar baar",
+      "follow up system","auto follow","followup automation","reminder system"
+    ],
+    "phrases": [
+      "follow up kaise hota hai","auto followup system","ghosting reduce kaise hoga",
+      "lead wapas kaise laye","reminder system kya hai","lead lost ho gaya",
+      "client reply nahi kar raha","how does follow up work","follow up automation",
+      "auto reminder system","sequence kya hai","drip campaign","lost lead recover"
+    ],
+    "answer": "Most leads disappear not because they're uninterested — because there was no follow-up.\n\nThis system automatically:\n• Sends timed reminders (1hr, 24hr, 3 days)\n• Re-engages people who went silent\n• Brings cold leads back into conversation\n• Never lets a warm lead go cold\n\n💡 Follow-up = money you were leaving on the table every single day.\n\nNo more ghosting losses — system handles it all 24/7.\n\nSee the full follow-up system: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Follow-up System"
+  },
+
+  "booking": {
+    "keywords": [
+      "booking","book","call","schedule","appointment","consultation",
+      "meeting","slot","calendar","calendly","call book","book a call",
+      "free call","call fix","call set","call kab","call milegi",
+      "booking funnel","book consultation","schedule call","appointment system"
+    ],
+    "phrases": [
+      "how does booking work","call booking kaise hota hai","booking funnel kya hai",
+      "kaise call book hoga","appointment system kya hai","book consultation",
+      "free call kaise milegi","call schedule karna","meeting book karna",
+      "call ke liye kaise apply karu","booking process kya hai"
+    ],
+    "answer": "The system only pushes SERIOUS people towards booking — not everyone.\n\nBooking flow:\n1️⃣ Lead enters conversation\n2️⃣ System qualifies them (goal, readiness, budget)\n3️⃣ If serious → booking link sent automatically\n4️⃣ They schedule directly on your calendar\n5️⃣ You show up to a pre-qualified call\n\n✅ Result: Every call on your calendar is with someone already interested — no more wasted discovery calls.\n\nBook your own free strategy call: https://ayushaiautomation.in/book.html",
+    "link": "https://ayushaiautomation.in/book.html",
+    "cta": "Book a Free Call"
+  },
+
+  "comment_to_dm": {
+    "keywords": [
+      "comment","comments","comment automation","reel comment","post comment",
+      "comment to dm","comment reply","comment funnel","comment lead",
+      "auto dm","comment trigger","keyword comment","instagram comment",
+      "comment dm","post comment auto","reel comment dm"
+    ],
+    "phrases": [
+      "comment to dm kaise kaam karta hai","comment automation kya hai",
+      "reel pe comment kiya toh dm milega kya","post comment se lead kaise",
+      "auto dm on comment","comment reply automation","comment funnel kya hai",
+      "comment se client kaise milega","comment trigger setup"
+    ],
+    "answer": "Comment → DM Automation — turn your content into conversations 🔥\n\nHow it works:\n• Someone comments on your post/reel\n• System instantly DMs them automatically\n• Conversation starts, lead gets qualified\n• Moves them towards booking\n\nWhy it's powerful:\n• Your content becomes a 24/7 lead generator\n• Zero manual effort to capture interested people\n• Works while you're posting, coaching, or sleeping\n\nLearn more: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Comment Automation"
+  },
+
+  "story_automation": {
+    "keywords": [
+      "story","stories","story automation","story reply","story reaction",
+      "story bot","story lead","instagram story","story viewer",
+      "story mention","story trigger","story response",
+      "story auto","story dm","ig story","insta story"
+    ],
+    "phrases": [
+      "story automation kaise kaam karta hai","story se lead kaise milega",
+      "story reply bot","story reaction pe kya hota hai","instagram story automation",
+      "story pe reply auto hoga kya","story mention automation","story trigger kya hai"
+    ],
+    "answer": "Story Automation — your stories become a lead machine too 📸\n\nWhen someone replies to or reacts to your story:\n• Conversation starts automatically\n• Bot engages and qualifies them\n• Moves towards booking\n\nSo not just your posts — every story you post is working for you too.\n\n💡 Most coaches ignore story replies. This captures every single one automatically.\n\nSee full details: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Story Automation"
+  },
+
+  "hot_lead_alert": {
+    "keywords": [
+      "hot lead","alert","notification","serious lead","high intent",
+      "priority","urgent","ready client","notification system",
+      "instant alert","real time","notify","ping","inform",
+      "hot lead alert","lead notification","real time alert","priority lead"
+    ],
+    "phrases": [
+      "hot lead alert kya hai","kaise pata chalega serious lead hai",
+      "notification kab milega","real time alert kaise kaam karta hai",
+      "priority lead system","hot prospect notification","urgent lead alert",
+      "serious wala ready hai kaise pata chalega","instant notification system"
+    ],
+    "answer": "Hot Lead Alert — never miss a ready buyer ⚡\n\nWhen a highly interested prospect comes in:\n• System tags them as 'HOT LEAD'\n• You get a real-time notification instantly\n• You can jump in and close them personally\n\nWhy this matters:\n• First response time = #1 conversion factor\n• Hot leads go cold within hours if ignored\n• This ensures you NEVER miss a ready buyer\n\n🎯 Strike while the iron is hot — system tells you exactly when to step in.\n\nSee how it works: https://ayushaiautomation.in/process.html",
+    "link": "https://ayushaiautomation.in/process.html",
+    "cta": "See Hot Lead System"
+  },
+
+  "reengagement": {
+    "keywords": [
+      "re engage","reengage","old leads","inactive","lost","dead leads",
+      "cold leads","dormant","purane","revive","reconnect","recover",
+      "wapas lao","bring back","old client","vapas","purani leads",
+      "reactivate","re-engage","old contacts","inactive leads"
+    ],
+    "phrases": [
+      "old leads kaise revive karein","inactive leads ke liye kya hai",
+      "lost leads recover karna","dead leads wapas kaise laye",
+      "cold lead re-engagement","purane clients ke liye kya","dormant leads",
+      "lead revive system","reconnect with old leads","old leads wapas aa sakte hain"
+    ],
+    "answer": "Old leads aren't dead — they were just never followed up properly.\n\nThe re-engagement system:\n• Sends targeted messages to inactive leads\n• Fresh conversation starters\n• New value offers to re-ignite interest\n• Brings them back into the active funnel\n\n💰 Old leads = hidden revenue sitting in your DMs right now.\n\nMost coaches leave thousands in revenue because they never re-engage old conversations.\n\nSee this feature: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Re-engagement Feature"
+  },
+
+  "both_platforms": {
+    "keywords": [
+      "both","dono","two platforms","instagram and whatsapp","combined",
+      "multi platform","dual","ig and wa","together","saath mein","ek saath",
+      "both ig and wa","instagram whatsapp combo","both platforms","use both"
+    ],
+    "phrases": [
+      "instagram aur whatsapp dono use kar sakta hun","both platforms kaise",
+      "dono platforms pe automation","ig and wa combined setup",
+      "can i use both","kya dono ho sakta hai","dual platform automation",
+      "instagram plus whatsapp","dono jagah chalega kya"
+    ],
+    "answer": "Yes — you can run both platforms together! 🔥\n\nHow most coaches use it:\n• Instagram → Capture leads (comments, DMs, stories)\n• WhatsApp → Close and follow up with serious buyers\n\nCombined benefits:\n• Complete lead journey covered end-to-end\n• Higher conversion rates\n• Better follow-up touchpoints\n• No lead ever falls through the cracks\n\n🎯 Both together = one complete automated sales machine.\n\nSee the combo setup: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Combined Setup"
+  },
+
+  "why_not_va": {
+    "keywords": [
+      "va","virtual assistant","assistant","hire","employee","manual",
+      "manually","khud","yourself","person","human","staff","team member",
+      "kisi ko rakhna","bandwidth","koi rakh lu","hire karna",
+      "hire someone","manual reply","do it myself","vs va","va vs automation"
+    ],
+    "phrases": [
+      "va rakhna better hai kya","virtual assistant vs automation","why not hire a va",
+      "manual reply better hai kya","khud reply karna vs automation",
+      "employee rakhna vs automation","human vs bot","va kyun nahi",
+      "why automation better than va","manually karna vs system"
+    ],
+    "answer": "VA vs Automation — honest comparison:\n\n👤 VA:\n• Can miss messages (sick days, off hours)\n• Costs ₹8,000–15,000/month minimum\n• Can't handle 100 DMs simultaneously\n• Needs training and management\n\n🤖 Automation:\n• Replies in seconds, 24/7/365\n• Never forgets follow-ups\n• Handles unlimited chats simultaneously\n• Set up once → works forever\n• Costs less than one client per month\n\n💡 A VA is one person. Automation is a system. Systems don't take sick days.\n\nSee why coaches choose automation: https://ayushaiautomation.in/coaches.html",
+    "link": "https://ayushaiautomation.in/coaches.html",
+    "cta": "Why Automation Wins"
+  },
+
+  "fitness_coaches": {
+    "keywords": [
+      "fitness","coach","coaches","gym","trainer","personal trainer","online coach",
+      "health coach","nutrition","diet","yoga","strength","weight loss",
+      "fitness influencer","coaching business","online coaching","pt",
+      "fitness business","mera coaching","my coaching","coach hun main",
+      "fitness coach","for coaches","trainer ke liye","coaching ke liye"
+    ],
+    "phrases": [
+      "fitness coaches ke liye kya hai","coaching business ke liye","trainer ke liye",
+      "online coaching pe kaise kaam karta","fitness coach hun main",
+      "gym trainer ke liye","kya coaches ke liye specifically banaya hai",
+      "coaching business mein kaise help karega","fitness niche ke liye"
+    ],
+    "answer": "This system is built SPECIFICALLY for fitness coaches — not generic businesses.\n\nWhy coaches need this:\n• Get 50–200+ DMs daily — can't reply to all manually\n• Not everyone who messages is serious\n• Hours wasted on non-serious conversations every week\n• Missing hot leads while you're busy coaching clients\n\nWhat the system does for you:\n• Handles all DMs automatically\n• Identifies serious prospects instantly\n• Pushes them towards a discovery call\n\n🏋️ You focus on coaching. The system handles the sales conversations.\n\nSee how it works for coaches: https://ayushaiautomation.in/coaches.html",
+    "link": "https://ayushaiautomation.in/coaches.html",
+    "cta": "See For Coaches"
+  },
+
+  "tools_used": {
+    "keywords": [
+      "manychat","tool","tools","software","technology","platform","app",
+      "tech stack","backend","which app","google sheets","what software",
+      "kaunsa tool","kaunsa software","technology used","under the hood",
+      "which tool","what tech","software used","tools kya","manychat kya"
+    ],
+    "phrases": [
+      "which tools are used","kaunsa software use karte ho","manychat kya hai",
+      "technology kya hai","tools kya hain","software kya use hota hai",
+      "tech stack kya hai","backend kya hai","platform kya hai",
+      "kaunsi technology","what is the tech behind this"
+    ],
+    "answer": "We use industry-standard, proven tools:\n\n🔧 ManyChat — the automation engine\n• Used by 1M+ businesses worldwide\n• Official Instagram & WhatsApp partner\n• Reliable, scalable, proven at scale\n\n📊 Google Sheets — lead tracking & reporting\n• All your leads organised in real-time\n• Easy to review and export\n\n⚠️ Note: Paid plans need a ManyChat subscription (separate from our fee — it's the software that keeps your automation running 24/7).\n\nRead more in our FAQ: https://ayushaiautomation.in/faq.html",
+    "link": "https://ayushaiautomation.in/faq.html",
+    "cta": "Read FAQ"
+  },
+
+  "requirements": {
+    "keywords": [
+      "requirements","need","access","what do you need","kya dena hoga",
+      "prerequisites","provide","share","meri side","my role","login",
+      "access dena","kya karna hoga","what i need to give","credentials",
+      "what is needed","what to provide","required documents","account access"
+    ],
+    "phrases": [
+      "setup ke liye kya chahiye","what do you need from me","kya dena hoga",
+      "access dena hoga kya","login share karna hoga kya","kya provide karna hoga",
+      "meri side se kya karna hoga","prerequisites kya hain","setup requirements",
+      "what is needed to get started","kya kya chahiye shuru karne ke liye"
+    ],
+    "answer": "Here's all you need to get started:\n\n✅ Instagram account access (via ManyChat OAuth — no password sharing ever)\n✅ Your approval on conversation flows we build for you\n✅ Payment confirmation\n\nThat's literally it. We handle everything else.\n\n🔒 Security: You never share your password. Access is through secure official OAuth — the same way any trusted app connects to Instagram.\n\nAfter setup — system runs fully on its own.\n\nSee the full setup steps: https://ayushaiautomation.in/process.html",
+    "link": "https://ayushaiautomation.in/process.html",
+    "cta": "See Setup Steps"
+  },
+
+  "revisions": {
+    "keywords": [
+      "changes","change","edit","modify","update","revision","customize",
+      "customization","flexibility","adjust","tweak","alter","baadal",
+      "modify kar sakte","edit kar sakte","change ho sakta","update milega",
+      "flow change","update flow","revision included","changes included"
+    ],
+    "phrases": [
+      "kya changes ho sakte hain","revision milega kya","flow change kar sakta hun",
+      "update system request kar sakta hun","can i modify the system",
+      "customization options kya hain","changes ke liye extra charge hai kya",
+      "flow edit karna hai","system update karna","baad mein badal sakte hain"
+    ],
+    "answer": "Yes — revisions and updates are included in all paid plans 🔄\n\nWhat you can request:\n• Flow logic changes\n• Message tone and style updates\n• New question sequences\n• New triggers or keywords\n\nProcess: Simple request → we implement → you approve → goes live.\n\n💡 Your coaching business evolves. Your automation system evolves with it.\n\nNo extra charges for reasonable revision requests.\n\nSee what's included: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Plans"
+  },
+
+  "guarantee": {
+    "keywords": [
+      "guarantee","refund","money back","risk","promise","assurance",
+      "warranty","performance guarantee","fail","no result","paise wapas",
+      "risk free","if no leads","agar kaam nahi kiya","koi guarantee",
+      "guaranteed","refund policy","money back guarantee","14 days"
+    ],
+    "phrases": [
+      "kya guarantee hai","money back guarantee hai kya","refund milega kya",
+      "agar result nahi aaya toh","what if no leads come","performance guarantee",
+      "risk kya hai","risk free hai kya","agar fail hua toh","guarantee policy kya hai",
+      "no result toh kya hoga","paise wapas milenge kya"
+    ],
+    "answer": "Here's our guarantee — in plain words:\n\n🛡️ If you have traffic coming to your profile but ZERO leads in 14 days:\n\n→ We REBUILD the entire system from scratch — FREE.\n\nNo excuses. No arguments. Complete redo, no questions asked.\n\nWhy we can offer this:\n• We're confident the system works\n• We've done this for multiple coaches\n• We're invested in your success — that's how we grow\n\n💡 Your risk = minimum. Our risk = maximum. That's how it should be.\n\nRead full guarantee terms: https://ayushaiautomation.in/terms.html",
+    "link": "https://ayushaiautomation.in/terms.html",
+    "cta": "Read Guarantee Terms"
+  },
+
+  "get_started": {
+    "keywords": [
+      "get started","start","begin","how to start","onboard","join","signup",
+      "sign up","register","enroll","apply","shuru","kaise shuru","abhi shuru",
+      "first step","next step","proceed","aage badhna","chalao",
+      "mujhe join karna hai","start karna hai","interested hun",
+      "how do i start","kaise join","how to join","starting","onboarding"
+    ],
+    "phrases": [
+      "how do i get started","kaise start karu","shuru kaise karu",
+      "pehla step kya hai","first step kya hai","how to begin",
+      "kaise join karun","sign up karna hai","onboarding process kya hai",
+      "aaj se shuru kar sakta hun","abhi start karna hai","start karna chahta hun"
+    ],
+    "answer": "Getting started is simple — just 4 steps:\n\n1️⃣ Book a free demo/strategy call\n2️⃣ See the system live for your specific situation\n3️⃣ Choose your plan and confirm\n4️⃣ We build and launch your entire system\n\nYou don't need to be technical. You don't need to know any tools.\nWe handle everything — you just approve and go live.\n\n⏱️ From booking to live system: 24–72 hours.\n\nBook your free call here: https://ayushaiautomation.in/book.html",
+    "link": "https://ayushaiautomation.in/book.html",
+    "cta": "Book Free Call Now"
+  },
+
+  "price_objection": {
+    "keywords": [
+      "expensive","mehenga","costly","too much","not affordable","cant afford",
+      "afford nahi","budget low","paise nahi","thoda sasta","discount",
+      "offer","negotiate","negotiable","kam mein","cheaper","reduce price",
+      "jyada hai","bahut zyada","itna nahi de sakta",
+      "too expensive","can't afford","not in budget","price kam karo"
+    ],
+    "phrases": [
+      "price bahut mehenga hai","afford nahi kar sakta","budget low hai",
+      "discount milega kya","offer hai kya","price kam ho sakti hai",
+      "itna expensive kyun hai","cheaper option hai kya","budget nahi hai",
+      "paise nahi hain abhi","price negotiate kar sakte hain",
+      "too expensive for me","can you reduce the price"
+    ],
+    "answer": "I hear you — let me reframe this:\n\nRight now, WITHOUT automation, every day you're losing:\n⏰ 2–4 hours manually replying to DMs\n💸 Missed clients from slow follow-up\n😤 Energy wasted on non-serious people\n\nIf your coaching is ₹5,000–15,000/client:\n→ Just 1 extra client per month from automation = cost recovered 10x over\n\n💡 That's why we have a FREE plan — start there, see results, then upgrade when it makes financial sense.\n\nNo pressure. No commitment on FREE.\n\nStart free here: https://ayushaiautomation.in/pricing.html",
+    "link": "https://ayushaiautomation.in/pricing.html",
+    "cta": "Start Free First"
+  },
+
+  "time_concern": {
+    "keywords": [
+      "time","time waste","worth it","busy","no time","setup time",
+      "maintenance","manage karna","consuming","time nahi","bahut time",
+      "time lagega","kitna time lunga","time commitment","time invest",
+      "too much time","time consuming","daily manage","maintenance time"
+    ],
+    "phrases": [
+      "bahut time lagega kya","time waste hoga kya","worth it hai kya time ke hisaab se",
+      "maintenance ke liye time chahiye kya","manage karna padega kya",
+      "time consuming hai kya","setup mein kitna time","iska maintenance time",
+      "bahut time lunga kya ye","time nahi hai mere paas"
+    ],
+    "answer": "Actually — you're losing MORE time without this system:\n\nRight now every day:\n• Same questions answered again & again ♻️\n• Hours spent with non-serious people ⏰\n• Manually tracking who to follow up ❌\n\nWith this system:\n• Your setup time: 1–2 hours (one time only)\n• Daily maintenance: Zero\n• System runs 24/7 without you\n\n💡 One-time time investment = permanent time savings every single day.",
+    "link": null,
+    "cta": null
+  },
+
+  "not_sure": {
+    "keywords": [
+      "not sure","unsure","thinking","confused","doubt","maybe","perhaps",
+      "soch raha hun","sochna","overthinking","decide nahi","pata nahi",
+      "karun ya nahi","should i","worth it","dekhta hun","time chahiye",
+      "let me think","thoda time","abhi nahi","baad mein",
+      "maybe later","not decided","still thinking","can't decide"
+    ],
+    "phrases": [
+      "not sure if i should do this","soch raha hun karu ya nahi",
+      "doubt hai kya ye kaam karega","overthinking ho rahi hai",
+      "decide nahi kar pa raha hun","should i invest in this",
+      "pata nahi worth it hai ya nahi","let me think about it",
+      "thoda time chahiye decide karne ke liye","baad mein batata hun"
+    ],
+    "answer": "Totally understand — big decisions need clarity, not pressure.\n\nHere's what I'd suggest:\n\nDon't decide based on words — experience it.\n\n👉 Take the FREE demo — 10 minutes\n• See the actual system live\n• Experience it as your client would\n• Then decide with full information\n\nNo commitment. No payment. No pressure.\n\n9 out of 10 coaches who see the demo say the decision becomes obvious once they see it working.\n\nTry the demo here: https://ayushaiautomation.in/demo.html",
+    "link": "https://ayushaiautomation.in/demo.html",
+    "cta": "Try Demo First — Free"
+  },
+
+  "trust_building": {
+    "keywords": [
+      "trust","believe","proof","real","authentic","reviews","testimonials",
+      "clients","existing clients","others using it","social proof",
+      "who else","koi aur","already using","case study","results proof",
+      "kaise maan lu","koi proof","real clients hain kya",
+      "trust kaise","proof do","real hai","testimonials dikhao"
+    ],
+    "phrases": [
+      "kaise trust karu","proof chahiye","real hai kya ye","authentic hai kya",
+      "koi testimonials hain","existing clients ke results dikhao",
+      "pehle se koi use kar raha hai kya","social proof chahiye",
+      "reviews hain kya","case studies dikhao","kaise believe karun"
+    ],
+    "answer": "Smart — don't trust words. Trust experience.\n\nHere's what you can do right now:\n\n1️⃣ Experience the live demo yourself — see it in action\n2️⃣ Ask any hard questions — we'll answer everything honestly\n3️⃣ See real client results on the website\n\nWe don't ask for blind trust. We ask for 10 minutes of your time to show you the system live.\n\nAfter seeing it work in real-time, you'll have all the information to decide confidently.\n\nSee proof and demo: https://ayushaiautomation.in/demo.html",
+    "link": "https://ayushaiautomation.in/demo.html",
+    "cta": "See Proof & Demo"
+  },
+
+  "comparison": {
+    "keywords": [
+      "others","other agencies","competitors","alternative","difference",
+      "why you","why ayush","better than","unique","special","what makes",
+      "why choose","advantage","doosre","koi aur","different","stand out",
+      "vs others","compare agencies","other services","why this"
+    ],
+    "phrases": [
+      "kyun tumse lun","what makes you different","better than competitors",
+      "unique kya hai tumhare mein","doosre agencies se kya fark hai",
+      "why choose ayush ai automation","advantage kya hai tumhara",
+      "koi aur bhi karta hai ye","alternative options kya hain",
+      "why not use someone else","what makes this special"
+    ],
+    "answer": "Honest comparison:\n\nMost automation services:\n• Set up basic bots that just reply messages\n• Generic templates, no customisation\n• No lead qualification logic\n• No follow-up system\n• Disappear after setup\n\nAyush AI Automation:\n• Built SPECIFICALLY for fitness coaches\n• Full conversion system — not just a chatbot\n• Lead qualification + filtering built in\n• Auto follow-up sequences\n• Monthly optimisation & support\n• 14-day rebuild guarantee\n\n🎯 Others build chatbots. We build conversion systems.\n\nSee why coaches choose us: https://ayushaiautomation.in/coaches.html",
+    "link": "https://ayushaiautomation.in/coaches.html",
+    "cta": "Why We're Different"
+  },
+
+  "human_feel": {
+    "keywords": [
+      "human","natural","robotic","bot feel","ai feel","fake","real feel",
+      "human like","organic","personal","conversational","real conversation",
+      "bot pata chalega","robotic lagega","artificial","clients notice",
+      "feel natural","natural conversation","human tone","bot obvious"
+    ],
+    "phrases": [
+      "kya bot obvious hoga","robotic lagega kya","clients samjhenge bot hai kya",
+      "natural lagega kya","human jaisa lagega kya","fake lagega kya",
+      "real conversation jaisa hoga kya","kya log notice karenge bot hai",
+      "human touch hai kya","organic feel hai kya","personal feel hoga kya"
+    ],
+    "answer": "Conversations are designed to feel genuinely human:\n\n• Conversational tone — not robotic commands\n• Natural flow — like chatting with a helpful assistant\n• Personalised responses based on what the person says\n• When someone is ready to talk — YOU step in personally\n\n💡 Reality check: People don't care if it's automated — if it's helpful, relevant, and fast. They care about getting their questions answered.\n\nOur systems have been mistaken for real people. That's the standard we build to.",
+    "link": null,
+    "cta": null
+  },
+
+  "instant_reply": {
+    "keywords": [
+      "instant","fast","speed","quick","reply time","response time","delay",
+      "24/7","always on","offline","sleeping","busy","raat ko","night",
+      "weekend","holiday","kab reply","kitni der mein","turant","immediately",
+      "instant reply","fast reply","24 hours","always available","no delay"
+    ],
+    "phrases": [
+      "instant reply hoga kya","24/7 reply milega kya","raat ko bhi reply hoga",
+      "offline hone pe kya hoga","sote waqt bhi kaam karega kya",
+      "kitni der mein reply karta hai","delay hoga kya","response time kya hai",
+      "weekend pe bhi kaam karta hai kya","holiday pe bhi chalega kya"
+    ],
+    "answer": "System replies instantly — always, no exceptions:\n\n⚡ 3 AM — ✅\n⚡ Sunday — ✅\n⚡ While you're in a client session — ✅\n⚡ During vacation — ✅\n⚡ When you're sick — ✅\n\nTypical response time: Under 30 seconds.\n\n📊 Why this matters: Leads that get replied within 5 minutes are 9x more likely to convert. After 1 hour, conversion drops by 80%.\n\nNo lead ever waits again.",
+    "link": null,
+    "cta": null
+  },
+
+  "contact": {
+    "keywords": [
+      "contact","reach","talk","human","real person","support","helpline",
+      "customer care","phone","email","whatsapp","directly","personal",
+      "baat karni hai","contact karna","reach out","connect","speak",
+      "contact info","get in touch","talk to someone","contact details"
+    ],
+    "phrases": [
+      "contact kaise karun","directly baat karni hai","talk to a human",
+      "real person se baat","support chahiye","helpline number kya hai",
+      "email kya hai","whatsapp number kya hai","ayush se directly baat",
+      "kaise contact karun","reach out karna chahta hun"
+    ],
+    "answer": "Direct contact anytime:\n\n📧 Email: ayushtrades54@gmail.com\n📱 WhatsApp: +91 94772 93867\n\nOr book a free strategy call — we'll talk through your specific situation and see if this is the right fit for you.\n\nBook your free call: https://ayushaiautomation.in/book.html",
+    "link": "https://ayushaiautomation.in/book.html",
+    "cta": "Book Free Call"
+  },
+
+  "whatsapp_contact": {
+    "keywords": [
+      "whatsapp contact","whatsapp number","wa number","wp number",
+      "whatsapp karo","whatsapp pe message","directly whatsapp",
+      "wa pe baat","wp pe baat","whatsapp pe contact",
+      "wa contact","whatsapp direct","message on whatsapp"
+    ],
+    "phrases": [
+      "whatsapp pe directly contact karna hai","wa number do",
+      "whatsapp karna chahta hun","directly whatsapp karo",
+      "whatsapp number kya hai","wa pe message karna hai"
+    ],
+    "answer": "Message directly on WhatsApp:\n\n📱 +91 94772 93867\n\nTap the button below — WhatsApp opens directly 👇",
+    "link": "https://wa.me/919477293867",
+    "cta": "Open WhatsApp"
+  },
+
+  "about": {
+    "keywords": [
+      "about","who","founder","background","experience","company","agency",
+      "ayush","who is ayush","about you","about us","who are you",
+      "kaun ho tum","company kaun hai","agency kaun hai","kaun banaya",
+      "kitna purana","kab se","history","story","background",
+      "about this","who built","who made","company info"
+    ],
+    "phrases": [
+      "about ayush ai automation","who is behind this","founder kaun hai",
+      "company background kya hai","ayush kaun hai","about you batao",
+      "agency ke baare mein batao","who built this","experience kya hai",
+      "company ki history","kab se kaam kar rahe ho"
+    ],
+    "answer": "Ayush AI Automation — DM automation agency built specifically for fitness coaches.\n\n🎯 One Mission:\nTurn your Instagram & WhatsApp DMs into a predictable client booking machine.\n\nWhat we do:\n• Build complete DM automation systems\n• Specifically for online fitness coaches\n• Focus: DMs → Qualified leads → Booked calls\n• Help coaches save 15–20 hours/week\n\nRead the full story here: https://ayushaiautomation.in/about.html",
+    "link": "https://ayushaiautomation.in/about.html",
+    "cta": "Read About Us"
+  },
+
+  "closing_ready": {
+    "keywords": [
+      "ready","lets do it","i want","start now","interested","confirm",
+      "book now","sign up now","yes","haan","mujhe chahiye","lena chahta",
+      "done deal","let's go","chalao","setup karo","karna hai","yes please",
+      "i'm ready","let's start","book it","confirm now","proceed"
+    ],
+    "phrases": [
+      "ready to start","let's do it","i want to start","start now please",
+      "setup karna hai","lena chahta hun","yes i want this","interested hun",
+      "book karta hun","confirm karna chahta hun","aage badhna hai",
+      "haan karna hai","mujhe chahiye ye system","done deal chalao"
+    ],
+    "answer": "Let's go! 🚀 Next steps are simple:\n\n1️⃣ Book your free strategy call (15 min)\n2️⃣ We understand your specific situation\n3️⃣ You choose your plan\n4️⃣ We build and launch your system\n\n⏱️ Timeline: Live in 24–72 hours after setup starts.\n\nSlots fill up fast — book yours here: https://ayushaiautomation.in/book.html",
+    "link": "https://ayushaiautomation.in/book.html",
+    "cta": "Book Now — Free"
+  },
+
+  "confused": {
+    "keywords": [
+      "confused","not clear","dont understand","samajh nahi","unclear",
+      "explain again","repeat","simplify","simple mein","easy explain",
+      "dobara batao","seedha batao","short mein","ek line mein","simple",
+      "what is this","explain simply","not getting it","didn't understand"
+    ],
+    "phrases": [
+      "samajh nahi aaya","clear nahi hai","explain karo simple mein",
+      "dobara batao","thoda aur explain karo","easy mein batao",
+      "short mein samjhao","not understanding","what exactly is this",
+      "one line mein batao","simplify karo","seedha bolo"
+    ],
+    "answer": "Super simple — one paragraph:\n\nThis is a system that automatically handles your Instagram/WhatsApp DMs, asks smart questions to find serious clients, filters out time-wasters, and pushes ready buyers to book a call with you.\n\nYou only talk to people who already want to buy. Everything else is automatic.\n\nWant to see it working? Demo takes 5 minutes 👇",
+    "link": "https://ayushaiautomation.in/demo.html",
+    "cta": "See Live Demo"
+  },
+
+  "ok_response": {
+    "keywords": [
+      "ok","okay","fine","nice","good","understood","got it","clear",
+      "thanks","thank you","great","awesome","perfect","cool","nice",
+      "acha","achha","theek hai","samajh gaya","helpful","appreciate",
+      "badhiya","zabardast","shukriya","dhanyawaad","👍","🙏"
+    ],
+    "phrases": [
+      "ok got it","thanks for that","that was helpful","clear hai",
+      "samajh gaya shukriya","got it thank you","okay understood",
+      "perfect thanks","great info","helpful tha"
+    ],
+    "answer": "Glad that helped! 👍\n\nAnything else you'd like to know? I'm here.\n\nWhenever you're ready — demo is available anytime 🚀",
+    "link": "https://ayushaiautomation.in/demo.html",
+    "cta": "See Demo"
+  },
+
+  "telugu_general": {
+    "keywords": [
+      "meeru","meru","nenu","mee","ela","enti","cheppandi","cheppu",
+      "automation em","bot em","price em","cost em","ela chestundi",
+      "entha avutundi","start ela","join ela","contact ela",
+      "manchi","baagundi","chala","chustanu","cheppu","ok anna",
+      "chettu","ikkade","adugutunnanu","help kaavalante"
+    ],
+    "phrases": [
+      "ela pani chestundi","entha avutundi","start ela cheyali",
+      "naku help kavali","emi cheyali","ela join avvali",
+      "price cheppandi","cost em avutundi","ela contact cheyali",
+      "ikkade ela pani chestundi","system ela work avutundi"
+    ],
+    "answer": "Hi! Let me explain in English:\n\nThis is a DM automation system for fitness coaches.\n\n✅ Auto-replies to Instagram/WhatsApp messages\n✅ Filters serious clients from time-wasters\n✅ Books calls automatically\n\n💰 Pricing: FREE (₹0) → Starter (₹999/mo) → Growth (₹1,999/mo)\n\nWant to see a live demo? Click below 👇",
+    "link": "https://ayushaiautomation.in/demo.html",
+    "cta": "See Live Demo"
+  },
+
+  "tamil_general": {
+    "keywords": [
+      "vanakkam","enna","epdi","ethanai","eppadi","naan","ungal","ungalukku",
+      "vilai","selavu","thogai","thodangu","help","bot enna",
+      "automation enna","price enna","cost enna","ela","tamizh",
+      "seri","nandri","romba","nalla","paathukkiren","pakalam"
+    ],
+    "phrases": [
+      "eppadi velai seiyum","ethanai aagum","thodangu eppadi",
+      "enakku help vendum","enna seiya vendum","eppadi join aavadhu",
+      "vilai enna","cost ethanai","eppadi contact seivadhu",
+      "system eppadi velai seiyum","demo paarkalam"
+    ],
+    "answer": "Vanakkam! 🙏 Let me explain in English:\n\nThis is a DM automation system for fitness coaches.\n\n✅ Auto-replies to Instagram/WhatsApp messages\n✅ Filters serious clients automatically\n✅ Books calls on your behalf\n\n💰 Pricing: FREE (₹0) → Starter (₹999/mo) → Growth (₹1,999/mo)\n\nClick below to see it live 👇",
+    "link": "https://ayushaiautomation.in/demo.html",
+    "cta": "See Live Demo"
+  },
+
+  "faq_dm_setup": {
+    "keywords": [
+      "dm automation setup","dm setup","what is dm automation","dm auto setup","dm setup kya hai",
+      "automatic dm","dm automation meaning","setup dm","dm kya hai","auto dm setup",
+      "dm system","dm bot setup","instagram dm bot","auto reply setup","same questions"
+    ],
+    "phrases": [
+      "what does dm automation setup mean","dm automation setup kya hai",
+      "dm setup kaise hota hai","what is dm setup","dm automation explain"
+    ],
+    "answer": "DM Automation Setup means we create automatic replies inside your Instagram DMs.\n\nSo when someone sends you the same common questions — about pricing, program details, availability — the system answers them automatically.\n\nYou don't need to type the same thing 50 times a day.\n\n→ You only talk to people who are genuinely ready to work with you.\n\nSee the full setup process: https://ayushaiautomation.in/process.html",
+    "link": "https://ayushaiautomation.in/process.html",
+    "cta": "See Setup Process"
+  },
+
+  "faq_lead_qualification": {
+    "keywords": [
+      "lead qualification","qualify leads","what is lead qualification","lead qualify",
+      "serious clients","filter serious","serious buyer","qualify kya hai",
+      "lead qualify kaise","qualification system","auto qualify","client filter",
+      "qualify karna","serious lead filter","genuine client"
+    ],
+    "phrases": [
+      "what is lead qualification","lead qualification kya hai",
+      "lead qualify kaise hota hai","how are leads qualified",
+      "serious clients kaise milte hain"
+    ],
+    "answer": "Lead Qualification is the system that asks smart questions to understand if someone is serious.\n\nIt asks things like:\n• What's your fitness goal?\n• When do you want to start?\n• Are you ready to invest in coaching?\n\nBased on their answers — the system tags them automatically:\n🟢 Serious buyer → pushed towards booking\n🔴 Just browsing → put in nurture sequence\n\nResult: Only real, ready buyers reach you.\n\nSee how filtering works: https://ayushaiautomation.in/process.html",
+    "link": "https://ayushaiautomation.in/process.html",
+    "cta": "See Lead Qualification"
+  },
+
+  "faq_tagging": {
+    "keywords": [
+      "tagging","tag system","tagging system","tags","label","labels","auto tag",
+      "fat loss tag","muscle gain tag","beginner tag","serious tag",
+      "automatic labels","client labels","segment leads","categorize"
+    ],
+    "phrases": [
+      "what is tagging system","tagging system kya hai","tags kya hote hain",
+      "how does tagging work","auto tagging kaise hota hai"
+    ],
+    "answer": "The Tagging System automatically labels your leads based on their answers.\n\nExamples of tags:\n🏷️ Fat Loss, Muscle Gain, Beginner, Advanced\n🏷️ Serious Buyer, Just Browsing, Follow Up Needed\n\nSo instead of reading every conversation, you instantly know:\n• Who to focus on\n• What stage they're at\n• What message to send next\n\nEverything is organised automatically — no manual work.\n\nSee how it works: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Tagging Feature"
+  },
+
+  "faq_followup_auto": {
+    "keywords": [
+      "follow up automation","auto followup","automatic followup","reminder auto",
+      "followup feature","auto reminder","ghosting solution","lost lead auto",
+      "follow up kya hai","what is follow up","followup system","reminder sequence"
+    ],
+    "phrases": [
+      "what is follow up automation","follow up automation kya hai",
+      "auto followup kaise kaam karta hai","how does followup work"
+    ],
+    "answer": "Follow-up Automation means if someone stops replying, the system automatically sends reminders.\n\nInstead of you manually chasing leads, the system sends:\n• A reminder after 1 hour\n• Another after 24 hours\n• Final nudge after 3 days\n\nThis recovers leads that would have been lost otherwise.\n\n💡 Most coaches lose 40–60% of potential clients just because there was no follow-up.\nThis system eliminates that problem completely.\n\nSee follow-up system: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Follow-up Feature"
+  },
+
+  "faq_comment_dm": {
+    "keywords": [
+      "comment to dm feature","comment dm faq","how comment dm works",
+      "reel comment lead","post comment automation","comment auto dm",
+      "comment se dm","comment reply auto","ig comment automation"
+    ],
+    "phrases": [
+      "what is comment to dm automation","comment to dm feature kya hai",
+      "how does comment to dm work","reel comment se dm kaise"
+    ],
+    "answer": "Comment-to-DM Automation means when someone comments on your post or reel, they automatically receive a DM from you.\n\nThe conversation then starts — the bot qualifies them and moves them towards booking.\n\nWhy this is powerful:\n• Your content becomes a 24/7 lead generator\n• You capture every interested person without lifting a finger\n• Works for reels, posts, ads — everything\n\nSee it in action: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Comment Automation"
+  },
+
+  "faq_story_reply": {
+    "keywords": [
+      "story reply automation","story reaction auto","story auto reply",
+      "what is story reply","story reply feature","ig story auto",
+      "story reply kya hai","story automation feature","story reaction dm"
+    ],
+    "phrases": [
+      "what is story reply automation","story reply automation kya hai",
+      "how does story reply automation work","story reaction pe kya hota hai"
+    ],
+    "answer": "Story Reply Automation means when someone reacts or replies to your story, the system starts a conversation automatically.\n\nInstead of that interaction disappearing, it becomes a lead:\n• Bot engages them\n• Qualifies their interest\n• Moves them towards booking\n\n💡 Most coaches ignore story replies. This captures every single one and turns them into potential clients.\n\nSee story automation: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Story Feature"
+  },
+
+  "faq_booking_funnel": {
+    "keywords": [
+      "booking funnel","call booking funnel","booking system","funnel kya hai",
+      "how booking funnel works","call funnel","book a call auto",
+      "automatic booking","calendar booking","booking process auto"
+    ],
+    "phrases": [
+      "what is call booking funnel","call booking funnel kya hai",
+      "booking funnel kaise kaam karta hai","how does booking funnel work"
+    ],
+    "answer": "The Call Booking Funnel guides interested people step-by-step and sends only ready clients to book a call with you.\n\nHow it works:\n1️⃣ Lead comes in\n2️⃣ System qualifies them\n3️⃣ If serious → booking link sent automatically\n4️⃣ They book directly on your calendar\n5️⃣ You show up to a pre-qualified call\n\nResult: Every call is with someone already interested — no more wasted discovery calls.\n\nBook your own free call: https://ayushaiautomation.in/book.html",
+    "link": "https://ayushaiautomation.in/book.html",
+    "cta": "Book Free Call"
+  },
+
+  "faq_whatsapp_qualification": {
+    "keywords": [
+      "whatsapp qualification","wa qualification","wp qualify","whatsapp qualify leads",
+      "qualify on whatsapp","whatsapp lead filter","wa lead qualify",
+      "serious clients whatsapp","whatsapp serious filter"
+    ],
+    "phrases": [
+      "what is whatsapp qualification","whatsapp qualification kya hai",
+      "wa pe qualification kaise hota hai","how does whatsapp qualification work"
+    ],
+    "answer": "WhatsApp Qualification means serious clients from Instagram are moved to WhatsApp and filtered further there.\n\nWhy move to WhatsApp?\n• Higher response rates\n• More personal feel\n• Better for closing calls\n\nThe system handles the move automatically — you don't need to do it manually.\n\nOnly the most interested people end up in your WhatsApp, ready to talk.\n\nSee full WhatsApp automation: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View WhatsApp Automation"
+  },
+
+  "faq_reengagement": {
+    "keywords": [
+      "re-engagement faq","reengagement feature","old leads faq","inactive leads feature",
+      "dead leads system","revive leads auto","reconnect old","reactivate leads"
+    ],
+    "phrases": [
+      "what is re-engagement","re-engagement kya hai","how does reengagement work",
+      "old leads ko wapas kaise laye"
+    ],
+    "answer": "Re-engagement means old or inactive leads are automatically contacted again.\n\nInstead of those conversations dying permanently, the system:\n• Sends a fresh, value-driven message after some time\n• Re-ignites their interest\n• Brings them back into the active conversation\n\n💰 Old leads = hidden revenue sitting unused in your DMs.\n\nMost coaches never go back to old leads. This system does it automatically.\n\nSee re-engagement feature: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View Re-engagement"
+  },
+
+  "faq_hot_lead": {
+    "keywords": [
+      "hot lead notification faq","hot lead feature","hot lead alert faq",
+      "what is hot lead","high intent alert","serious lead notification",
+      "hot lead system","ready buyer alert","priority notification"
+    ],
+    "phrases": [
+      "what is hot lead notification","hot lead notification kya hai",
+      "how does hot lead alert work","hot lead kab milega"
+    ],
+    "answer": "Hot Lead Notification means you get alerted in real-time when a highly interested client appears.\n\nThe system detects their high intent based on their answers and tags them as a HOT LEAD.\n\nYou get an instant notification so you can reply personally and close them fast.\n\nWhy it matters:\n• First response = biggest conversion factor\n• Hot leads go cold within hours\n• You never miss a ready buyer\n\nSee hot lead system: https://ayushaiautomation.in/process.html",
+    "link": "https://ayushaiautomation.in/process.html",
+    "cta": "See Hot Lead Feature"
+  },
+
+  "faq_no_daily_manage": {
+    "keywords": [
+      "daily manage","manage daily","daily maintenance","manage karna padega",
+      "maintain karna","run daily","check daily","automation daily",
+      "no maintenance","self running","runs itself","hands free"
+    ],
+    "phrases": [
+      "do i need to manage automation daily","daily manage karna padega kya",
+      "how much time to manage daily","maintenance daily hai kya"
+    ],
+    "answer": "No — you don't need to manage the automation daily.\n\nAfter setup, it runs completely automatically:\n• Replies on its own\n• Qualifies leads on its own\n• Sends follow-ups on its own\n\nYour only job: Reply to the serious, pre-qualified leads that the system sends your way.\n\n💡 That's the whole point — you coach clients, the system handles the rest.\n\nSee how it works: https://ayushaiautomation.in/process.html",
+    "link": "https://ayushaiautomation.in/process.html",
+    "cta": "See Full Process"
+  },
+
+  "faq_spam": {
+    "keywords": [
+      "spam","will it spam","sends spam","spam messages","bulk messages",
+      "spam nahi karega","bot spam","mass message","unwanted messages",
+      "spam risk","spam policy","no spam","spam karta hai kya"
+    ],
+    "phrases": [
+      "will this send spam","spam bhejega kya","does it send spam messages",
+      "spam karni waali automation hai kya","no spam confirm karo"
+    ],
+    "answer": "No — the system never sends spam. 🚫\n\nIt only replies to people who message or interact with you FIRST.\n\nThis means:\n• No bulk messaging\n• No random outreach\n• No unsolicited messages\n• 100% within platform guidelines\n\nThe system only starts a conversation when someone knocks on your door first.\nYou never reach out — they come to you.",
+    "link": null,
+    "cta": null
+  },
+
+  "faq_technical_knowledge": {
+    "keywords": [
+      "technical knowledge","tech knowledge","technical background","coding needed",
+      "do i need to code","technical skill","non technical","not technical",
+      "beginner friendly","no tech","easy to use","technical requirement",
+      "technical skill chahiye","coding chahiye kya"
+    ],
+    "phrases": [
+      "do i need technical knowledge","technical knowledge chahiye kya",
+      "is it beginner friendly","kya main use kar sakta hun bina technical knowledge ke",
+      "non technical hun use kar sakta hun kya"
+    ],
+    "answer": "Zero technical knowledge required. 👍\n\nThis system is built for fitness coaches — not developers.\n\nYou don't need to:\n• Know how to code\n• Understand automation software\n• Manage any technical settings\n\nWe handle the entire setup for you.\nYou just approve the conversation flows and go live.\n\nEven if you barely use apps — you can use this without any problem.",
+    "link": null,
+    "cta": null
+  },
+
+  "faq_organic_ads": {
+    "keywords": [
+      "organic","ads","paid ads","organic leads","ad leads","reels leads",
+      "organic content","story leads","content leads","organic vs ads",
+      "works for organic","works with ads","both organic and ads"
+    ],
+    "phrases": [
+      "does it work for organic leads","kya organic content pe bhi kaam karta hai",
+      "ads ke liye hai ya organic ke liye","organic aur ads dono ke liye kaam karta hai"
+    ],
+    "answer": "Works for both — organic content AND paid ads. ✅\n\nIt captures leads from:\n• Reels comments\n• Story replies\n• Direct DMs\n• Post comments\n• Ads (anyone who clicks and messages)\n\nWhether your audience is finding you organically or through ads — the system handles every conversation automatically.\n\nSee all features: https://ayushaiautomation.in/services.html",
+    "link": "https://ayushaiautomation.in/services.html",
+    "cta": "View All Features"
+  },
+
+  "faq_manychat_subscription": {
+    "keywords": [
+      "manychat subscription","manychat fee","manychat cost","manychat separately",
+      "manychat paid","manychat plan","why manychat","manychat required",
+      "manychat separately kyun","pay manychat","manychat subscription kya"
+    ],
+    "phrases": [
+      "do i need manychat subscription","manychat subscription ki zarurat hai kya",
+      "why do i pay manychat separately","manychat alag kyun dena padega",
+      "if i upgrade do i need manychat"
+    ],
+    "answer": "Yes — if you upgrade to a paid plan, you'll need a ManyChat subscription too.\n\nHere's why they're separate:\n• My fee = building & setting up your system\n• ManyChat fee = the software that keeps automation running 24/7\n\nThink of it like this:\n🏗️ I'm the builder who sets up your shop\n💡 ManyChat is the electricity that keeps it running\n\nBoth are needed. The Free plan doesn't require ManyChat paid.\n\nSee full pricing details: https://ayushaiautomation.in/pricing.html",
+    "link": "https://ayushaiautomation.in/pricing.html",
+    "cta": "View Pricing"
+  },
+
+  "faq_support": {
+    "keywords": [
+      "support","after support","support available","help available","issue support",
+      "problem support","face issue","technical support","support channel",
+      "support kaise milega","support hai kya","after setup support"
+    ],
+    "phrases": [
+      "do you provide support","support milega kya","kya support available hai",
+      "agar problem aaye toh","after setup support kaise milega"
+    ],
+    "answer": "Yes — support is available via WhatsApp and email anytime.\n\n📱 WhatsApp: +91 94772 93867\n📧 Email: ayushtrades54@gmail.com\n\nWe also provide guidance on using the system effectively so you get the best results.\n\nFor paid plans, monthly review/optimisation calls are also included — so your system keeps improving over time.",
+    "link": "https://ayushaiautomation.in/book.html",
+    "cta": "Book Free Call"
+  },
+
+  "faq_stop_service": {
+    "keywords": [
+      "stop service","cancel","discontinue","end service","stop automation",
+      "cancel plan","leave","quit","not continue","service band karna",
+      "stop karna","exit","how to cancel","cancel subscription"
+    ],
+    "phrases": [
+      "what if i want to stop","stop service kaise karu","cancel karna hai",
+      "can i discontinue","service band karna hai","how to exit the plan"
+    ],
+    "answer": "No long-term commitment — you can stop anytime after your monthly plan.\n\n• Monthly plans — just don't renew next month\n• No contracts, no hidden cancellation fees\n• Refunds follow the terms outlined in our policy\n\nYou're never locked in. Stay because it's working — not because you're stuck.\n\nRead full terms: https://ayushaiautomation.in/terms.html",
+    "link": "https://ayushaiautomation.in/terms.html",
+    "cta": "Read Terms"
+  },
+
+  "fallback": {
+    "keywords": [],
+    "phrases": [],
+    "answer": "I didn't quite catch that — could you rephrase? 🤔\n\nAre you asking about:\n💰 Pricing & Plans\n⚙️ How the system works\n📈 Getting clients & leads\n🛡️ Safety & trust\n🚀 How to get started\n📞 Contact & booking\n\nJust ask anything about Instagram/WhatsApp DM automation — I've got answers!",
+    "link": null,
+    "cta": null
+  }
+}
