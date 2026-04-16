@@ -2585,3 +2585,83 @@ button, a, input, textarea, div {
 html, body {
   -webkit-tap-highlight-color: transparent;
 }
+
+
+/* ===== TESTIMONIAL SLIDER ===== */
+.testi-slider {
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+.testi-slide {
+  display: none;
+  animation: teslideIn 0.5s ease;
+}
+
+.testi-slide.active {
+  display: block;
+}
+
+@keyframes teslideIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.testi-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(59,130,246,0.3);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.testi-dot.active {
+  background: var(--primary-light);
+}
+
+.testi-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.testi-arrow {
+  background: rgba(59,130,246,0.15);
+  border: 1px solid rgba(59,130,246,0.4);
+  color: var(--primary-light);
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.testi-arrow:hover {
+  background: rgba(59,130,246,0.3);
+  transform: scale(1.05);
+}
+
+/* Image size fix — bada */
+.wa-phone-frame {
+  width: 320px !important;
+}
+
+@media (max-width: 480px) {
+  .wa-phone-frame {
+    width: 270px !important;
+  }
+  .testi-slider {
+    min-height: 600px;
+  }
+}
+/* ===== END TESTIMONIAL SLIDER ===== */
