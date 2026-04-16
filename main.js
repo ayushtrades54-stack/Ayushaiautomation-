@@ -827,7 +827,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// ===== TESTIMONIAL SLIDER =====
+let currentSlide = 0;
+const slides = document.querySelectorAll('.testi-slide');
+const dots = document.querySelectorAll('.testi-dot');
 
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = n;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+function changeSlide(dir) {
+  let next = (currentSlide + dir + slides.length) % slides.length;
+  goToSlide(next);
+}
+
+// Auto-slide every 5 seconds
+setInterval(() => changeSlide(1), 5000);
+// ===== END TESTIMONIAL SLIDER =====
 
 
 
