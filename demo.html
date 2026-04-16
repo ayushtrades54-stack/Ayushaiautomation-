@@ -69,40 +69,68 @@
     </div>
   </section>
 
-
-
 <!-- ===== TESTIMONIAL PROOF SECTION ===== -->
 <section class="testimonial-proof-section">
   <div class="testimonial-proof-wrapper">
 
     <h2 class="testimonial-heading">Don't Take My Word For It…</h2>
 
-    <div class="testimonial-card">
-      <div class="quote-icon">"</div>
-      <p class="testimonial-quote">
-        Within 7 days, I started getting qualified leads directly from DMs.
+    <!-- SLIDER WRAPPER -->
+    <div class="testi-slider">
+
+      <!-- SLIDE 1 — Fabby -->
+      <div class="testi-slide active">
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-quote">
+            Within 7 days, I started getting qualified leads directly from DMs.
         No more wasting time on random chats — only serious inquiries and booked calls.
       </p>
-      <p class="testimonial-author">— Fabby (Fitness Coach)</p>
+          <p class="testimonial-author">— Fabby (Fitness Coach)</p>
+        </div>
+        <p class="whatsapp-proof-label">Real feedback from a fitness coach using this system:</p>
+        <div class="whatsapp-screenshot-wrapper">
+          <div class="wa-phone-frame">
+            <img src="YOUR_FABBY_SCREENSHOT.png" alt="Fabby WhatsApp feedback" class="wa-screenshot-img"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 — Haider -->
+      <div class="testi-slide">
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-quote">
+            A DM automation system was set up for my page by Ayush. The flow is simple and structured, making it easy to handle leads and manage profiles. The setup felt clean and professional.
+          </p>
+          <p class="testimonial-author">— Haider (Early Client)</p>
+        </div>
+        <p class="whatsapp-proof-label">Real WhatsApp feedback from Haider:</p>
+        <div class="whatsapp-screenshot-wrapper">
+          <div class="wa-phone-frame">
+            <img src="YOUR_HAIDER_SCREENSHOT.png" alt="Haider WhatsApp feedback" class="wa-screenshot-img"/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END SLIDER -->
+
+    <!-- DOTS -->
+    <div class="testi-dots">
+      <span class="testi-dot active" onclick="goToSlide(0)"></span>
+      <span class="testi-dot" onclick="goToSlide(1)"></span>
     </div>
 
-    <p class="whatsapp-proof-label">Real feedback from a fitness coach using this system:</p>
-
-    <div class="whatsapp-screenshot-wrapper">
-      <div class="wa-phone-frame">
-        <img
-          src="YOUR_WHATSAPP_SCREENSHOT.png"
-          alt="WhatsApp feedback from fitness coach"
-          class="wa-screenshot-img"
-        />
-      </div>
+    <!-- ARROWS -->
+    <div class="testi-arrows">
+      <button class="testi-arrow" onclick="changeSlide(-1)">&#8592;</button>
+      <button class="testi-arrow" onclick="changeSlide(1)">&#8594;</button>
     </div>
 
   </div>
 </section>
 <!-- ===== END TESTIMONIAL PROOF SECTION ===== -->
-  
-
   
   <!-- ===== PLAN DEMO VIDEOS SECTION ===== -->
   <section>
