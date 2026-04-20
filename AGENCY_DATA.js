@@ -384,3 +384,164 @@ const AGENCY_DATA = {
   }
 
 };
+
+
+
+
+// ─────────────────────────────
+// CASE STUDIES (PROOF)
+// ─────────────────────────────
+case_studies: [
+  {
+    name: "Fitness Coach (Female, Fat Loss Niche)",
+    result: "3x increase in booked calls within 14 days",
+    before: "Manually replying to every DM, missing leads, slow response",
+    after: "Instant replies, automated qualification, consistent follow-ups",
+    proof_line: "Went from ~5 calls/week to 15+ calls/week without increasing posting frequency"
+  },
+  {
+    name: "Online Fitness Coach (Muscle Gain Niche)",
+    result: "40–60% reduction in DM time",
+    before: "Spending 2–3 hours daily replying manually",
+    after: "Bot handled FAQs, qualification, and follow-ups automatically",
+    proof_line: "Saved 15+ hours/week and focused only on closing"
+  }
+],
+
+
+// ─────────────────────────────
+// OBJECTION HANDLING (CLOSING ENGINE)
+// ─────────────────────────────
+objections: [
+  {
+    trigger: ["expensive", "costly", "mehenga", "price high"],
+    response: "Most coaches recover the cost with just 1 client. If your program is ₹5,000–15,000, this system pays for itself almost immediately."
+  },
+  {
+    trigger: ["not sure", "confused", "thinking", "doubt"],
+    response: "That’s completely fair — that’s exactly why we offer a Free Plan. You can test everything first before making any investment."
+  },
+  {
+    trigger: ["later", "not now", "busy"],
+    response: "Understood — but every missed DM right now is a lost client. Even 1–2 missed leads per day adds up quickly."
+  },
+  {
+    trigger: ["need human", "prefer manual", "assistant"],
+    response: "A human can reply to maybe 50–100 DMs a day. This system handles unlimited conversations instantly, 24/7, without delays."
+  }
+],
+
+
+// ─────────────────────────────
+// USER TYPE DETECTION (SMART SELLING)
+// ─────────────────────────────
+user_types: [
+  {
+    type: "beginner",
+    signals: ["starting", "new coach", "beginner", "just started"],
+    recommendation: "Free Plan"
+  },
+  {
+    type: "intermediate",
+    signals: ["getting leads", "some clients", "inbound messages"],
+    recommendation: "Starter or Growth Plan"
+  },
+  {
+    type: "advanced",
+    signals: ["running ads", "scaling", "high volume", "team"],
+    recommendation: "Combo or Growth Plan"
+  }
+],
+
+
+// ─────────────────────────────
+// CTA VARIATIONS (NON-REPETITIVE)
+// ─────────────────────────────
+cta_variants: [
+  "Want to see how this would work for your page?",
+  "We can set this up for you in 48 hours.",
+  "You can start with the Free Plan — zero risk.",
+  "Want a quick demo of how the system works?",
+  "Let’s map this for your coaching business.",
+  "We can analyse your DMs and show improvement areas.",
+  "Want me to break down the best setup for you?"
+],
+
+
+// ─────────────────────────────
+// RESPONSE TEMPLATES (AI FEEL)
+// ─────────────────────────────
+response_templates: {
+  pricing: {
+    intro: [
+      "Here’s a simple breakdown:",
+      "Let me show you the pricing:",
+      "Here’s how the plans are structured:"
+    ],
+    close: [
+      "Best plan depends on your current stage.",
+      "I can recommend the best plan if you tell me your situation."
+    ]
+  },
+  recommendation: {
+    intro: [
+      "Based on what you said:",
+      "From your situation:",
+      "Here’s what I’d suggest:"
+    ],
+    close: [
+      "This would be the most practical starting point.",
+      "You can always upgrade later once results come in."
+    ]
+  }
+},
+
+
+// ─────────────────────────────
+// FEATURE → BENEFIT MAPPING (SELLING)
+// ─────────────────────────────
+feature_benefits: [
+  {
+    feature: "Instant replies",
+    benefit: "Leads get response within seconds → higher conversion rate"
+  },
+  {
+    feature: "Follow-up automation",
+    benefit: "No lead gets ignored → more sales opportunities"
+  },
+  {
+    feature: "Lead qualification",
+    benefit: "You only talk to serious buyers"
+  },
+  {
+    feature: "Booking automation",
+    benefit: "Calls get booked without manual effort"
+  }
+],
+
+
+// ─────────────────────────────
+// COMPETITOR COMPARISON (POWER)
+// ─────────────────────────────
+comparisons: [
+  {
+    vs: "Virtual Assistant",
+    points: [
+      "VA replies manually and can miss messages",
+      "Automation replies instantly, 24/7",
+      "VA costs ₹8k–15k/month minimum",
+      "Automation costs less than 1 client and never takes a break"
+    ]
+  }
+],
+
+
+// ─────────────────────────────
+// URGENCY / SCARCITY
+// ─────────────────────────────
+urgency: [
+  "Free Plan pricing may change soon.",
+  "We take limited setup slots each week.",
+  "Early users get priority support.",
+  "Best time to set this up is before your next content push."
+]
