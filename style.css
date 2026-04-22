@@ -2688,3 +2688,462 @@ html, body {
 
 
 
+
+
+
+
+
+
+
+
+
+/* ==============================================
+   CARD SYSTEM UPGRADE — GLASSMORPHISM
+   Paste at the END of style.css
+   Targets ONLY card components
+   Blue-only. No purple. No green accents.
+   Mobile-optimised. No layout changes.
+============================================== */
+
+
+/* ─────────────────────────────────────────────
+   Card Base
+───────────────────────────────────────────── */
+.service-card,
+.card,
+.step,
+.faq-item,
+.flow-step,
+.testimonial-card {
+  background: rgba(15, 25, 55, 0.52) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(59, 130, 246, 0.16) !important;
+  border-left: 3px solid var(--primary) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22) !important;
+  position: relative;
+  overflow: hidden;
+  /* GPU acceleration — kills mobile lag */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: auto;
+  /* Smooth but fast — not sluggish */
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
+}
+
+/* Shimmer top line — subtle premium touch */
+.service-card::after,
+.card::after,
+.step::after,
+.faq-item::after,
+.flow-step::after,
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.35), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Kill the heavy ::before overlay — replaced by cleaner hover */
+.service-card::before,
+.card::before,
+.step::before,
+.faq-item::before,
+.flow-step::before {
+  display: none !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   Card Hover — desktop only
+───────────────────────────────────────────── */
+@media (hover: hover) {
+  .service-card:hover,
+  .card:hover,
+  .step:hover,
+  .faq-item:hover,
+  .flow-step:hover,
+  .testimonial-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(96, 165, 250, 0.38) !important;
+    border-left-color: var(--primary-light) !important;
+    border-left-width: 3px !important;
+    box-shadow:
+      0 10px 32px rgba(59, 130, 246, 0.18),
+      0 0 0 1px rgba(96, 165, 250, 0.12) !important;
+    background: rgba(20, 35, 75, 0.62) !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   Card Typography — hierarchy clean-up
+───────────────────────────────────────────── */
+.service-card h3,
+.card h3,
+.step h3,
+.flow-step h3 {
+  color: var(--primary-light) !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  margin-bottom: 10px !important;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card p,
+.card p,
+.step p,
+.faq-item p,
+.flow-step p {
+  color: var(--text-soft) !important;
+  font-size: 0.93rem !important;
+  line-height: 1.72 !important;
+  position: relative;
+  z-index: 1;
+  /* Kill inherited section > p styles */
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   Pricing Cards — special override
+   (wider, centered, featured plan glow)
+───────────────────────────────────────────── */
+.pricing-cards .card {
+  background: rgba(13, 22, 50, 0.6) !important;
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.28) !important;
+}
+
+@media (hover: hover) {
+  .pricing-cards .card:hover {
+    transform: translateY(-8px) scale(1.01) !important;
+    border-color: rgba(96, 165, 250, 0.45) !important;
+    box-shadow: 0 16px 48px rgba(59, 130, 246, 0.22) !important;
+    background: rgba(20, 36, 78, 0.7) !important;
+  }
+}
+
+.pricing-cards .card.featured,
+.pricing-cards .card.popular {
+  border-color: rgba(59, 130, 246, 0.45) !important;
+  box-shadow:
+    0 8px 36px rgba(59, 130, 246, 0.22),
+    0 0 0 1px rgba(96, 165, 250, 0.18) !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   Step Number Badge
+───────────────────────────────────────────── */
+.step .step-number {
+  width: 44px !important;
+  height: 44px !important;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: white !important;
+  margin-bottom: 16px !important;
+  box-shadow: 0 3px 12px rgba(59, 130, 246, 0.4) !important;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ─────────────────────────────────────────────
+   Card Icon Box
+───────────────────────────────────────────── */
+.service-card .card-icon,
+.card .card-icon,
+.step .card-icon {
+  width: 52px !important;
+  height: 52px !important;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 18px !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  flex-shrink: 0;
+}
+
+@media (hover: hover) {
+  .service-card:hover .card-icon,
+  .card:hover .card-icon,
+  .step:hover .card-icon {
+    transform: scale(1.08) !important;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5) !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   Smooth Card — large wrapper (CTA / info blocks)
+   Usage: class="smooth-card"
+───────────────────────────────────────────── */
+.smooth-card {
+  background: rgba(13, 22, 50, 0.58);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 20px;
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.26);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.smooth-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.4), transparent);
+  pointer-events: none;
+}
+
+
+/* ─────────────────────────────────────────────
+   Smooth Grid Card — feature / role grids
+   Usage: class="smooth-grid-card"
+───────────────────────────────────────────── */
+.smooth-grid-card {
+  background: rgba(59, 130, 246, 0.055);
+  border: 1px solid rgba(59, 130, 246, 0.16);
+  border-radius: 14px;
+  padding: 22px 20px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.smooth-grid-card .grid-icon {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.smooth-grid-card h4,
+.smooth-grid-card strong {
+  color: var(--primary-light);
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 7px;
+  display: block;
+}
+
+.smooth-grid-card p {
+  color: var(--text-soft);
+  font-size: 0.87rem;
+  line-height: 1.65;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+@media (hover: hover) {
+  .smooth-grid-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(96, 165, 250, 0.35);
+    box-shadow: 0 8px 26px rgba(59, 130, 246, 0.14);
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   Highlight Box — callout / tip / note
+   Usage: class="smooth-highlight"
+   Blue only — no green/purple variants
+───────────────────────────────────────────── */
+.smooth-highlight,
+.smooth-highlight.green,
+.smooth-highlight.purple {
+  background: rgba(59, 130, 246, 0.07);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 12px 12px 0;
+  padding: 15px 20px;
+  margin: 14px 0;
+  color: var(--text-main);
+  font-size: 0.93rem;
+  line-height: 1.72;
+  /* Kill section > p styles */
+  box-shadow: none !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   Timeline / Badge Pill
+   Usage: class="timeline-badge"
+───────────────────────────────────────────── */
+.timeline-badge {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.28);
+  color: var(--primary-light);
+  padding: 9px 26px;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+
+/* ─────────────────────────────────────────────
+   CTA Buttons — inside cards
+───────────────────────────────────────────── */
+
+/* Primary — solid blue gradient */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  color: #fff !important;
+  padding: 13px 28px !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  border: none !important;
+  cursor: pointer;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.35) !important;
+  transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.12) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 28px rgba(59, 130, 246, 0.45) !important;
+}
+
+.btn-primary:active {
+  transform: translateY(0) !important;
+  filter: brightness(0.96) !important;
+}
+
+/* Secondary — ghost blue */
+.btn-secondary {
+  background: transparent !important;
+  color: var(--primary-light) !important;
+  padding: 12px 26px !important;
+  border-radius: 10px !important;
+  border: 1.5px solid rgba(59, 130, 246, 0.5) !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  cursor: pointer;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease !important;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background: rgba(59, 130, 246, 0.12) !important;
+  border-color: var(--primary-light) !important;
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Pricing card CTA — full width exception */
+.pricing-cards .card .btn-primary {
+  width: 100% !important;
+  justify-content: center !important;
+  padding: 14px 0 !important;
+  border-radius: 10px !important;
+}
+
+/* Button container spacing */
+.btn-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 14px !important;
+  justify-content: center !important;
+  margin-top: 28px !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   Mobile — kill all transitions & transforms
+   Eliminates scroll lag on low-end devices
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .service-card,
+  .card,
+  .step,
+  .faq-item,
+  .flow-step,
+  .testimonial-card,
+  .smooth-card,
+  .smooth-grid-card,
+  .pricing-cards .card {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    transition: none !important;
+    transform: none !important;
+    will-change: auto !important;
+    border-radius: 14px !important;
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none !important;
+  }
+
+  .smooth-card {
+    padding: 28px 20px;
+    border-radius: 16px !important;
+  }
+
+  .smooth-grid-card {
+    padding: 18px 16px;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Reduce-motion respect
+───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .card,
+  .step,
+  .faq-item,
+  .flow-step,
+  .testimonial-card,
+  .smooth-card,
+  .smooth-grid-card,
+  .btn-primary,
+  .btn-secondary {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+  
