@@ -3147,3 +3147,307 @@ html, body {
   }
 }
   
+
+
+
+
+
+
+
+
+/* ==============================================
+   PRICING CARDS — PREMIUM UPGRADE
+   Paste at END of style.css
+   Targets pricing section only
+   Blue-only. Strong hierarchy. SaaS-level.
+============================================== */
+
+
+/* ─────────────────────────────────────────────
+   Pricing Cards — Base
+───────────────────────────────────────────── */
+.pricing-cards .card {
+  background: rgba(13, 22, 52, 0.6) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(59, 130, 246, 0.18) !important;
+  border-radius: 20px !important;
+  padding: 36px 30px 32px !important;
+  width: 310px !important;
+  text-align: left !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.28) !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: auto;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Top shimmer line */
+.pricing-cards .card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.3), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Kill heavy radial ::before */
+.pricing-cards .card::before {
+  display: none !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   Pricing Cards — Hover (desktop only)
+───────────────────────────────────────────── */
+@media (hover: hover) {
+  .pricing-cards .card:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(96, 165, 250, 0.4) !important;
+    box-shadow:
+      0 14px 44px rgba(59, 130, 246, 0.2),
+      0 0 0 1px rgba(96, 165, 250, 0.14) !important;
+    background: rgba(18, 30, 68, 0.7) !important;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   Plan Name
+───────────────────────────────────────────── */
+.pricing-cards .card h3 {
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: var(--primary-light) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.4px !important;
+  margin-bottom: 20px !important;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ─────────────────────────────────────────────
+   Price Styling — dominant element
+───────────────────────────────────────────── */
+.pricing-cards .card .price {
+  font-size: 3.4rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+  margin-bottom: 4px !important;
+  letter-spacing: -1px !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* /month or duration */
+.pricing-cards .card .price span {
+  font-size: 0.88rem !important;
+  font-weight: 400 !important;
+  color: var(--text-soft) !important;
+  letter-spacing: 0 !important;
+}
+
+/* Setup fee / subtitle line below price */
+.pricing-cards .card .price-sub,
+.pricing-cards .card .setup-fee {
+  font-size: 0.8rem !important;
+  color: var(--text-soft) !important;
+  margin-bottom: 24px !important;
+  margin-top: 6px !important;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Divider between price and features */
+.pricing-cards .card .price-divider,
+.pricing-cards .card hr {
+  border: none !important;
+  border-top: 1px solid rgba(59, 130, 246, 0.15) !important;
+  margin: 20px 0 !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   Features List
+───────────────────────────────────────────── */
+.pricing-cards .card ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 28px !important;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.pricing-cards .card ul li {
+  font-size: 0.88rem !important;
+  color: var(--text-soft) !important;
+  padding: 7px 0 7px 26px !important;
+  margin: 0 !important;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  line-height: 1.5 !important;
+}
+
+.pricing-cards .card ul li:last-child {
+  border-bottom: none !important;
+}
+
+.pricing-cards .card ul li::before {
+  content: "✓" !important;
+  position: absolute;
+  left: 0;
+  top: 7px;
+  color: var(--primary) !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+}
+
+/* Negative / not-included features */
+.pricing-cards .card ul li.no,
+.pricing-cards .card ul li[data-no] {
+  color: rgba(156, 163, 175, 0.45) !important;
+}
+
+.pricing-cards .card ul li.no::before,
+.pricing-cards .card ul li[data-no]::before {
+  content: "✕" !important;
+  color: rgba(156, 163, 175, 0.35) !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   Most Popular — Highlighted Plan
+   Add class="card featured" to the plan card
+───────────────────────────────────────────── */
+.pricing-cards .card.featured {
+  border: 1px solid rgba(59, 130, 246, 0.55) !important;
+  background: rgba(16, 28, 64, 0.72) !important;
+  box-shadow:
+    0 8px 40px rgba(59, 130, 246, 0.26),
+    0 0 0 1px rgba(96, 165, 250, 0.2) !important;
+  transform: scale(1.04) !important;
+  z-index: 2;
+}
+
+@media (hover: hover) {
+  .pricing-cards .card.featured:hover {
+    transform: scale(1.04) translateY(-5px) !important;
+    box-shadow:
+      0 18px 52px rgba(59, 130, 246, 0.32),
+      0 0 0 1px rgba(96, 165, 250, 0.28) !important;
+  }
+}
+
+/* "Most Popular" badge — auto-injected via ::before */
+.pricing-cards .card.featured::before {
+  display: flex !important;
+  content: "Most Popular" !important;
+  position: absolute !important;
+  top: -1px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  color: #fff !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  padding: 5px 18px !important;
+  border-radius: 0 0 10px 10px !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.45) !important;
+  z-index: 10 !important;
+  white-space: nowrap !important;
+  width: auto !important;
+  height: auto !important;
+  opacity: 1 !important;
+}
+
+/* Extra top padding so badge doesn't overlap plan name */
+.pricing-cards .card.featured {
+  padding-top: 44px !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   CTA Button
+───────────────────────────────────────────── */
+.pricing-cards .card .btn-primary {
+  display: block !important;
+  width: auto !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  padding: 13px 32px !important;
+  border-radius: 10px !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.32) !important;
+  transition: filter 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease !important;
+  position: relative !important;
+  z-index: 1 !important;
+  letter-spacing: 0.2px !important;
+}
+
+@media (hover: hover) {
+  .pricing-cards .card .btn-primary:hover {
+    filter: brightness(1.14) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.46) !important;
+  }
+}
+
+.pricing-cards .card .btn-primary:active {
+  filter: brightness(0.94) !important;
+  transform: translateY(0) !important;
+}
+
+/* Featured plan CTA — stronger glow */
+.pricing-cards .card.featured .btn-primary {
+  box-shadow: 0 6px 22px rgba(59, 130, 246, 0.5) !important;
+  padding: 14px 36px !important;
+  font-size: 0.95rem !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   Mobile — no transforms, no lag
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .pricing-cards .card,
+  .pricing-cards .card.featured {
+    width: 100% !important;
+    max-width: 360px !important;
+    transform: none !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    transition: none !important;
+  }
+
+  .pricing-cards .card:hover,
+  .pricing-cards .card.featured:hover {
+    transform: none !important;
+  }
+
+  .pricing-cards .card .price {
+    font-size: 2.8rem !important;
+  }
+
+  .pricing-cards {
+    gap: 20px !important;
+  }
+}
+  
