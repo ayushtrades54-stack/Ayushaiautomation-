@@ -151,9 +151,9 @@
         <label for="budget">Monthly Budget for Automation *</label>
         <select id="budget" name="budget" required>
           <option value="">Select Budget Range</option>
-          <option value="under-1500"> ₹2,000-₹3,000 / month</option>
-          <option value="1500-2500">₹3,000 – ₹5,000 / month</option>
-          <option value="2500-5000">₹5,000+ / month</option>
+          <option value="<₹3000"> under ₹3,000 / month</option>
+          <option value="₹3000-₹5000">₹3,000 – ₹5,000 / month</option>
+          <option value="₹5000+">₹5,000+ / month</option>
           <option value="discuss">Let's discuss on the call</option>
         </select>
         <span class="error-message" id="budget-error"></span>
@@ -164,10 +164,10 @@
         <label for="time">Preferred Time for the Call *</label>
         <select id="time" name="preferred_time" required>
           <option value="">Select a Time Slot</option>
-          <option value="morning">12pm to 3pm</option>
-          <option value="afternoon">3pm to 6pm</option>
-          <option value="evening">6pm to 9pm</option>
-          <option value="flexible">I'm flexible — you pick</option>
+          <option value="12pm-3pm">12pm to 3pm</option>
+          <option value="3pm-6pm">3pm to 6pm</option>
+          <option value="6pm-9pm">6pm to 9pm</option>
+          <option value="flexible, you pick">I'm flexible — you pick</option>
         </select>
         <span class="error-message" id="time-error"></span>
       </div>
