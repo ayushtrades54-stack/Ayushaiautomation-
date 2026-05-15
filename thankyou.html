@@ -3,63 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You - Ayush AI Automation</title>
-  
-  <!-- Favicon -->
+  <title>Booking Confirmed — Ayush AI Automation</title>
   <link rel="icon" type="image/png" href="logo.png">
-  
-  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Meta Description -->
-  <meta name="description" content="Thank you for booking a call with Ayush AI Automation. We'll contact you shortly!">
+  <meta name="description" content="Your strategy call has been booked. Ayush will reach out on WhatsApp shortly.">
 </head>
 <body>
 
-  <!-- Animated Background Canvas -->
-  <canvas id="automation-bg"></canvas>
+<div class="thankyou-container">
+  <h1>🎉 Booking Confirmed!</h1>
 
-  <!-- Thank You Container -->
-  <div class="thankyou-container">
-    <h1>Thank You! 🚀</h1>
-    
-    <p>
-      Your booking request has been submitted successfully.<br>
-      Our team will contact you shortly via WhatsApp or Email.
-    </p>
-    
-    <!-- Next Steps Card -->
-    <div class="next-steps">
-      <h3>What Happens Next?</h3>
-      <ul>
-        <li>Check your email/WhatsApp for confirmation</li>
-        <li>We'll reach out within 24 hours</li>
-        <li>Prepare your Instagram/WhatsApp details</li>
-        <li>Get ready to Discuss about improving DMs</li>
-      </ul>
-    </div>
-    
-    <!-- Back to Home Button --><div>
-    <a href="index.html" class="home-btn">Back to Home</a>
+  <p>
+    I've received your details.<br>
+    <strong>I'll confirm your call time on WhatsApp within 2–3 hours.</strong>
+  </p>
+
+  <div class="next-steps">
+    <h3>What Happens Next?</h3>
+    <ul>
+      <li>✅ You'll get a WhatsApp confirmation — keep an eye out</li>
+      <li>✅ Save my number: <strong>+91 94772 93867</strong></li>
+      <li>✅ The call is only 20 minutes — no preparation needed</li>
+      <li>✅ I'll tell you honestly which plan fits — zero pressure</li>
+    </ul>
   </div>
 
-  
+  <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:28px;">
+    <a href="https://wa.me/919477293867?text=Hi%20Ayush%2C%20I%20just%20booked%20a%20strategy%20call" 
+       class="btn-primary" target="_blank">
+      Message on WhatsApp
+    </a>
+    <a href="index.html" class="btn-secondary">Back to Home</a>
+  </div>
+</div>
 
-  <!-- Main JavaScript -->
-  <script src="main.js"></script>
-
-  <!-- Confetti Effect (Optional) -->
-  <script>
-    // Simple confetti animation on page load
-    window.addEventListener('load', () => {
-      // Add subtle entrance animation
-      document.querySelector('.thankyou-container').style.opacity = '0';
-      setTimeout(() => {
-        document.querySelector('.thankyou-container').style.transition = 'opacity 0.8s ease';
-        document.querySelector('.thankyou-container').style.opacity = '1';
-      }, 100);
-    });
-  </script>
+<script src="main.js"></script>
 
 </body>
 </html>
