@@ -348,183 +348,75 @@
   var submitBtn   = document.getElementById('submit-btn');
   var successMsg  = document.getElementById('success-message');
 
-  function showError(id, msg) {
-    var span = document.getElementById(id + '-error');
-    var el   = document.getElementById(id);
-    if (span) { span.textContent = msg; span.style.display = 'block'; }
-    if (el)   { el.style.borderColor = '#ff4444'; }
-  }
-  function clearError(id) {
-    var span = document.getElementById(id + '-error');
-    var el   = document.getElementById(id);
-    if (span) { span.textContent = ''; span.style.display = 'none'; }
-    if (el)   { el.style.borderColor = 'rgba(59,130,246,0.3)'; }
-  }
-
-  var textFields = [
-    ['full-name','full-name','Full name is required'],
-    ['email','email','Email address is required'],
-    ['whatsapp','whatsapp','WhatsApp number is required'],
-    ['instagram','instagram','Instagram username is required'],
-    ['coaching-type','coaching-type','Coaching type is required'],
-    ['ideal-client','ideal-client','Ideal client description is required'],
-    ['main-offer','main-offer','Main offer is required'],
-    ['price-range','price-range','Price range is required'],
-    ['lead-source','lead-source','Lead source is required'],
-    ['dm-action','dm-action','DM action is required'],
-    ['post-booking','post-booking','Post-booking action is required']
-  ];
-
-  textFields.forEach(function(f) {
-    var el = document.getElementById(f[0]);
-    if (!el) return;
-    el.addEventListener('blur', function() {
-      if (!this.value.trim()) showError(f[1], f[2]); else clearError(f[1]);
-    });
-    el.addEventListener('focus', function() { clearError(f[1]); });
-  });
-
   bookingForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    ['full-name','email','whatsapp','instagram','coaching-type','ideal-client',
-     'main-offer','price-range','lead-source','has-lead-magnet','dm-action',
-     'qualify-leads','answer-faqs','books-calls','post-booking','comment-trigger-enabled']
-      .forEach(clearError);
-
     var hasError = false;
 
-    function req(id, errId, msg) {
+    function req(id, msg) {
       var el = document.getElementById(id);
-      if (!el || !el.value.trim()) { showError(errId, msg); hasError = true; }
+      if (!el || !el.value.trim()) {
+        var span = document.getElementById(id + '-error');
+        if (span) { span.textContent = msg; span.style.display = 'block'; }
+        if (el)   { el.style.borderColor = '#ff4444'; }
+        hasError = true;
+      }
     }
     function reqRadio(name, errId, msg) {
       if (!document.querySelector('input[name="' + name + '"]:checked')) {
-        showError(errId, msg); hasError = true;
+        var span = document.getElementById(errId + '-error');
+        if (span) { span.textContent = msg; span.style.display = 'block'; }
+        hasError = true;
       }
     }
 
-    req('full-name','full-name','Full name is required');
-    req('email','email','Email address is required');
-    req('whatsapp','whatsapp','WhatsApp number is required');
-    req('instagram','instagram','Instagram username is required');
-    req('coaching-type','coaching-type','Coaching type is required');
-    req('ideal-client','ideal-client','Ideal client description is required');
-    req('main-offer','main-offer','Main offer is required');
-    req('price-range','price-range','Price range is required');
-    req('lead-source','lead-source','Lead source is required');
-    reqRadio('has_lead_magnet','has-lead-magnet','Please select an option');
-    req('dm-action','dm-action','DM action is required');
-    reqRadio('qualify_leads','qualify-leads','Please select an option');
-    reqRadio('answer_faqs','answer-faqs','Please select an option');
-    reqRadio('books_calls','books-calls','Please select an option');
-    req('post-booking','post-booking','Post-booking action is required');
+    req('full-name',      'Full name is required');
+    req('email',          'Email is required');
+    req('whatsapp',       'WhatsApp number is required');
+    req('instagram',      'Instagram username is required');
+    req('coaching-type',  'Coaching type is required');
+    req('ideal-client',   'Ideal client is required');
+    req('main-offer',     'Main offer is required');
+    req('price-range',    'Price range is required');
+    req('lead-source',    'Lead source is required');
+    req('dm-action',      'DM action is required');
+    req('post-booking',   'Post-booking action is required');
+    reqRadio('has_lead_magnet',        'has-lead-magnet',        'Please select an option');
+    reqRadio('qualify_leads',          'qualify-leads',          'Please select an option');
+    reqRadio('answer_faqs',            'answer-faqs',            'Please select an option');
+    reqRadio('books_calls',            'books-calls',            'Please select an option');
     reqRadio('comment_trigger_enabled','comment-trigger-enabled','Please select an option');
 
-    if (hasError) {
-      var firstErr = document.querySelector('.error-message[style*="block"]');
-      if (firstErr) firstErr.parentElement.scrollIntoView({ behavior:'smooth', block:'center' });
-      return;
-    }
+    if (hasError) return;
 
-    var btnText = submitBtn.querySelector('.btn-text');
+    // Submit to Web3Forms via fetch
     submitBtn.disabled = true;
-    btnText.textContent = 'Submitting...';
-    submitBtn.style.opacity = '0.7';
+    submitBtn.querySelector('.btn-text').textContent = 'Submitting...';
 
-    var fullName      = document.getElementById('full-name').value.trim();
-    var email         = document.getElementById('email').value.trim();
-    var whatsapp      = document.getElementById('whatsapp').value.trim();
-    var instagram     = document.getElementById('instagram').value.trim().replace('@','');
-    var coachingType  = document.getElementById('coaching-type').value.trim();
-    var idealClient   = document.getElementById('ideal-client').value.trim();
-    var mainOffer     = document.getElementById('main-offer').value.trim();
-    var priceRange    = document.getElementById('price-range').value.trim();
-    var leadSource    = document.getElementById('lead-source').value.trim();
-    var hasLeadMagnet = document.querySelector('input[name="has_lead_magnet"]:checked').value;
-    var lmName        = document.getElementById('lead-magnet-name').value.trim();
-    var lmLink        = document.getElementById('lead-magnet-link').value.trim();
-    var dmAction      = document.getElementById('dm-action').value.trim();
-    var qualifyLeads  = document.querySelector('input[name="qualify_leads"]:checked').value;
-    var answerFaqs    = document.querySelector('input[name="answer_faqs"]:checked').value;
-    var booksCalls    = document.querySelector('input[name="books_calls"]:checked').value;
-    var callLink      = document.getElementById('call-booking-link').value.trim();
-    var postBooking   = document.getElementById('post-booking').value.trim();
-    var commentTrig   = document.querySelector('input[name="comment_trigger_enabled"]:checked').value;
-    var triggerWord   = document.getElementById('trigger-keyword').value.trim();
-    var additional    = document.getElementById('additional-instructions').value.trim();
+    var formData = new FormData(bookingForm);
 
-    var waMessage =
-'Hi! New Growth Plan Setup Request 🚀\n\n' +
-'👤 Name: ' + fullName + '\n' +
-'📧 Email: ' + email + '\n' +
-'📱 WhatsApp: ' + whatsapp + '\n' +
-'📲 Instagram: @' + instagram + '\n\n' +
-'💼 Coaching Type: ' + coachingType + '\n' +
-'🎯 Ideal Client: ' + idealClient + '\n' +
-'📦 Main Offer: ' + mainOffer + '\n' +
-'💰 Price Range: ' + priceRange + '\n\n' +
-'📥 Lead Source: ' + leadSource + '\n' +
-'🎁 Has Lead Magnet: ' + hasLeadMagnet +
-(lmName ? '\n   Name: ' + lmName : '') +
-(lmLink ? '\n   Link: ' + lmLink : '') + '\n\n' +
-'💬 DM Action: ' + dmAction + '\n' +
-'✅ Qualify Leads: ' + qualifyLeads + '\n' +
-'❓ Answer FAQs: ' + answerFaqs + '\n' +
-'📞 Books Calls: ' + booksCalls +
-(callLink ? '\n   Booking Link: ' + callLink : '') + '\n' +
-'📩 Post-Booking: ' + postBooking + '\n\n' +
-'💡 Comment Trigger: ' + commentTrig +
-(triggerWord ? '\n   Keyword: ' + triggerWord : '') +
-(additional ? '\n\n📝 Additional: ' + additional : '');
-
-    var encoded = encodeURIComponent(waMessage);
-
-    fetch('https://formsubmit.co/ajax/ayushtrades54@gmail.com', {
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        _subject: 'New Growth Plan Setup Request 🚀',
-        _template: 'box',
-        _captcha: 'false',
-        'Full Name': fullName,
-        'Email': email,
-        'WhatsApp': whatsapp,
-        'Instagram': '@' + instagram,
-        'Coaching Type': coachingType,
-        'Ideal Client': idealClient,
-        'Main Offer': mainOffer,
-        'Price Range': priceRange,
-        'Lead Source': leadSource,
-        'Has Lead Magnet': hasLeadMagnet,
-        'Lead Magnet Name': lmName || 'Not provided',
-        'Lead Magnet Link': lmLink || 'Not provided',
-        'DM Action': dmAction,
-        'Qualify Leads': qualifyLeads,
-        'Answer FAQs': answerFaqs,
-        'Books Calls': booksCalls,
-        'Call Booking Link': callLink || 'Not provided',
-        'Post-Booking Action': postBooking,
-        'Comment Trigger': commentTrig,
-        'Trigger Word': triggerWord || 'Not provided',
-        'Additional Instructions': additional || 'None'
-      })
+      body: formData
     })
-    .then(function() {
-      window.open('https://wa.me/919477293867?text=' + encoded, '_blank');
-      bookingForm.style.display = 'none';
-      successMsg.style.display = 'block';
-      successMsg.scrollIntoView({ behavior:'smooth', block:'start' });
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.success) {
+        bookingForm.style.display = 'none';
+        successMsg.style.display = 'block';
+      } else {
+        alert('Something went wrong. Please try again.');
+        submitBtn.disabled = false;
+        submitBtn.querySelector('.btn-text').textContent = 'Submit Setup Details';
+      }
     })
     .catch(function() {
-      window.open('https://wa.me/919477293867?text=' + encoded, '_blank');
-      bookingForm.style.display = 'none';
-      successMsg.style.display = 'block';
-      successMsg.scrollIntoView({ behavior:'smooth', block:'start' });
+      alert('Network error. Please check your connection and try again.');
+      submitBtn.disabled = false;
+      submitBtn.querySelector('.btn-text').textContent = 'Submit Setup Details';
     });
   });
-</script>
-
+    </script>
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
