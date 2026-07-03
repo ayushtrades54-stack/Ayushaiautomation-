@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" sizes="64x64" href="../favicon.png">
+  <meta charset="UTF-8">
+  <title>The Lab — Free Tools for Fitness Coaches | Ayush AI Automation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free interactive tools for fitness coaches: Instagram ROI Calculator, Automation Health Score, and a DM automation resource library.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="automation-bg"></canvas>
+
+<!-- Navbar (identical to main site) -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="brand">
+      <img src="../logo.png" alt="Ayush AI Automation Logo" class="logo">
+      <span class="brand-name">Ayush AI Automation</span>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="nav-menu" id="navMenu">
+      <a href="../index.html">Home</a>
+      <a href="../services.html">Services</a>
+      <a href="../coaches.html">For Coaches</a>
+      <a href="../process.html">Process</a>
+      <a href="../demo.html">Demo</a>
+      <a href="index.html" class="active">Lab</a>
+      <a href="../about.html">About</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../book.html" class="nav-cta">Book a Call</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Lab Hero -->
+<section class="page-hero lab-hero">
+  <canvas id="hero-bg"></canvas>
+  <div style="position:relative; z-index:1;">
+    <div style="display:inline-block; background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.35); border-radius: 30px; padding: 6px 18px; font-size: 0.82rem; font-weight: 600; color: #93c5fd; letter-spacing: 0.5px; margin-bottom: 22px; text-transform: uppercase;">
+      Free Tools — No Signup Required
+    </div>
+    <h1>The Lab</h1>
+    <p>Interactive tools built for fitness coaches — see your real numbers, check your automation health, and grab ready-to-use DM resources.</p>
+  </div>
+</section>
+
+<!-- Tool Picker -->
+<section class="lab-tool-nav">
+  <a href="#roi-calculator" class="lab-tool-card">
+    <div class="lab-tool-icon">💰</div>
+    <h3>Instagram ROI Calculator</h3>
+    <p>See exactly how much revenue slow DM replies are costing you every month.</p>
+  </a>
+  <a href="#health-score" class="lab-tool-card">
+    <div class="lab-tool-icon">📊</div>
+    <h3>Automation Health Score</h3>
+    <p>A 60-second assessment that scores your current DM setup and shows what to fix first.</p>
+  </a>
+  <a href="#resource-library" class="lab-tool-card">
+    <div class="lab-tool-icon">📚</div>
+    <h3>Resource Library</h3>
+    <p>Free Guide, Free Plan, Free Audit, and Instagram resources — searchable.</p>
+  </a>
+</section>
+
+<!-- ============================================= -->
+<!-- TOOL 1: INSTAGRAM ROI CALCULATOR -->
+<!-- ============================================= -->
+<section id="roi-calculator" class="lab-section">
+  <h2>Instagram ROI Calculator</h2>
+  <p style="text-align:center; color:var(--text-soft); max-width:640px; margin:0 auto 40px;">Enter your real numbers. See what unanswered and slow-followed-up DMs are actually costing you every month.</p>
+
+  <div class="lab-grid">
+    <div class="card lab-form-card">
+      <div class="form-group">
+        <label for="dmVolume">DMs you receive per month</label>
+        <input type="number" id="dmVolume" placeholder="e.g. 150" min="0">
+        <span class="lab-field-error" id="err-dmVolume"></span>
+      </div>
+      <div class="form-group">
+        <label for="replyRate">% of DMs you currently reply to</label>
+        <input type="number" id="replyRate" placeholder="e.g. 60" min="0" max="100">
+        <span class="lab-field-error" id="err-replyRate"></span>
+      </div>
+      <div class="form-group">
+        <label for="closeRate">Your close rate on booked calls (%)</label>
+        <input type="number" id="closeRate" placeholder="e.g. 10" min="0" max="100">
+        <span class="lab-field-error" id="err-closeRate"></span>
+      </div>
+      <div class="form-group">
+        <label for="clientValue">Average client value (₹/month)</label>
+        <input type="number" id="clientValue" placeholder="e.g. 8000" min="0">
+        <span class="lab-field-error" id="err-clientValue"></span>
+      </div>
+      <div class="form-group">
+        <label for="hoursSpent">Hours/week you spend on manual DM replies</label>
+        <input type="number" id="hoursSpent" placeholder="e.g. 10" min="0" max="168">
+        <span class="lab-field-error" id="err-hoursSpent"></span>
+      </div>
+      <div class="lab-validation-summary" id="validationSummary" style="display:none;"></div>
+      <button class="btn-primary" onclick="calculateROI()" style="width:100%; justify-content:center;">Calculate My ROI</button>
+    </div>
+
+    <div class="card lab-results-card" id="roiResults">
+      <h3 style="text-align:center; margin-bottom:24px;">Your Results</h3>
+      <div class="lab-stat-grid" id="roiStatGrid">
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statMissed">0</div>
+          <div class="lab-stat-label">Missed Conversations / Month</div>
+          <div class="lab-stat-explain" id="exp-statMissed"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statRecoverable">0</div>
+          <div class="lab-stat-label">Recoverable Conversations / Month</div>
+          <div class="lab-stat-explain" id="exp-statRecoverable"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statBookings">0</div>
+          <div class="lab-stat-label">Recoverable Booked Calls / Month</div>
+          <div class="lab-stat-explain" id="exp-statBookings"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statLeadsLost">₹0</div>
+          <div class="lab-stat-label">Estimated Revenue Lost / Month</div>
+          <div class="lab-stat-explain" id="exp-statLeadsLost"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statPotential">₹0</div>
+          <div class="lab-stat-label">Revenue Recovered / Month (Automation)</div>
+          <div class="lab-stat-explain" id="exp-statPotential"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statTime">0 hrs</div>
+          <div class="lab-stat-label">Hours Saved / Week</div>
+          <div class="lab-stat-explain" id="exp-statTime"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statYearly">₹0</div>
+          <div class="lab-stat-label">Yearly Opportunity Value</div>
+          <div class="lab-stat-explain" id="exp-statYearly"></div>
+        </div>
+      </div>
+      <p style="text-align:center; color:var(--text-soft); font-size:0.85rem; margin-top:20px;" id="roiHelperText">Fill the form and click Calculate to see your numbers.</p>
+      <p class="lab-disclaimer">📌 These are business estimates based on the values you entered and standard industry assumptions (shown above) — not a guarantee of results.</p>
+      <div class="btn-container" style="margin-top:20px;">
+        <a href="../book.html" class="btn-primary">Book a Free Strategy Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- TOOL 2: AUTOMATION HEALTH SCORE -->
+<!-- ============================================= -->
+<section id="health-score" class="lab-section">
+  <h2>Automation Health Score</h2>
+  <p style="text-align:center; color:var(--text-soft); max-width:640px; margin:0 auto 40px;">8 quick questions. Get a full breakdown of where your DM system is strong — and where it's leaking leads.</p>
+
+  <div class="card lab-quiz-card" id="quizCard">
+    <div class="lab-progress-track">
+      <div class="lab-progress-fill" id="quizProgress"></div>
+    </div>
+    <div id="quizBody"></div>
+  </div>
+
+  <div class="card lab-quiz-results" id="quizResults" style="display:none;">
+    <h3 style="text-align:center;">Your Automation Health Report</h3>
+    <div class="lab-score-badge" id="scoreLevel">—</div>
+    <div class="lab-score-bars" id="scoreBars"></div>
+    <div class="lab-report-grid">
+      <div>
+        <h4 style="color:#86efac;">✅ Strengths</h4>
+        <ul id="strengthsList"></ul>
+      </div>
+      <div>
+        <h4 style="color:#fca5a5;">⚠️ Weaknesses</h4>
+        <ul id="weaknessesList"></ul>
+      </div>
+    </div>
+    <div>
+      <h4 style="color:var(--primary-light);">🎯 Recommendations</h4>
+      <ul id="recommendationsList"></ul>
+    </div>
+    <div class="btn-container" style="margin-top:24px;">
+      <a href="../book.html" class="btn-primary">Fix These With a Free Strategy Call</a>
+      <button class="btn-secondary" onclick="restartQuiz()">Retake Assessment</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- TOOL 3: RESOURCE LIBRARY -->
+<!-- ============================================= -->
+<section id="resource-library" class="lab-section">
+  <h2>Resource Library</h2>
+  <p style="text-align:center; color:var(--text-soft); max-width:640px; margin:0 auto 30px;">Free Guide, Free Plan, Free Audit, and Instagram resources — all in one place.</p>
+
+  <div class="lab-library-controls">
+    <input type="text" id="librarySearch" placeholder="Search resources..." oninput="renderLibrary()">
+    <div class="lab-filter-pills" id="filterPills"></div>
+  </div>
+
+  <div class="lab-library-grid" id="libraryGrid"></div>
+</section>
+
+<!-- Footer (identical to main site) -->
+<footer class="footer">
+    <div class="footer-content">
+        <h3 class="footer-heading">Ayush AI Automation</h3>
+        <p style="max-width: 600px; margin: 0 auto 20px;">
+            Systems That Generate Leads. Instagram and WhatsApp DM Automation for Fitness Coaches.
+        </p>
+        <div class="footer-contact">
+            <a href="mailto:ayushtrades54@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                ayushtrades54@gmail.com
+            </a>
+            <a href="tel:+919477293867">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                +91 94772 93867
+            </a>
+        </div>
+        <div class="footer-socials">
+            <a href="https://wa.me/919477293867" class="social-icon" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </a>
+            <a href="https://instagram.com/ayush.automation" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/ayush-ai-automation-333a123a1" class="social-icon linkedin" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+        </div>
+        <div class="footer-links">
+            <a href="../privacy.html">Privacy Policy</a>
+            <span style="color: var(--text-soft);">|</span>
+            <a href="../terms.html">Terms & Conditions</a>
+        </div>
+        <div class="footer-bottom">© 2026 Ayush AI Automation. All rights reserved.</div>
+    </div>
+</footer>
+
+<div class="social-float">
+    <a href="https://wa.me/919477293867" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <span>WhatsApp</span>
+    </a>
+    <a href="https://instagram.com/ayush.automation" class="instagram-float" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <span>Instagram</span>
+    </a>
+</div>
+
+<script src="../main.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
