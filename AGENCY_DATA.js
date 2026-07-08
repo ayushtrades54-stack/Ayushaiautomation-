@@ -25,7 +25,7 @@ var AGENCY_DATA = {
     {
       name: "Free Plan — Inbox Assistant",
       price: "₹0/month",
-      price_alt: "₹0 setup fee. Available until 30th June (after which a ₹2,000 one-time setup fee applies).",
+      price_alt: "₹0 setup fee. Currently available during the testing phase — no expiry date mentioned.",
       trial: false,
       popular: false,
       best_for: "Coaches who want to test automation and stop repeating the same DM replies every day.",
