@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent Setup Form | Ayush AI Automation</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ai-system.css">
+</head>
+<body data-root="">
+<div data-nav=""></div>
+
+<section class="page-hero">
+  <h1>AI Agent Setup Form</h1>
+  <p>Everything I need to configure your agent. Choose the product you bought and only the relevant questions appear — nothing from tiers you didn't purchase.</p>
+</section>
+
+<section class="ai-section ai-section--tight" style="max-width:780px;">
+  <div class="ai-callout">
+    <h3>Before you start</h3>
+    <ul style="margin:10px 0 0 18px;">
+      <li style="padding:4px 0;">Takes around 15–20 minutes. Answer in your own words — the agent will speak the way you write here.</li>
+      <li style="padding:4px 0;">The more specific your answers, the fewer things the agent has to defer to you.</li>
+      <li style="padding:4px 0;">Never enter a password anywhere on this form. Account access is granted separately through Meta.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="aiform-wrap">
+<form id="ai-setup-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+
+  <input type="hidden" name="access_key" value="0ddc4423-b049-4da8-a1f4-028344bd286f">
+  <input type="hidden" name="subject" value="New AI Agent Setup Submission — Ayush AI Automation">
+  <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+
+  <!-- ══ STEP 1 — PRODUCT ══ -->
+  <div class="aiform-step">
+    <h2>Step 1 — Which product did you purchase?</h2>
+    <p class="aiform-hint">This decides which questions you'll be asked. If you're not sure, check your invoice or message me.</p>
+
+    <div class="aiform-picker" role="radiogroup" aria-label="Purchased product">
+      <label class="aiform-pick">
+        <input type="radio" name="product" value="Basic" data-product="basic" required>
+        <span class="dot" aria-hidden="true"></span>
+        <span class="pk-name">Basic</span>
+        <span class="pk-desc">Instagram inbox &amp; FAQ assistant</span>
+      </label>
+      <label class="aiform-pick">
+        <input type="radio" name="product" value="Pro" data-product="pro">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="pk-name">Pro</span>
+        <span class="pk-desc">Instagram lead qualification AI</span>
+      </label>
+      <label class="aiform-pick">
+        <input type="radio" name="product" value="Business" data-product="business">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="pk-name">Business</span>
+        <span class="pk-desc">Advanced Instagram AI agent</span>
+      </label>
+      <label class="aiform-pick">
+        <input type="radio" name="product" value="WhatsApp Personal Assistant" data-product="wapa">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="pk-name">WhatsApp Personal Assistant</span>
+        <span class="pk-desc">WhatsApp AI assistant</span>
+      </label>
+      <label class="aiform-pick">
+        <input type="radio" name="product" value="Fusion" data-product="fusion">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="pk-name">Fusion</span>
+        <span class="pk-desc">Instagram + WhatsApp AI system</span>
+      </label>
+      <label class="aiform-pick">
+        <input type="radio" name="product" value="Fusion Max" data-product="fusion-max">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="pk-name">Fusion Max</span>
+        <span class="pk-desc">Advanced Instagram + WhatsApp AI system</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Everything below is hidden until a product is chosen -->
+  <div id="form-body" hidden>
+
+  <!-- ══ ABOUT YOU ══ -->
+  <div class="aiform-step">
+    <h2>Step 2 — About you</h2>
+    <p class="aiform-hint">So I know who I'm building for and where to reach you.</p>
+
+    <div class="aiform-field">
+      <label for="f-name">Your full name <span class="req">*</span></label>
+      <input type="text" id="f-name" name="coach_name" required autocomplete="name">
+    </div>
+    <div class="aiform-field">
+      <label for="f-brand">Business or brand name</label>
+      <input type="text" id="f-brand" name="brand_name" placeholder="If different from your own name">
+    </div>
+    <div class="aiform-field">
+      <label for="f-email">Email <span class="req">*</span></label>
+      <input type="email" id="f-email" name="email" required autocomplete="email">
+    </div>
+    <div class="aiform-field">
+      <label for="f-phone">Your contact WhatsApp number <span class="req">*</span></label>
+      <input type="tel" id="f-phone" name="contact_whatsapp" required autocomplete="tel">
+      <span class="help">Where I'll reach you during setup. Not necessarily the number the system runs on.</span>
+    </div>
+  </div>
+
+  <!-- ══ YOUR COACHING BUSINESS ══ -->
+  <div class="aiform-step">
+    <h2>Step 3 — Your coaching business</h2>
+    <p class="aiform-hint">This becomes your agent's knowledge base. It can only answer what you tell it here.</p>
+
+    <p class="aiform-legend">WHAT YOU OFFER</p>
+
+    <div class="aiform-field">
+      <label for="f-offer">Describe your coaching offer <span class="req">*</span></label>
+      <textarea id="f-offer" name="offer_description" rows="4" required
+        placeholder="e.g. 12-week online fat loss coaching — custom training program, nutrition plan, weekly check-ins over WhatsApp and a monthly video call."></textarea>
+    </div>
+    <div class="aiform-field">
+      <label for="f-programs">Your programs and what each includes <span class="req">*</span></label>
+      <textarea id="f-programs" name="programs" rows="4" required
+        placeholder="List each program with duration and what's included. If you have more than one, describe how they differ."></textarea>
+    </div>
+    <div class="aiform-field">
+      <label for="f-pricing">Your pricing, and how you want it communicated <span class="req">*</span></label>
+      <textarea id="f-pricing" name="pricing_info" rows="4" required
+        placeholder="Actual prices, plus how you'd like the agent to present them — straight away, after understanding their goal, or only on a call."></textarea>
+      <span class="help">Tell me exactly what should happen when someone opens with "how much?" — it's the most common message you'll get.</span>
+    </div>
+    <div class="aiform-field">
+      <label for="f-audience">Who your ideal client is <span class="req">*</span></label>
+      <textarea id="f-audience" name="audience" rows="3" required
+        placeholder="e.g. Working professionals, 25–40, wanting fat loss without giving up a normal social life."></textarea>
+    </div>
+    <div class="aiform-field">
+      <label for="f-notfor">Who you don't work with</label>
+      <textarea id="f-notfor" name="not_for" rows="2"
+        placeholder="e.g. Competition prep, under-18s, anyone wanting extreme rapid weight loss."></textarea>
+      <span class="help">Just as useful as the previous answer — it stops the agent qualifying people you'd turn down.</span>
+    </div>
+
+    <p class="aiform-legend">HOW YOU SOUND</p>
+
+    <div class="aiform-field">
+      <label for="f-tone">Tone of voice <span class="req">*</span></label>
+      <select id="f-tone" name="tone" required>
+        <option value="">Select a tone</option>
+        <option value="Warm and encouraging">Warm and encouraging</option>
+        <option value="Direct and no-nonsense">Direct and no-nonsense</option>
+        <option value="Professional and calm">Professional and calm</option>
+        <option value="Friendly and casual">Friendly and casual</option>
+        <option value="Motivational and high-energy">Motivational and high-energy</option>
+      </select>
+    </div>
+    <div class="aiform-field">
+      <label for="f-voice-sample">Paste 2–3 real replies you've sent to leads <span class="req">*</span></label>
+      <textarea id="f-voice-sample" name="voice_sample" rows="5" required
+        placeholder="Copy actual messages from your DMs. This is the single most useful thing on this form for making the agent sound like you."></textarea>
+    </div>
+    <div class="aiform-field">
+      <label for="f-avoid">Words or phrases the agent should never use</label>
+      <textarea id="f-avoid" name="avoid_words" rows="2"
+        placeholder="e.g. Don't say 'transformation journey'. Never use the word 'guarantee'."></textarea>
+    </div>
+
+    <p class="aiform-legend">COMMON QUESTIONS</p>
+
+    <div class="aiform-field">
+      <label for="f-faqs">The questions you get most, and your answers <span class="req">*</span></label>
+      <textarea id="f-faqs" name="faqs" rows="7" required
+        placeholder="Write them as Q and A. e.g.&#10;Q: Do you provide a diet plan?&#10;A: Yes — a custom plan built around your food preferences, adjusted every two weeks.&#10;&#10;Q: Do I need a gym?&#10;A: No, I write home-based programs too."></textarea>
+      <span class="help">Aim for at least 8–10. Anything you don't cover here is something the agent will have to defer to you on.</span>
+    </div>
+    <div class="aiform-field">
+      <label for="f-objections">Your three most common objections, and how you answer them</label>
+      <textarea id="f-objections" name="objections" rows="4"
+        placeholder="e.g. 'It's too expensive', 'I've tried online coaching before', 'I'll start next month' — and what you actually say to each."></textarea>
+    </div>
+  </div>
+
+  <!-- ══ QUALIFICATION (not Basic) ══ -->
+  <div class="aiform-step aiform-section" data-show="pro business wapa fusion fusion-max" hidden>
+    <h2>Step 4 — Qualification</h2>
+    <p class="aiform-hint">The questions your agent asks to work out who's serious. Asked one at a time, in the order you set.</p>
+
+    <div class="aiform-field">
+      <label for="f-q1">Question 1 <span class="req">*</span></label>
+      <input type="text" id="f-q1" name="qualify_q1" placeholder="e.g. What's your main goal right now — fat loss, muscle gain, or general fitness?">
+    </div>
+    <div class="aiform-field">
+      <label for="f-q2">Question 2 <span class="req">*</span></label>
+      <input type="text" id="f-q2" name="qualify_q2" placeholder="e.g. When are you looking to get started?">
+    </div>
+    <div class="aiform-field">
+      <label for="f-q3">Question 3</label>
+      <input type="text" id="f-q3" name="qualify_q3" placeholder="e.g. Are you ready to invest in coaching at the moment?">
+      <span class="help">Two or three focused questions work better than a long list — the agent will still adapt naturally within the conversation.</span>
+    </div>
+
+    <div class="aiform-field">
+      <label for="f-qualified">What makes a lead "qualified" for you? <span class="req">*</span></label>
+      <textarea id="f-qualified" name="qualified_definition" rows="3"
+        placeholder="e.g. Anyone with a clear goal who wants to start within a month and is open to investing. Everyone else gets nurtured instead of getting the booking link."></textarea>
+      <span class="help">This decides who receives your booking link, so be specific.</span>
+    </div>
+    <div class="aiform-field">
+      <label for="f-permission">How should the agent ask permission before qualifying?</label>
+      <input type="text" id="f-permission" name="permission_line"
+        placeholder="e.g. Mind if I ask you a couple of quick questions so I can point you in the right direction?">
+    </div>
+  </div>
+
+  <!-- ══ CONVERSION (not Basic) ══ -->
+  <div class="aiform-step aiform-section" data-show="pro business wapa fusion fusion-max" hidden>
+    <h2>Step 5 — Where qualified leads go</h2>
+    <p class="aiform-hint">Your booking destination is sent once, only after someone qualifies.</p>
+
+    <div class="aiform-field">
+      <label for="f-booking">Your booking link <span class="req">*</span></label>
+      <input type="url" id="f-booking" name="booking_url" placeholder="https://calendly.com/... or your application form URL">
+      <span class="help">The agent sends this link. It does not read or manage your calendar, so make sure the link itself handles availability.</span>
+    </div>
+    <div class="aiform-field">
+      <label for="f-booking-msg">How should the agent introduce the link?</label>
+      <textarea id="f-booking-msg" name="booking_message" rows="2"
+        placeholder="e.g. Based on what you've told me, I think a quick call with Coach would be the right next step — here's the link."></textarea>
+    </div>
+    <div class="aiform-field">
+      <label for="f-handoff">When should the agent hand the conversation to you?</label>
+      <textarea id="f-handoff" name="handoff_rules" rows="2"
+        placeholder="e.g. Any time someone asks to speak to me directly, mentions an injury, or asks something medical."></textarea>
+    </div>
+  </div>
+
+  <!-- ══ FOLLOW-UPS — simple configuration ══ -->
+  <div class="aiform-step aiform-section" data-show="pro business wapa fusion fusion-max" hidden>
+    <h2>Step 6 — Follow-ups</h2>
+    <p class="aiform-hint">You don't need to write the messages. Tell me whether you want follow-ups, how many, and what they should be trying to do — I'll handle the wording and match it to your tone.</p>
+
+    <div class="aiform-field">
+      <label for="f-fu-on">Do you want follow-ups for leads who go quiet? <span class="req">*</span></label>
+      <select id="f-fu-on" name="followups_enabled">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No — never follow up</option>
+      </select>
+    </div>
+
+    <div class="aiform-field" id="fu-count-wrap">
+      <label for="f-fu-count">How many follow-ups before leaving them alone?</label>
+      <select id="f-fu-count" name="followup_count">
+        <option value="1">1</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <span class="help">Two is the usual choice. On WhatsApp, timing also has to respect the platform's 24-hour messaging window.</span>
+    </div>
+
+    <div class="aiform-field" id="fu-angle-wrap">
+      <label for="f-fu-angle">What should follow-ups be trying to do?</label>
+      <select id="f-fu-angle" name="followup_angle">
+        <option value="Re-open the conversation gently">Re-open the conversation gently</option>
+        <option value="Remind them of their own goal">Remind them of their own goal</option>
+        <option value="Answer the objection they likely have">Answer the objection they likely have</option>
+        <option value="Offer a low-pressure next step">Offer a low-pressure next step</option>
+        <option value="Create a sense of momentum">Create a sense of momentum</option>
+      </select>
+    </div>
+
+    <div class="aiform-field" id="fu-notes-wrap">
+      <label for="f-fu-notes">Anything follow-ups should or shouldn't do? (optional)</label>
+      <textarea id="f-fu-notes" name="followup_notes" rows="3"
+        placeholder="e.g. Never offer a discount. Don't guilt them for going quiet. Always leave the door open."></textarea>
+    </div>
+
+    <div class="aiform-field aiform-section" data-show="business fusion-max" hidden>
+      <label for="f-fu-personalize">Since your follow-ups are AI-written for each lead, anything you want it to specifically personalize? (optional)</label>
+      <input type="text" id="f-fu-personalize" name="followup_personalize"
+        placeholder="e.g. Reference their specific goal by name, or mention the exact objection they raised earlier.">
+      <span class="help">Business and Fusion Max write each follow-up fresh — this just steers what it leans on.</span>
+    </div>
+  </div>
+
+<!-- ══ INSTAGRAM ══ -->
+  <div class="aiform-step aiform-section" data-show="basic pro business fusion fusion-max" hidden>
+    <h2>Instagram setup</h2>
+    <p class="aiform-hint">Your Instagram must be a Business or Creator account connected to a Facebook Page. Never enter your password here.</p>
+
+    <div class="aiform-field">
+      <label for="f-ig">Instagram handle <span class="req">*</span></label>
+      <input type="text" id="f-ig" name="instagram_handle" placeholder="@yourhandle">
+    </div>
+    <div class="aiform-field">
+      <label for="f-fbpage">Connected Facebook Page name</label>
+      <input type="text" id="f-fbpage" name="facebook_page">
+    </div>
+    <div class="aiform-field">
+      <label>Account status</label>
+      <label class="aiform-check"><input type="checkbox" name="ig_business_account" value="Yes"> My Instagram is a Business or Creator account</label>
+      <label class="aiform-check"><input type="checkbox" name="ig_fb_linked" value="Yes"> It's linked to a Facebook Page</label>
+      <label class="aiform-check"><input type="checkbox" name="ig_meta_business" value="Yes"> I have a Meta Business account (or I'm happy to create one)</label>
+      <span class="help">If any of these are unchecked, that's fine — I'll walk you through it. It just adds a little time.</span>
+    </div>
+
+    <p class="aiform-legend">COMMENT → DM (INCLUDED)</p>
+
+    <div class="aiform-field">
+      <label for="f-keywords">Keywords that should trigger a DM</label>
+      <input type="text" id="f-keywords" name="comment_keywords" placeholder="e.g. PLAN, COACH, INFO, START">
+      <span class="help">When someone comments one of these, they get a public reply plus a DM that opens the conversation.</span>
+    </div>
+    <div class="aiform-field">
+      <label for="f-public-reply">Your public comment reply</label>
+      <input type="text" id="f-public-reply" name="public_reply" placeholder="e.g. Just sent you a DM! 📩">
+    </div>
+    <div class="aiform-field">
+      <label for="f-dm-open">The opening DM they receive</label>
+      <textarea id="f-dm-open" name="comment_dm_opener" rows="2"
+        placeholder="e.g. Hey! Thanks for commenting — happy to tell you about the program. What's your main goal at the moment?"></textarea>
+    </div>
+  </div>
+
+  <!-- ══ WHATSAPP ══ -->
+  <div class="aiform-step aiform-section" data-show="wapa fusion fusion-max" hidden>
+    <h2>WhatsApp setup</h2>
+    <p class="aiform-hint">Please read this section carefully before answering — it's the part coaches most often get caught out by.</p>
+
+    <div class="ai-callout ai-callout--amber" style="margin-bottom:22px;">
+      <h3>About the number</h3>
+      <p>Your WhatsApp AI runs on the WhatsApp Business Platform. A number connected to that platform is used by the system rather than through the normal WhatsApp app, so it should be a number you're not relying on for everyday personal chats. Existing chat history from another number isn't carried over.</p>
+      <p style="margin-top:10px;">WhatsApp also allows businesses to reply freely for 24 hours after a person's last message. Outside that window, messaging is limited by WhatsApp's own rules, so follow-ups are timed to work within them.</p>
+    </div>
+
+    <div class="aiform-field">
+      <label for="f-wa-number">The dedicated number for the system <span class="req">*</span></label>
+      <input type="tel" id="f-wa-number" name="whatsapp_business_number" placeholder="Include country code, e.g. +91 98765 43210">
+    </div>
+    <div class="aiform-field">
+      <label>Number status <span class="req">*</span></label>
+      <label class="aiform-check"><input type="checkbox" name="wa_number_free" value="Yes"> This number is not currently in daily use for personal WhatsApp</label>
+      <label class="aiform-check"><input type="checkbox" name="wa_history_ok" value="Yes"> I understand existing chat history won't be carried over</label>
+      <label class="aiform-check"><input type="checkbox" name="wa_need_number" value="Yes"> I don't have a suitable number yet and need to arrange one</label>
+    </div>
+    <div class="aiform-field">
+      <label for="f-wa-name">Business display name for WhatsApp</label>
+      <input type="text" id="f-wa-name" name="whatsapp_display_name" placeholder="What leads will see as the sender name">
+    </div>
+    <div class="aiform-field">
+      <label for="f-wa-greeting">Your WhatsApp opening message</label>
+      <textarea id="f-wa-greeting" name="whatsapp_greeting" rows="2"
+        placeholder="What someone messaging your WhatsApp for the first time should receive."></textarea>
+    </div>
+  </div>
+
+  <!-- ══ CROSS-CHANNEL ══ -->
+  <div class="aiform-step aiform-section" data-show="fusion fusion-max" hidden>
+    <h2>Instagram → WhatsApp handover</h2>
+    <p class="aiform-hint">The part that makes Fusion one system instead of two. A lead moves across and is recognised automatically — questions they've already answered are never asked again.</p>
+
+    <div class="aiform-field">
+      <label for="f-handover-when">When should a lead be moved to WhatsApp? <span class="req">*</span></label>
+      <select id="f-handover-when" name="handover_trigger">
+        <option value="">Select</option>
+        <option value="After qualification completes">After qualification completes</option>
+        <option value="Once they show clear buying intent">Once they show clear buying intent</option>
+        <option value="Whenever the lead asks for it">Whenever the lead asks for it</option>
+        <option value="As early as possible">As early as possible</option>
+      </select>
+    </div>
+    <div class="aiform-field">
+      <label for="f-handover-msg">How should the agent invite them across?</label>
+      <textarea id="f-handover-msg" name="handover_message" rows="2"
+        placeholder="e.g. Easier to carry this on over WhatsApp — tap here and we'll pick up right where we left off."></textarea>
+    </div>
+  </div>
+
+  <!-- ══ FINAL ══ -->
+  <div class="aiform-step">
+    <h2>Anything else</h2>
+    <div class="aiform-field">
+      <label for="f-notes">Anything else I should know</label>
+      <textarea id="f-notes" name="additional_notes" rows="4"
+        placeholder="Seasonal offers, things that have gone wrong with automation before, particular worries about tone — anything at all."></textarea>
+    </div>
+    <div class="aiform-field">
+      <label class="aiform-check">
+        <input type="checkbox" name="confirm_accurate" value="Yes" required>
+        <span>I confirm the information above is accurate, and I understand the agent can only answer using what I've provided here. <span class="req">*</span></span>
+      </label>
+      <label class="aiform-check">
+        <input type="checkbox" name="confirm_no_password" value="Yes" required>
+        <span>I understand I should never share account passwords, and that access is granted through Meta's official process. <span class="req">*</span></span>
+      </label>
+    </div>
+
+    <button type="submit" class="aiform-submit" id="ai-submit">Submit Setup Information</button>
+    <p style="color:var(--text-soft);font-size:0.82rem;text-align:center;margin-top:14px;">
+      I'll confirm receipt on WhatsApp and send your Meta access steps.
+    </p>
+  </div>
+
+  </div><!-- /form-body -->
+</form>
+
+<!-- Success state -->
+<div id="ai-success" hidden>
+  <div class="aiform-step">
+    <h2 style="color:#86efac;">Received — thank you</h2>
+    <p class="aiform-hint">Your setup information is in. Here's exactly what happens next.</p>
+
+    <div class="ai-steps" style="margin-top:24px;">
+      <div class="ai-step">
+        <span class="ai-step-who ai-step-who--ayush">Ayush</span>
+        <h3>I review your answers</h3>
+        <p>I'll read through everything and message you on WhatsApp if anything needs clarifying before I start building.</p>
+      </div>
+    </div>
+
+    <!-- Platform-specific access steps — filled in by JS from
+         SITE_DATA.META_ONBOARDING based on the product you selected -->
+    <div id="success-instagram-track" hidden style="margin-top:8px;">
+      <p class="aiform-legend">INSTAGRAM ACCESS</p>
+      <div class="ai-steps" id="success-instagram-steps"></div>
+    </div>
+
+    <div id="success-whatsapp-track" hidden style="margin-top:8px;">
+      <p class="aiform-legend">WHATSAPP ACCESS</p>
+      <div class="ai-steps" id="success-whatsapp-steps"></div>
+    </div>
+
+    <div class="ai-steps" style="margin-top:8px;">
+      <div class="ai-step">
+        <span class="ai-step-who ai-step-who--ayush">Ayush</span>
+        <h3>Configuration and testing</h3>
+        <p>Your agent is configured and run through every path — the straightforward enquiry, the messy answer, the person who asks for a human, the lead who goes quiet — before it touches a real conversation.</p>
+      </div>
+      <div class="ai-step">
+        <span class="ai-step-who ai-step-who--ayush">Ayush</span>
+        <h3>Launch</h3>
+        <p>Around 48–72 hours for most builds once access is in; Fusion and Fusion Max can take around 72 hours or more. I'll watch it closely through the first day.</p>
+      </div>
+    </div>
+
+    <div class="ai-callout" style="margin-top:20px;">
+      <h3>No passwords, ever</h3>
+      <p>Every step above uses Meta's official permission system — secure access tokens and OTP verification, never a password. You keep ownership of your accounts throughout, and access can be revoked from your own settings at any time.</p>
+    </div>
+
+    <div class="ai-callout ai-callout--green" style="margin-top:14px;">
+      <p style="margin:0;">Can't understand any of this? No worry — I'll explain it to you personally on WhatsApp, step by step.</p>
+    </div>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;">
+      <a href="https://wa.me/919477293867?text=Hey%2C%20I%20came%20from%20your%20website%21%20I%27ve%20submitted%20my%20AI%20setup%20form."
+         class="ai-cta-primary" target="_blank" rel="noopener" style="flex:1;">Message me on WhatsApp</a>
+      <a href="index.html" class="ai-cta-secondary" style="flex:1;"><span>Back to Home</span></a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div data-footer></div>
+
+<script src="site-data.js"></script>
+<script src="main.js"></script>
+<script src="ui.js"></script>
+<script>
+(function () {
+  var form    = document.getElementById("ai-setup-form");
+  var body    = document.getElementById("form-body");
+  var success = document.getElementById("ai-success");
+  var radios  = form.querySelectorAll('input[name="product"]');
+  var sections= form.querySelectorAll(".aiform-section");
+  var selectedProductId = null;
+
+  /* Required fields inside hidden sections must not block submission,
+     so requiredness is applied only to visible sections. */
+  var CONDITIONAL_REQUIRED = {
+    "pro":        ["f-q1","f-q2","f-qualified","f-booking","f-fu-on","f-ig"],
+    "business":   ["f-q1","f-q2","f-qualified","f-booking","f-fu-on","f-ig"],
+    "wapa":       ["f-q1","f-q2","f-qualified","f-booking","f-fu-on","f-wa-number"],
+    "fusion":     ["f-q1","f-q2","f-qualified","f-booking","f-fu-on","f-ig","f-wa-number","f-handover-when"],
+    "fusion-max": ["f-q1","f-q2","f-qualified","f-booking","f-fu-on","f-ig","f-wa-number","f-handover-when"],
+    "basic":      ["f-ig"]
+  };
+
+  /* Human-readable labels used in inline validation messages */
+  var FIELD_LABELS = {
+    "f-q1": "Question 1", "f-q2": "Question 2",
+    "f-qualified": "What makes a lead qualified",
+    "f-booking": "Your booking link",
+    "f-fu-on": "Follow-ups on/off",
+    "f-ig": "Instagram handle",
+    "f-wa-number": "Dedicated WhatsApp number",
+    "f-handover-when": "When to move a lead to WhatsApp"
+  };
+
+  function applyProduct(id) {
+    selectedProductId = id;
+    body.hidden = false;
+
+    sections.forEach(function (sec) {
+      var list = (sec.getAttribute("data-show") || "").split(/\s+/);
+      sec.hidden = list.indexOf(id) === -1;
+    });
+
+    // Clear all conditional requiredness, then set it for this product
+    Object.keys(CONDITIONAL_REQUIRED).forEach(function (k) {
+      CONDITIONAL_REQUIRED[k].forEach(function (fid) {
+        var el = document.getElementById(fid);
+        if (el) el.required = false;
+      });
+    });
+    (CONDITIONAL_REQUIRED[id] || []).forEach(function (fid) {
+      var el = document.getElementById(fid);
+      if (el && !el.closest(".aiform-section, .aiform-step").hidden) el.required = true;
+    });
+
+    body.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  radios.forEach(function (r) {
+    r.addEventListener("change", function () {
+      if (r.checked) applyProduct(r.getAttribute("data-product"));
+    });
+  });
+
+  /* Follow-up detail fields only matter when follow-ups are on */
+  var fuOn = document.getElementById("f-fu-on");
+  if (fuOn) {
+    fuOn.addEventListener("change", function () {
+      var off = fuOn.value === "No";
+      ["fu-count-wrap","fu-angle-wrap","fu-notes-wrap"].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.hidden = off;
+      });
+    });
+  }
+
+  /* ── Validation — matches the working Managed Automation forms:
+     required fields checked in JS (novalidate on the <form>), inline
+     error text, invalid fields get a visible border, and we scroll to
+     the first problem instead of leaving a silent native tooltip. ── */
+  function showFieldError(el, msg) {
+    clearFieldError(el);
+    el.classList.add("has-error");
+    var err = document.createElement("span");
+    err.className = "field-error";
+    err.textContent = msg;
+    el.insertAdjacentElement("afterend", err);
+  }
+  function clearFieldError(el) {
+    el.classList.remove("has-error");
+    var next = el.nextElementSibling;
+    if (next && next.classList.contains("field-error")) next.remove();
+  }
+  function clearAllErrors() {
+    form.querySelectorAll(".has-error").forEach(function (el) { clearFieldError(el); });
+    var summary = document.getElementById("form-validation-summary");
+    if (summary) summary.remove();
+  }
+
+  function validateVisibleRequired() {
+    clearAllErrors();
+    var invalid = [];
+    var required = form.querySelectorAll("[required]");
+    required.forEach(function (el) {
+      var container = el.closest(".aiform-section, .aiform-step");
+      if (container && container.hidden) return;   // not on screen, skip
+      var value = (el.value || "").trim();
+      var ok = el.type === "radio"
+        ? form.querySelector('input[name="' + el.name + '"]:checked')
+        : value !== "";
+      if (!ok) {
+        showFieldError(el, (FIELD_LABELS[el.id] || "This field") + " is required.");
+        invalid.push(el);
+      }
+    });
+
+    // Checkboxes that must be ticked (the two confirmations at the end)
+    form.querySelectorAll('input[type="checkbox"][required]').forEach(function (el) {
+      if (!el.checked && invalid.indexOf(el) === -1) invalid.push(el);
+    });
+
+    if (invalid.length) {
+      var summary = document.createElement("div");
+      summary.id = "form-validation-summary";
+      summary.className = "ai-callout ai-callout--amber";
+      summary.style.marginBottom = "18px";
+      summary.innerHTML = "<h3>Please fill in " + invalid.length +
+        (invalid.length === 1 ? " field" : " fields") + " before submitting</h3>" +
+        "<p style=\"margin:0;\">Highlighted below — scroll down to find them.</p>";
+      form.insertBefore(summary, form.firstChild);
+      invalid[0].scrollIntoView({ behavior: "smooth", block: "center" });
+      return false;
+    }
+    return true;
+  }
+
+  /* ── Render the platform-specific setup steps from SITE_DATA,
+     so the wording stays editable in one place rather than
+     hardcoded in this page. ── */
+  function renderSteps(containerId, steps) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    el.innerHTML = steps.map(function (s) {
+      return '<div class="ai-step">' +
+        '<span class="ai-step-who ai-step-who--' + (s.who || "you") + '">' +
+        (s.who === "ayush" ? "Ayush" : "You") + "</span>" +
+        "<h3>" + s.title + "</h3><p>" + s.desc + "</p></div>";
+    }).join("");
+  }
+
+  function showSuccessTracks(id) {
+    var D = window.SITE_DATA;
+    var M = D && D.META_ONBOARDING;
+    var needsInstagram = ["basic","pro","business","fusion","fusion-max"].indexOf(id) !== -1;
+    var needsWhatsapp  = ["wapa","fusion","fusion-max"].indexOf(id) !== -1;
+
+    var igTrack = document.getElementById("success-instagram-track");
+    var waTrack = document.getElementById("success-whatsapp-track");
+
+    if (needsInstagram && M && M.instagramSteps) {
+      renderSteps("success-instagram-steps", M.instagramSteps);
+      igTrack.hidden = false;
+    } else {
+      igTrack.hidden = true;
+    }
+
+    if (needsWhatsapp && M && M.whatsappSteps) {
+      renderSteps("success-whatsapp-steps", M.whatsappSteps);
+      waTrack.hidden = false;
+    } else {
+      waTrack.hidden = true;
+    }
+  }
+
+  /* Submit over AJAX so the Meta next-steps panel can be shown in place —
+     same mechanism (Web3Forms + FormData + access_key) already used by
+     the Free/Growth/Combo Managed Automation forms. */
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (!validateVisibleRequired()) return;
+
+    var btn = document.getElementById("ai-submit");
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: new FormData(form)
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (data.success) {
+        showSuccessTracks(selectedProductId);
+        form.hidden = true;
+        success.hidden = false;
+        success.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        throw new Error("submit failed");
+      }
+    })
+    .catch(function () {
+      btn.disabled = false;
+      btn.textContent = "Submit Setup Information";
+      alert("Something went wrong sending the form. Please try again, or WhatsApp me on +91 94772 93867 and I'll take the details directly.");
+    });
+  });
+})();
+</script>
+</body>
+</html>
