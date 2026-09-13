@@ -133,7 +133,7 @@ var SITE_DATA = (function () {
                                         // ("" covers the domain root)
     text:        "Free DM Lead Audit",  // longer text is supported
     ctaLabel:    "Get Audit",           // underlined link under the text
-    url:         "coaches.html?free#resources",
+    url:         "coaches.html?free#resource",
     idleSeconds: 4                      // seconds of no scroll/interaction
                                         // before it slides in
   };
