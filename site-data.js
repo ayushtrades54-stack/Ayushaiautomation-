@@ -315,7 +315,8 @@ var SITE_DATA = (function () {
       platform: "both",
       aiLevel: 3,
       aiLevelLabel: "Qualifying, cross-channel",
-      modelCount: 22,
+      modelCount: 2,                       // per channel — used by simple displays
+      modelCountByChannel: { instagram: 2, whatsapp: 2 },
       badge: "Best Value",
       composition: "Instagram Pro + WhatsApp Personal Assistant, linked",
       toggleGroup: "fusion",
@@ -354,7 +355,8 @@ var SITE_DATA = (function () {
       platform: "both",
       aiLevel: 5,
       aiLevelLabel: "Contextual, cross-channel",
-      modelCount: 3+3,
+      modelCount: 3,                       // per channel — used by simple displays
+      modelCountByChannel: { instagram: 3, whatsapp: 3 },
       badge: "Advanced",
       composition: "Instagram Business + WhatsApp Personal Assistant, linked",
       toggleGroup: "fusion",
@@ -622,10 +624,15 @@ var SITE_DATA = (function () {
   var AI_MODEL_INFO = {
     label: "AI models used",
     note:
-      "Some products use more than one AI model working together. This " +
-      "can provide extra capability and redundancy where the underlying " +
-      "workflow supports it \u2014 it is not a guarantee of uninterrupted " +
-      "or error-free service."
+      "Some products use more than one AI model working together. On " +
+      "Fusion and Fusion Max, that count runs per channel \u2014 each " +
+      "channel (Instagram and WhatsApp) has its own set of models rather " +
+      "than sharing one pool. Using more than one model, where the " +
+      "underlying workflow supports it, can provide extra capability and " +
+      "redundancy \u2014 it is not a guarantee of uninterrupted or " +
+      "error-free service. Any AI model can occasionally be slow, " +
+      "unavailable, or produce an unexpected response, the same as any " +
+      "other software service."
   };
 
   var FRAMEWORK = {

@@ -244,7 +244,12 @@
       set("[data-f-desc]", p.descriptor);
       set("[data-f-summary]", p.summary);
       set("[data-f-level-label]", p.aiLevelLabel);
-      set("[data-f-model-count]", p.modelCount != null ? String(p.modelCount) : "");
+      set("[data-f-model-count]", (function () {
+        if (p.modelCountByChannel) {
+          return p.modelCountByChannel.instagram + " + " + p.modelCountByChannel.whatsapp;
+        }
+        return p.modelCount != null ? String(p.modelCount) : "";
+      })());
       set("[data-f-badge]", p.badge || "");
 
       var badge = card.querySelector("[data-f-badge]");
