@@ -131,9 +131,9 @@ var SITE_DATA = (function () {
     enabled:     true,                  // false = remove it site-wide
     pages:       ["index.html", ""],    // which pages it may appear on
                                         // ("" covers the domain root)
-    text:        "Free DM Lead Audit",  // longer text is supported
-    ctaLabel:    "Get Audit",           // underlined link under the text
-    url:         "book.html?intent=audit",
+    text:        "Free DM Handling Guide",  // longer text is supported
+    ctaLabel:    "Get Guide",           // underlined link under the text
+    url:         "coaches.html?intent=free#resource",
     idleSeconds: 4                      // seconds of no scroll/interaction
                                         // before it slides in
   };
