@@ -315,7 +315,7 @@ var SITE_DATA = (function () {
       platform: "both",
       aiLevel: 3,
       aiLevelLabel: "Qualifying, cross-channel",
-      modelCount: 2+2,
+      modelCount: 22,
       badge: "Best Value",
       composition: "Instagram Pro + WhatsApp Personal Assistant, linked",
       toggleGroup: "fusion",
