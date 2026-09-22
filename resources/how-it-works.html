@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How AI DM Automation Works for Fitness Coaches | Ayush AI Automation</title>
+  <meta name="description" content="How an AI DM automation system for fitness coaches handles a conversation: coach knowledge, context, lead qualification, lead records, voice notes, follow-ups, human handoff, booking links and hot lead alerts.">
+  <link rel="canonical" href="https://www.ayushaiautomation.in/resources/how-it-works.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ayush AI Automation">
+  <meta property="og:title" content="How AI DM Automation Works for Fitness Coaches | Ayush AI Automation">
+  <meta property="og:description" content="How an AI DM automation system for fitness coaches handles a conversation: coach knowledge, context, lead qualification, lead records, voice notes, follow-ups, human handoff, booking links and hot lead alerts.">
+  <meta property="og:url" content="https://www.ayushaiautomation.in/resources/how-it-works.html">
+  <meta property="og:image" content="https://www.ayushaiautomation.in/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../ai-system.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://www.ayushaiautomation.in/resources/how-it-works.html#webpage",
+   "url": "https://www.ayushaiautomation.in/resources/how-it-works.html",
+   "name": "How AI DM Automation Works for Fitness Coaches | Ayush AI Automation",
+   "description": "How an AI DM automation system for fitness coaches handles a conversation: coach knowledge, context, lead qualification, lead records, voice notes, follow-ups, human handoff, booking links and hot lead alerts.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://www.ayushaiautomation.in/#website"
+   },
+   "publisher": {
+    "@id": "https://www.ayushaiautomation.in/#organization"
+   },
+   "about": {
+    "@id": "https://www.ayushaiautomation.in/#organization"
+   },
+   "breadcrumb": {
+    "@id": "https://www.ayushaiautomation.in/resources/how-it-works.html#breadcrumb"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.ayushaiautomation.in/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Resources",
+     "item": "https://www.ayushaiautomation.in/resources/learn.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "How It Works",
+     "item": "https://www.ayushaiautomation.in/resources/how-it-works.html"
+    }
+   ],
+   "@id": "https://www.ayushaiautomation.in/resources/how-it-works.html#breadcrumb"
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://www.ayushaiautomation.in/resources/how-it-works.html#faqpage",
+   "url": "https://www.ayushaiautomation.in/resources/how-it-works.html",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Is this just a chatbot connected to Instagram?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. A chatbot answers a message. This is a configured DM conversation system: it answers from your business knowledge, keeps track of each lead, runs your qualification, decides when your booking link is released, follows up, hands over to you on request and records every lead. Which of those it does depends on the product."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens when a lead asks something the agent wasn't told?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It doesn't make an answer up. It tells the lead you'll confirm, so you can reply personally."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does the agent reply with voice notes?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. On Business and Fusion Max it understands voice notes and replies in text. No product sends generated voice replies."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does a hot lead alert mean the call is booked?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It means the lead qualified and received your booking link. The system doesn't see your calendar, so it never marks a lead as booked just because the link went out."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I see the lead data?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, in a usable form: the lead's username, relevant chat logs, a short summary, useful details and a contact number where the channel provides one. More specific data can be provided where appropriate. You don't get raw access to the backend."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can the behaviour be changed after launch?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Questions, knowledge answers, tone and follow-up wording can be adjusted as your offer changes. That's part of the monthly service."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body data-root="../" data-bg="live">
+
+<canvas id="automation-bg"></canvas>
+<header class="navbar"><div class="nav-container"><a href="../index.html" class="brand" style="text-decoration:none;display:flex;align-items:center;gap:10px;"><img src="../logo.png" alt="Ayush AI Automation" class="logo"><span class="brand-name">Ayush AI Automation</span></a><button class="hamburger" type="button" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="navMenu" style="background:none;border:none;font:inherit;color:inherit;cursor:pointer;">&#9776;</button><nav class="nav-menu" id="navMenu" aria-label="Main"><a href="../index.html">Home</a><a href="../services.html">Services</a><a href="../pricing.html">Pricing</a><a href="../coaches.html">For Coaches</a><a href="../process.html">Process</a><a href="../demo.html">Demo</a><a href="../faq.html">FAQ</a><a href="../about.html">About</a><a href="../lab/index.html">Lab</a><a href="../book.html" class="nav-cta">Book a Call</a></nav></div></header>
+
+<section class="page-hero">
+  <h1>How AI DM Automation Works</h1>
+  <p>What actually happens between a lead's first message and a qualified conversation reaching you — explained at the level a coach needs, without the jargon and without publishing anything private.</p>
+</section>
+<nav class="rs-crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li><a href="../resources/learn.html">Resources</a></li><li aria-current="page">How It Works</li></ol></nav>
+<div style="height:18px"></div>
+<nav class="rs-toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#what-we-build">What we build</a></li><li><a href="#conversation-handling">Conversation handling</a></li><li><a href="#coach-knowledge">Your knowledge</a></li><li><a href="#context">Context</a></li><li><a href="#qualification">Qualification</a></li><li><a href="#answer-locking">Answer locking</a></li><li><a href="#lead-management">Lead management</a></li><li><a href="#voice-notes">Voice notes</a></li><li><a href="#follow-ups">Follow-ups</a></li><li><a href="#human-handoff">Human handoff</a></li><li><a href="#booking-link">Booking link</a></li><li><a href="#hot-lead-alerts">Hot lead alerts</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
+
+<section class="rs-section" id="what-we-build">
+  <span class="rs-kicker">The short version</span>
+  <h2>What Ayush AI Automation actually builds</h2>
+  <p>Ayush AI Automation designs, configures, builds and manages <strong>DM conversation systems for fitness coaches</strong> on Instagram and WhatsApp. It isn't an AI reply box bolted onto your inbox, and it isn't a platform you're handed and left to set up. Each system is configured around the coach's business and conversation requirements, then run as a managed service every month.</p>
+  <p>At a public level, this is the path every enquiry takes:</p>
+  <ol class="rs-flow">
+    <li><strong>Lead message</strong>A DM, a keyword comment or a WhatsApp message arrives.</li>
+    <li><strong>Understanding</strong>The system reads what the lead actually wrote.</li>
+    <li><strong>Your knowledge</strong>It answers from your programs, pricing, policies and objection answers.</li>
+    <li><strong>Qualification</strong>Your questions, one at a time, where the product supports it.</li>
+    <li><strong>Lead record</strong>Answers, status and context are stored in a structured record.</li>
+    <li><strong>Follow-up</strong>Quiet leads get a configured follow-up, where supported.</li>
+    <li><strong>Transfer</strong>Qualified leads get your booking link, and you get a hot lead alert.</li>
+    <li><strong>Human handoff</strong>Anyone who asks for a person gets you.</li>
+  </ol>
+  <p>This structure follows the <a href="../resources/learn.html#fit-framework" style="color:var(--primary-light);">F.I.T. DM Funnel Framework</a> — Filter, Influence, Transfer. Which steps run depends on the product: Basic stops at answering and handoff, and the qualifying products run the full journey. The <a href="../resources/products.html" style="color:var(--primary-light);">products page</a> maps exactly which product does what.</p>
+</section>
+
+<section class="rs-section" id="conversation-handling">
+  <h2>AI conversation handling</h2>
+  <p>Rule-based automation matches keywords and buttons. That works well when every lead asks the same few things. Coaching leads usually don't: they write in full sentences, mix two questions into one message, and bring up things no keyword anticipated — <em>"I've tried online coaching before and it didn't stick, is yours different?"</em></p>
+  <p>An AI Agent reads the message itself rather than scanning it for a trigger word. It works out what's being asked, answers from your knowledge, and keeps the conversation moving in the direction you've configured. Replies are automatic and usually land within seconds, though no hard response time is promised on someone else's platform.</p>
+  <div class="ai-split">
+    <div class="ai-card"><h3 style="font-size:1rem;margin-bottom:8px;">What it handles well</h3><p style="color:var(--text-soft);line-height:1.7;">Varied wording, messy or out-of-order answers, slang, questions buried inside longer messages, and the objections coaching leads actually raise.</p></div>
+    <div class="ai-card"><h3 style="font-size:1rem;margin-bottom:8px;">What it deliberately doesn't do</h3><p style="color:var(--text-soft);line-height:1.7;">It doesn't invent answers, run your sales call, message people who never contacted you, or pretend to know things you didn't give it.</p></div>
+  </div>
+  <p style="margin-top:16px;">On Business, WhatsApp Personal Assistant and Fusion Max, a lead who sends several short messages in a row gets <strong>one combined reply</strong> instead of three separate ones.</p>
+</section>
+
+<section class="rs-section" id="coach-knowledge">
+  <h2>Coach knowledge and configuration</h2>
+  <p>During setup, your onboarding answers become the <strong>knowledge layer</strong> the agent works from. That includes your offer and programs, what each program includes, your pricing and how you want it presented, who you do and don't work with, your most common questions and your answers, your objection answers in your own words, your tone, and the phrases you never want used.</p>
+  <p>This is why the agent sounds like your business rather than a generic assistant. It is also why it can say <em>"I'll confirm that for you"</em> instead of guessing when something falls outside what it was given.</p>
+  <p>Qualification questions, the point at which your booking link is released, follow-up wording and handoff behaviour are all configured here too. Changing them later is an edit, not a rebuild.</p>
+</section>
+
+<section class="rs-section" id="context">
+  <h2>Conversation context</h2>
+  <p>Every AI product keeps relevant context across recent messages. It picks up the lead's name naturally, remembers what was already covered, and won't repeat information it has already given. Higher capability plans handle context more deeply — combining rapid messages and treating voice notes as part of the same conversation.</p>
+  <p>On <strong>Fusion</strong> and <strong>Fusion Max</strong>, context carries across channels. A lead who starts on Instagram and moves to WhatsApp is recognised, and the questions they already answered aren't asked again.</p>
+</section>
+
+<section class="rs-section" id="qualification">
+  <span class="rs-applies">Pro · Business · WhatsApp PA · Fusion · Fusion Max</span>
+  <h2>Lead qualification</h2>
+  <p>Qualification is the <strong>Filter</strong> stage of F.I.T. The questions are yours — goal, timeline, readiness, budget, or whatever matters for your offer. The agent asks permission once so it doesn't feel like an interrogation, then asks your questions <strong>one at a time, in your order</strong>, never as a list.</p>
+  <p>Leads rarely answer neatly. Someone might give their goal and timeline in one message, or answer question three before question two. The agent understands messy, slang and out-of-order answers and records them against the right question.</p>
+  <div class="rs-chat" aria-label="Illustrative qualification example">
+    <span class="rs-chat-label">Illustrative example — not a real client conversation</span>
+    <p class="rs-msg lead">hey how much is ur coaching</p>
+    <p class="rs-msg agent">Hi! Happy to explain. The price depends on which program fits you best — mind if I ask a couple of quick questions first?</p>
+    <p class="rs-msg lead">sure. i want to lose around 8 kg before my wedding in april</p>
+    <p class="rs-msg agent">Congratulations! That gives us a clear goal and timeline. Have you worked with a coach before?</p>
+    <p class="rs-msg system">Goal and timeline recorded from one message · next question asked</p>
+  </div>
+  <p>Basic doesn't qualify. It answers enquiries accurately and hands over, which is exactly right when you don't yet need qualification.</p>
+</section>
+
+<section class="rs-section" id="answer-locking">
+  <h2>Answer boundaries and answer locking</h2>
+  <p>Two boundaries keep conversations clean:</p>
+  <ul class="rs-list">
+    <li><strong>Knowledge boundary.</strong> The agent answers only from what you supplied. Anything outside it gets deferred to you, not improvised.</li>
+    <li><strong>Answer locking.</strong> On qualifying products, once a lead answers a question, that answer is locked. The agent won't ask it again, even if the conversation wanders for days.</li>
+  </ul>
+  <p>Nobody gets asked their goal three times, and nobody gets a price you never quoted.</p>
+</section>
+
+<section class="rs-section" id="lead-management">
+  <h2>Lead management and structured lead records</h2>
+  <p>Every AI product records each conversation as a <strong>structured lead record</strong> — CRM-style lead management built around how coaching enquiries actually work, rather than a generic contact list. Depending on the product, a record can hold:</p>
+  <div class="ai-grid">
+    <div class="ai-card"><h3 style="font-size:.98rem;margin-bottom:6px;">Lead identity</h3><p style="color:var(--text-soft);line-height:1.65;">Name as the lead gives it, their username, and a contact identifier or number where the channel provides one.</p></div>
+    <div class="ai-card"><h3 style="font-size:.98rem;margin-bottom:6px;">Qualification information</h3><p style="color:var(--text-soft);line-height:1.65;">The answer to each of your questions, locked once given.</p></div>
+    <div class="ai-card"><h3 style="font-size:.98rem;margin-bottom:6px;">Status and state</h3><p style="color:var(--text-soft);line-height:1.65;">Where the lead is: answering, qualifying, qualified, link sent, following up or handed to you.</p></div>
+    <div class="ai-card"><h3 style="font-size:.98rem;margin-bottom:6px;">Context and history</h3><p style="color:var(--text-soft);line-height:1.65;">Relevant conversation history, so the next message — or you — has the full picture.</p></div>
+  </div>
+  <h3>What you actually receive</h3>
+  <p>You don't get raw access to the backend, and you don't need it. By default you receive the useful part: the lead's <strong>username</strong>, <strong>relevant chat logs</strong>, a <strong>concise lead summary</strong>, the useful lead details and a <strong>contact number where applicable</strong>. More specific lead data can be provided where appropriate. On Business, WhatsApp Personal Assistant and Fusion Max, lead data is also cleaned before it's recorded and kept in a flat view that can be sorted and exported.</p>
+  <p>Lead data is cleared from the active system on a regular cycle. The <a href="../privacy.html#retention" style="color:var(--primary-light);">Privacy Policy</a> explains how retention works.</p>
+</section>
+
+<section class="rs-section" id="voice-notes">
+  <span class="rs-applies">Business · Fusion Max</span>
+  <h2>Voice note handling</h2>
+  <p>Plenty of fitness leads would rather talk than type. On Business and Fusion Max, a voice note is handled like any typed message:</p>
+  <ol class="rs-flow">
+    <li><strong>Voice note</strong>The lead sends audio instead of text.</li>
+    <li><strong>Transcription</strong>The audio is converted to text.</li>
+    <li><strong>Understanding</strong>The words are read in the context of the conversation.</li>
+    <li><strong>Text reply</strong>The agent answers in text — and a qualifying answer counts.</li>
+  </ol>
+  <p>A voice note can answer a qualification question just like a typed reply. The agent replies in <strong>text</strong> and doesn't send generated voice messages. Voice handling isn't included in Basic, Pro, WhatsApp Personal Assistant or Fusion. If voice matters to your audience, see <a href="../resources/products.html#business" style="color:var(--primary-light);">Business</a> and <a href="../resources/products.html#fusion-max" style="color:var(--primary-light);">Fusion Max</a>.</p>
+</section>
+
+<section class="rs-section" id="follow-ups">
+  <span class="rs-applies">Pro · Business · WhatsApp PA · Fusion · Fusion Max</span>
+  <h2>Follow-ups: template and AI-written</h2>
+  <p>Most leads don't decide in one sitting. Qualifying products run <strong>configured follow-up sequences</strong> for leads who go quiet, matched to where the conversation stopped. There are two kinds:</p>
+  <div class="ai-split">
+    <div class="ai-card"><h3 style="font-size:1rem;margin-bottom:8px;">Template follow-ups</h3><p style="color:var(--text-soft);line-height:1.7;"><strong>Pro, WhatsApp Personal Assistant, Fusion.</strong> Messages you approve in advance. The system sends the one that matches the lead's stage.</p></div>
+    <div class="ai-card"><h3 style="font-size:1rem;margin-bottom:8px;">AI-written follow-ups</h3><p style="color:var(--text-soft);line-height:1.7;"><strong>Business, Fusion Max.</strong> Written fresh for each lead, referencing what that person actually said. These replace template follow-ups rather than running alongside them.</p></div>
+  </div>
+  <p style="margin-top:16px;">Whichever type runs, the same rules apply:</p>
+  <ul class="rs-list">
+    <li>The moment a lead replies, books or is handed to you, anything queued for them is cancelled.</li>
+    <li>No follow-up is scheduled while the lead is still actively writing.</li>
+    <li>Timing follows the sequence configured for you and stays within each platform's messaging-window rules. WhatsApp's <a href="../resources/channels.html#whatsapp-window" style="color:var(--primary-light);">24-hour window</a> is the main constraint.</li>
+  </ul>
+  <p>Basic doesn't send follow-ups.</p>
+</section>
+
+<section class="rs-section" id="human-handoff">
+  <span class="rs-applies">All six AI products</span>
+  <h2>Human handoff</h2>
+  <p>When a lead asks to speak to a real person, the agent <strong>stops replying in that conversation</strong> and leaves it with you. It also <strong>cancels any follow-ups it had queued</strong> for that lead, so nobody gets an automated nudge in the middle of a conversation with you. The agent doesn't resume that thread on its own.</p>
+  <p>This is where a lot of automation goes wrong, which is why every AI product has it and every build is tested for it before launch.</p>
+</section>
+
+<section class="rs-section" id="booking-link">
+  <span class="rs-applies">Pro · Business · WhatsApp PA · Fusion · Fusion Max</span>
+  <h2>Booking-link transfer</h2>
+  <p>Transfer is the final stage of F.I.T. The booking destination you provide — a scheduling link, a form, or your own WhatsApp — goes out <strong>once, and only after a lead qualifies</strong>. Anyone who already has the link isn't sent it again.</p>
+  <p>To be precise about what this is: the system <strong>sends your link</strong>. It doesn't read or write your calendar, check real-time availability or reserve slots. The link itself handles availability. On Fusion and Fusion Max, a qualified Instagram lead can instead be moved to WhatsApp to complete booking, configured to how you work.</p>
+</section>
+
+<section class="rs-section" id="hot-lead-alerts">
+  <span class="rs-applies">Pro · Business · WhatsApp PA · Fusion · Fusion Max</span>
+  <h2>Hot lead alerts</h2>
+  <p>A qualified lead who has just received your booking link is the warmest lead you have. Hot lead alerts make sure you know about them straight away:</p>
+  <ol class="rs-flow">
+    <li><strong>Lead qualifies</strong>Your qualification is complete.</li>
+    <li><strong>Link provided</strong>Your booking link has been sent.</li>
+    <li><strong>Marked hot</strong>The lead is treated as a hot lead.</li>
+    <li><strong>Email alert</strong>You get an email with the lead's details.</li>
+  </ol>
+  <p>The alert contains <strong>structured lead information</strong>, a <strong>short summary of the lead</strong> and the <strong>useful context</strong> from the conversation, so you can decide whether to reach out personally. It goes to the email address you choose during onboarding, and that address can be changed.</p>
+  <p>A hot lead alert isn't a booking confirmation. The system hasn't checked your calendar, and a lead isn't recorded as booked just because the link was sent.</p>
+</section>
+
+<section class="rs-section" id="faq">
+  <h2>Questions about how it works</h2>
+  <div class="acc">
+  <div class="acc-item" id="hiw-chatbot">
+    <h3 style="margin:0;"><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="a-hiw-chatbot">Is this just a chatbot connected to Instagram?</button></h3>
+    <div class="acc-panel" id="a-hiw-chatbot" data-open="false"><div><div class="acc-body">
+      <p>No. A chatbot answers a message. This is a configured DM conversation system: it answers from your business knowledge, keeps track of each lead, runs your qualification, decides when your booking link is released, follows up, hands over to you on request and records every lead. Which of those it does depends on the product.</p>
+    </div></div></div>
+  </div>
+  <div class="acc-item" id="hiw-invent">
+    <h3 style="margin:0;"><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="a-hiw-invent">What happens when a lead asks something the agent wasn't told?</button></h3>
+    <div class="acc-panel" id="a-hiw-invent" data-open="false"><div><div class="acc-body">
+      <p>It doesn't make an answer up. It tells the lead you'll confirm, so you can reply personally.</p>
+    </div></div></div>
+  </div>
+  <div class="acc-item" id="hiw-voice-reply">
+    <h3 style="margin:0;"><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="a-hiw-voice-reply">Does the agent reply with voice notes?</button></h3>
+    <div class="acc-panel" id="a-hiw-voice-reply" data-open="false"><div><div class="acc-body">
+      <p>No. On Business and Fusion Max it understands voice notes and replies in text. No product sends generated voice replies.</p>
+    </div></div></div>
+  </div>
+  <div class="acc-item" id="hiw-alert-booking">
+    <h3 style="margin:0;"><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="a-hiw-alert-booking">Does a hot lead alert mean the call is booked?</button></h3>
+    <div class="acc-panel" id="a-hiw-alert-booking" data-open="false"><div><div class="acc-body">
+      <p>No. It means the lead qualified and received your booking link. The system doesn't see your calendar, so it never marks a lead as booked just because the link went out.</p>
+    </div></div></div>
+  </div>
+  <div class="acc-item" id="hiw-see-data">
+    <h3 style="margin:0;"><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="a-hiw-see-data">Can I see the lead data?</button></h3>
+    <div class="acc-panel" id="a-hiw-see-data" data-open="false"><div><div class="acc-body">
+      <p>Yes, in a usable form: the lead's username, relevant chat logs, a short summary, useful details and a contact number where the channel provides one. More specific data can be provided where appropriate. You don't get raw access to the backend.</p>
+    </div></div></div>
+  </div>
+  <div class="acc-item" id="hiw-change">
+    <h3 style="margin:0;"><button class="acc-trigger" type="button" aria-expanded="false" aria-controls="a-hiw-change">Can the behaviour be changed after launch?</button></h3>
+    <div class="acc-panel" id="a-hiw-change" data-open="false"><div><div class="acc-body">
+      <p>Yes. Questions, knowledge answers, tone and follow-up wording can be adjusted as your offer changes. That's part of the monthly service.</p>
+    </div></div></div>
+  </div>
+</div>
+  <p class="rs-note">More answers on the <a href="../faq.html" style="color:var(--primary-light);">full FAQ</a>.</p>
+</section>
+
+<section class="rs-related" aria-label="Related resources"><h2>Related resources</h2><div class="ai-grid"><a class="ai-card" href="../resources/learn.html#fit-framework"><h3>The F.I.T. Framework</h3><p>The structure every qualifying conversation follows: Filter, Influence, Transfer.</p></a><a class="ai-card" href="../resources/products.html"><h3>Products</h3><p>What each of the six AI products does and where it stops.</p></a><a class="ai-card" href="../resources/channels.html"><h3>Instagram and WhatsApp</h3><p>Comment → DM, dedicated WhatsApp numbers and cross-channel continuity.</p></a><a class="ai-card" href="../resources/comparisons.html"><h3>Comparisons</h3><p>How this differs from ManyChat, AI reply tools, instant DM tools and human setters.</p></a></div></section>
+
+<section class="ai-section ai-center" style="max-width:720px;">
+  <h2>See which product runs which parts</h2>
+  <p class="ai-lede" style="margin-bottom:26px;">Every capability above is mapped to a product. Pricing is kept on one page, so it's always current.</p>
+  <div class="btn-container">
+    <a href="../resources/products.html" class="btn-primary">Explore Products</a>
+    <a href="../pricing.html" class="btn-secondary">See Pricing</a>
+  </div>
+</section>
+
+<footer class="footer">
+<div class="footer-content">
+<nav class="footer-discovery" aria-label="Resources and comparisons"><div class="footer-col"><p class="footer-col-title">Compare</p><ul><li><a href="../resources/comparisons.html#manychat">vs ManyChat</a></li><li><a href="../resources/comparisons.html#ai-reply-tools">vs Cheap AI Reply Tools</a></li><li><a href="../resources/comparisons.html#instant-dm-tools">vs Instant DM Tools</a></li><li><a href="../resources/comparisons.html#rule-based-automation">vs Rule-Based Automation</a></li><li><a href="../resources/comparisons.html#human-setter-va">vs Human Setter / VA</a></li><li><a href="../resources/comparisons.html#managed-vs-ai">Managed vs AI Agent</a></li><li><a href="../resources/comparisons.html#why-ai-fits">Why AI Automation Fits Your Business</a></li></ul></div><div class="footer-col"><p class="footer-col-title">How It Works</p><ul><li><a href="../resources/how-it-works.html#what-we-build">AI DM Automation</a></li><li><a href="../resources/how-it-works.html#qualification">Lead Qualification</a></li><li><a href="../resources/how-it-works.html#lead-management">Lead Management</a></li><li><a href="../resources/how-it-works.html#voice-notes">Voice Notes</a></li><li><a href="../resources/how-it-works.html#follow-ups">AI Follow-Ups</a></li><li><a href="../resources/how-it-works.html#human-handoff">Human Handoff</a></li><li><a href="../resources/how-it-works.html#hot-lead-alerts">Hot Lead Alerts</a></li><li><a href="../resources/channels.html#comment-to-dm">Comment → DM</a></li></ul></div><div class="footer-col"><p class="footer-col-title">Channels</p><ul><li><a href="../resources/channels.html#instagram">Instagram DM Automation</a></li><li><a href="../resources/channels.html#whatsapp">WhatsApp AI Automation</a></li><li><a href="../resources/channels.html#instagram-whatsapp">Instagram + WhatsApp</a></li></ul></div><div class="footer-col"><p class="footer-col-title">Products</p><ul><li><a href="../resources/products.html#basic">Basic</a></li><li><a href="../resources/products.html#pro">Pro</a></li><li><a href="../resources/products.html#business">Business</a></li><li><a href="../resources/products.html#whatsapp-personal-assistant">WhatsApp Personal Assistant</a></li><li><a href="../resources/products.html#fusion">Fusion</a></li><li><a href="../resources/products.html#fusion-max">Fusion Max</a></li></ul></div><div class="footer-col"><p class="footer-col-title">Learn</p><ul><li><a href="../resources/learn.html#fit-framework">F.I.T. Framework</a></li><li><a href="../resources/learn.html#ai-vs-managed">AI Agent vs Managed Automation</a></li><li><a href="../resources/learn.html#glossary">Glossary</a></li><li><a href="../resources/learn.html#dm-handling-guide">DM Handling Guide</a></li><li><a href="../resources/learn.html#when-automation-makes-sense">When Automation Makes Sense</a></li></ul></div><div class="footer-col"><p class="footer-col-title">Proof</p><ul><li><a href="../resources/case-studies.html">Case Studies</a></li><li><a href="../resources/case-studies.html#client-stories">Client Stories</a></li></ul></div></nav>
+<h3 class="footer-heading">Ayush AI Automation</h3>
+<p class="footer-tag"><strong>AI Agents</strong> &amp; <strong>DM Automation</strong> for Fitness Coaches</p>
+<p class="footer-sub">We design, build and manage Instagram and WhatsApp DM conversation systems for fitness coaches, built on the <a href="../resources/learn.html#fit-framework" style="color:var(--primary-light);font-weight:600;">F.I.T. DM Funnel Framework</a> &mdash; the first DM automation framework designed specifically for fitness coaches.</p>
+<div class="footer-contact"><a href="mailto:ayushaiautomation.in@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>ayushaiautomation.in@gmail.com</a><a href="tel:+919477293867"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>+91 94772 93867</a></div>
+<div class="footer-socials"><a href="https://wa.me/919477293867?text=Hey%2C%20I%20came%20from%20your%20website!%20I%20have%20a%20question." class="social-icon" target="_blank" rel="noopener" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a><a href="https://instagram.com/ayush.automation" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a><a href="https://www.linkedin.com/in/ayush-ai-automation-333a123a1" class="social-icon linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></div>
+<div class="footer-links"><a href="../index.html">Home</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../services.html">Services</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../pricing.html">Pricing</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../faq.html">FAQ</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../about.html">About</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../book.html">Book a Call</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../privacy.html">Privacy Policy</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../terms.html">Terms &amp; Conditions</a></div>
+<p class="footer-fit">The #1 and only agency providing fitness coaches with the F.I.T. Framework.</p>
+<div class="footer-bottom">&copy; 2026 Ayush AI Automation. All rights reserved.</div>
+</div>
+</footer>
+<div data-floats></div>
+
+<script src="../site-data.js"></script>
+<script src="../main.js"></script>
+<script src="../ui.js"></script>
+</body>
+</html>
