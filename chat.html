@@ -5,151 +5,164 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ask a Question | Ayush AI Automation</title>
-  <meta name="description" content="Ask about the AI products, Managed Automation, pricing, setup and WhatsApp requirements.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#070b16">
+  <title>Ask the Assistant | Ayush AI Automation</title>
+  <meta name="description" content="Ask about the AI products, Managed Automation, pricing, setup and WhatsApp requirements. Runs privately in your browser.">
   <meta name="robots" content="noindex, follow">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="ai-system.css">
-<style>body{padding-top:0}</style>
 <style>
-.chat-top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;max-width:820px;margin:0 auto;padding:14px 16px;background:rgba(9,14,28,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(96,165,250,.16)}
-.chat-back{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;color:var(--primary-light);background:rgba(59,130,246,.1);border:1px solid rgba(96,165,250,.24);flex-shrink:0;transition:background .22s}
-.chat-back:hover{background:rgba(59,130,246,.2)}
-.chat-back svg{width:17px;height:17px}
-.chat-id{display:flex;align-items:center;gap:10px;min-width:0}
-.chat-dot{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px rgba(34,197,94,.8);flex-shrink:0;animation:chat-live 2.4s ease-in-out infinite}
-@keyframes chat-live{0%,100%{opacity:1}50%{opacity:.45}}
-.chat-id strong{display:block;color:var(--primary-light);font-size:.98rem;line-height:1.25}
-.chat-id em{display:block;color:var(--text-soft);font-size:.76rem;font-style:normal;line-height:1.3}
-.chat-shell{max-width:820px;margin:0 auto;padding:0 16px 20px;display:flex;flex-direction:column;height:calc(100vh - 66px);min-height:420px}
-.chat-log{flex:1;overflow-y:auto;padding:20px 4px;display:flex;flex-direction:column;gap:16px;scroll-behavior:smooth}
-.msg{max-width:82%;padding:14px 17px;border-radius:16px;line-height:1.72;font-size:0.95rem;white-space:pre-wrap;word-wrap:break-word;animation:msg-in .28s ease both}
-@keyframes msg-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.msg.bot{align-self:flex-start;background:linear-gradient(160deg,rgba(17,18,34,.9),rgba(26,42,80,.5));border:1px solid var(--ai-line);border-bottom-left-radius:5px;color:var(--text-soft)}
-.msg.user{align-self:flex-end;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border-bottom-right-radius:5px}
-.msg strong{color:var(--text-main);font-weight:600}
-.msg.user strong{color:#fff}
-.msg em{font-style:normal;opacity:.72;font-size:.9em}
-.chat-typing{align-self:flex-start;display:flex;gap:5px;padding:15px 18px;background:rgba(17,18,34,.9);border:1px solid var(--ai-line);border-radius:16px;border-bottom-left-radius:5px}
-.chat-typing span{width:7px;height:7px;border-radius:50%;background:var(--primary-light);animation:dot 1.3s infinite}
-.chat-typing span:nth-child(2){animation-delay:.16s}
-.chat-typing span:nth-child(3){animation-delay:.32s}
-@keyframes dot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
-.chat-chips{display:flex;gap:8px;flex-wrap:wrap;padding:12px 4px}
-.chat-chip{background:rgba(59,130,246,.08);border:1px solid var(--ai-line);color:var(--ai-blue-soft);border-radius:20px;padding:8px 15px;font-size:.82rem;font-family:inherit;cursor:pointer;transition:background .22s,border-color .22s}
-.chat-chip:hover{background:rgba(59,130,246,.16);border-color:var(--ai-line-strong)}
-.chat-chip:focus-visible{outline:2px solid var(--primary-light);outline-offset:2px}
-.chat-input-row{display:flex;gap:10px;padding:14px 4px 0;border-top:1px solid rgba(255,255,255,.06)}
-.chat-input-row input{flex:1;background:rgba(11,16,32,.8);border:1px solid var(--ai-line);border-radius:24px;padding:14px 18px;color:var(--text-main);font-size:.95rem;font-family:inherit}
-.chat-input-row input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(59,130,246,.16)}
-.chat-send{background:linear-gradient(135deg,var(--primary),var(--primary-dark));border:none;border-radius:50%;width:48px;height:48px;min-width:48px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .18s,box-shadow .22s}
-.chat-send:hover{transform:scale(1.06);box-shadow:0 6px 20px rgba(59,130,246,.42)}
-.chat-send:focus-visible{outline:2px solid var(--primary-light);outline-offset:3px}
-.chat-send svg{width:20px;height:20px;stroke:#fff}
-@media (max-width:768px){.chat-shell{height:calc(100vh - 62px);padding:0 12px 14px}.msg{max-width:91%;font-size:.89rem;padding:12px 14px}.chat-top{padding:11px 13px}.chat-chip{font-size:.78rem;padding:7px 13px}.chat-input-row input{padding:12px 16px;font-size:.92rem}}
-@media (prefers-reduced-motion:reduce){.msg{animation:none}.chat-typing span{animation:none}.chat-send:hover{transform:none}}
+html,body{height:100%;margin:0;padding:0;overflow:hidden;background:var(--bg-dark)}
+body{padding-top:0}
+.cm-app{position:relative;display:flex;flex-direction:column;height:var(--vvh,100dvh);max-height:100dvh;
+  background:radial-gradient(1200px 520px at 50% -180px,rgba(59,130,246,.16),transparent 70%),linear-gradient(180deg,#070b16,#0a1020 60%,#070b16)}
+/* header */
+.cm-top{flex:0 0 auto;display:flex;align-items:center;gap:12px;padding:12px max(16px,env(safe-area-inset-left)) 12px max(16px,env(safe-area-inset-right));
+  padding-top:max(12px,env(safe-area-inset-top));background:rgba(7,11,22,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(96,165,250,.14);z-index:5}
+.cm-top-in{display:flex;align-items:center;gap:12px;width:100%;max-width:820px;margin:0 auto}
+.cm-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:11px;flex-shrink:0;
+  color:var(--primary-light);background:rgba(59,130,246,.09);border:1px solid rgba(96,165,250,.22);cursor:pointer;transition:background .2s var(--ease),border-color .2s var(--ease);text-decoration:none}
+.cm-icon-btn:hover{background:rgba(59,130,246,.18);border-color:rgba(96,165,250,.45)}
+.cm-icon-btn svg{width:18px;height:18px}
+.cm-id{display:flex;align-items:center;gap:11px;min-width:0;flex:1}
+.cm-id>div{min-width:0}
+.cm-mark{position:relative;width:36px;height:36px;border-radius:50%;flex-shrink:0;
+  background:conic-gradient(from 200deg,#3b82f6,#8b5cf6,#00e5ff,#3b82f6);box-shadow:0 0 18px rgba(59,130,246,.45)}
+.cm-mark::after{content:"";position:absolute;inset:3px;border-radius:50%;background:#0b1224 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2393c5fd' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M8 10h8M8 14h5M20 12a8 8 0 11-16 0 8 8 0 0116 0z'/%3E%3C/svg%3E") center/17px no-repeat}
+.cm-status{position:absolute;right:-1px;bottom:-1px;width:10px;height:10px;border-radius:50%;background:#22c55e;border:2px solid #070b16;z-index:1}
+.cm-id strong{display:block;color:var(--text-main);font-size:.98rem;line-height:1.25;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cm-id small{display:block;color:var(--text-soft);font-size:.74rem;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cm-new{display:inline-flex;align-items:center;gap:7px;padding:0 13px;height:38px;border-radius:11px;font:inherit;font-size:.82rem;font-weight:600;
+  color:var(--text-main);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);cursor:pointer;transition:background .2s,border-color .2s;flex-shrink:0}
+.cm-new:hover{background:rgba(59,130,246,.14);border-color:rgba(96,165,250,.4)}
+.cm-new svg{width:16px;height:16px}
+/* log */
+.cm-log{flex:1 1 auto;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:22px 16px 10px}
+.cm-inner{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.cm-row{display:flex;align-items:flex-end;gap:10px;max-width:100%}
+.cm-user{justify-content:flex-end}
+.cm-avatar{width:28px;height:28px;border-radius:50%;flex-shrink:0;margin-bottom:2px;background:conic-gradient(from 200deg,#3b82f6,#8b5cf6,#00e5ff,#3b82f6);position:relative}
+.cm-avatar::after{content:"";position:absolute;inset:2px;border-radius:50%;background:#0b1224 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2393c5fd' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M8 10h8M8 14h5'/%3E%3C/svg%3E") center/14px no-repeat}
+.cm-bubble{min-width:0;max-width:min(86%,640px);padding:12px 16px;border-radius:18px;font-size:.95rem;line-height:1.66;overflow-wrap:anywhere}
+.cm-bot .cm-bubble{color:#cbd5e1;background:linear-gradient(165deg,rgba(17,24,44,.94),rgba(22,36,70,.7));border:1px solid rgba(96,165,250,.16);border-bottom-left-radius:6px;box-shadow:0 8px 28px rgba(0,0,0,.22)}
+.cm-user .cm-bubble{color:#fff;background:linear-gradient(135deg,#3b82f6,#1d4ed8);border-bottom-right-radius:6px;box-shadow:0 8px 24px rgba(29,78,216,.3);white-space:pre-wrap}
+.cm-bubble p{margin:0}
+.cm-bubble p+p,.cm-bubble p+ul,.cm-bubble ul+p,.cm-bubble ul+ul{margin-top:10px}
+.cm-bubble ul{margin:6px 0 0;padding:0;list-style:none}
+.cm-bubble li{position:relative;padding:3px 0 3px 18px}
+.cm-bubble li::before{content:"";position:absolute;left:3px;top:.8em;width:6px;height:6px;border-radius:50%;background:var(--primary-light);opacity:.85}
+.cm-bubble strong{color:var(--text-main);font-weight:650}
+.cm-bubble em{font-style:normal;color:#94a3b8;font-size:.9em}
+.cm-bubble a{color:#93c5fd;text-decoration:underline;text-underline-offset:2px}
+.cm-in{animation:cm-in .32s var(--ease) both}
+@keyframes cm-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.cm-ctas{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.cm-cta{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;font-size:.82rem;font-weight:600;text-decoration:none!important;
+  color:#bfdbfe!important;background:rgba(59,130,246,.1);border:1px solid rgba(96,165,250,.3);transition:background .2s,border-color .2s,transform .2s}
+.cm-cta:hover{background:rgba(59,130,246,.2);border-color:rgba(96,165,250,.55)}
+.cm-cta--primary{color:#fff!important;background:linear-gradient(135deg,#3b82f6,#1d4ed8);border-color:transparent;box-shadow:0 6px 18px rgba(59,130,246,.3)}
+.cm-cta--primary:hover{transform:translateY(-1px);background:linear-gradient(135deg,#60a5fa,#2563eb)}
+.cm-cta::after{content:"→";opacity:.8}
+.cm-typing{display:flex;gap:5px;align-items:center;padding:15px 17px}
+.cm-typing span{width:7px;height:7px;border-radius:50%;background:var(--primary-light);animation:cm-dot 1.2s infinite ease-in-out}
+.cm-typing span:nth-child(2){animation-delay:.15s}.cm-typing span:nth-child(3){animation-delay:.3s}
+@keyframes cm-dot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+/* empty state */
+.cm-empty{max-width:640px;margin:6vh auto 0;text-align:center;padding:0 6px}
+.cm-empty .cm-mark{width:58px;height:58px;margin:0 auto 18px}
+.cm-empty .cm-mark::after{background-size:26px;inset:4px}
+.cm-empty h1{font-size:clamp(1.35rem,4vw,1.75rem);color:var(--text-main);margin:0 0 10px;line-height:1.25}
+.cm-empty p{color:var(--text-soft);font-size:.95rem;line-height:1.7;margin:0 auto;max-width:520px}
+.cm-empty ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;list-style:none;padding:0;margin:26px 0 0;text-align:left}
+.cm-empty li{padding:13px 14px;border-radius:14px;background:rgba(17,24,44,.6);border:1px solid rgba(96,165,250,.14);color:var(--text-soft);font-size:.84rem;line-height:1.5}
+.cm-empty li strong{display:block;color:var(--text-main);font-size:.88rem;margin-bottom:2px}
+/* composer */
+.cm-foot{flex:0 0 auto;padding:8px 16px max(12px,env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(7,11,22,0),rgba(7,11,22,.92) 30%)}
+.cm-foot-in{max-width:780px;margin:0 auto;position:relative}
+.cm-chips{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:none}
+.cm-chips::-webkit-scrollbar{display:none}
+.cm-chip{flex:0 0 auto;padding:8px 14px;border-radius:999px;font:inherit;font-size:.8rem;color:#bfdbfe;background:rgba(59,130,246,.08);
+  border:1px solid rgba(96,165,250,.24);cursor:pointer;white-space:nowrap;transition:background .2s,border-color .2s}
+.cm-chip:hover{background:rgba(59,130,246,.18);border-color:rgba(96,165,250,.5)}
+.cm-form{display:flex;align-items:flex-end;gap:8px;padding:7px 7px 7px 16px;border-radius:22px;background:rgba(13,20,38,.95);
+  border:1px solid rgba(96,165,250,.24);box-shadow:0 10px 30px rgba(0,0,0,.35);transition:border-color .2s,box-shadow .2s}
+.cm-form:focus-within{border-color:rgba(96,165,250,.6);box-shadow:0 0 0 3px rgba(59,130,246,.16),0 10px 30px rgba(0,0,0,.35)}
+.cm-form textarea{flex:1;min-height:24px;max-height:132px;resize:none;border:0!important;outline:0;background:transparent!important;box-shadow:none!important;
+  border-radius:0;margin:0;width:auto;color:var(--text-main);font:inherit;font-size:16px;line-height:1.5;padding:8px 0!important}
+.cm-form textarea::placeholder{color:#64748b}
+.cm-send{width:42px;height:42px;border-radius:14px;border:0;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#3b82f6,#1d4ed8);transition:opacity .2s,transform .15s,box-shadow .2s;box-shadow:0 6px 18px rgba(59,130,246,.35)}
+.cm-send:hover:not(:disabled){transform:scale(1.05)}
+.cm-send:disabled{opacity:.35;cursor:default;box-shadow:none}
+.cm-send svg{width:19px;height:19px;stroke:#fff}
+.cm-note{margin:9px 0 0;text-align:center;font-size:.72rem;color:#64748b;line-height:1.5}
+.cm-jump{position:absolute;left:50%;top:-44px;transform:translateX(-50%);padding:7px 14px;border-radius:999px;border:1px solid rgba(96,165,250,.4);
+  background:rgba(13,20,38,.95);color:#bfdbfe;font:inherit;font-size:.78rem;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+:focus-visible{outline:2px solid var(--primary-light);outline-offset:2px}
+.cm-vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:640px){
+  .cm-log{padding:16px 12px 8px}.cm-foot{padding-left:10px;padding-right:10px}
+  .cm-bubble{max-width:90%;font-size:.92rem;padding:11px 14px}.cm-avatar{display:none}
+  .cm-new span{display:none}.cm-new{padding:0;width:38px;justify-content:center}
+  .cm-empty{margin-top:3vh}.cm-empty ul{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){.cm-in,.cm-typing span{animation:none}.cm-send:hover:not(:disabled),.cm-cta--primary:hover{transform:none}}
 </style>
 </head>
 <body data-root="" data-bare>
-
-
-<header class="chat-top">
-  <a href="index.html" class="chat-back" aria-label="Back to site">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-  </a>
-  <div class="chat-id">
-    <span class="chat-dot" aria-hidden="true"></span>
-    <div>
-      <strong>Ayush AI Automation</strong>
-      <em>Ask about products, pricing or setup</em>
+<div class="cm-app">
+  <header class="cm-top">
+    <div class="cm-top-in">
+      <a href="index.html" class="cm-icon-btn" aria-label="Back to website">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </a>
+      <div class="cm-id">
+        <span class="cm-mark" aria-hidden="true"><span class="cm-status"></span></span>
+        <div><strong>Ayush AI Assistant</strong><small>Answers from this website · runs in your browser</small></div>
+      </div>
+      <button type="button" class="cm-new" id="chat-new" aria-label="Start a new chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg><span>New chat</span>
+      </button>
     </div>
-  </div>
-</header>
+  </header>
 
-<div class="chat-shell">
-  <div class="chat-log" id="chat-log" role="log" aria-live="polite" aria-label="Conversation"></div>
-  <div class="chat-chips" id="chat-chips"></div>
-  <form class="chat-input-row" id="chat-form">
-    <label for="chat-input" class="ai-vh">Type your question</label>
-    <input type="text" id="chat-input" placeholder="Ask about pricing, products, setup…" autocomplete="off">
-    <button type="submit" class="chat-send" aria-label="Send">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-    </button>
-  </form>
+  <main class="cm-log" id="chat-log" aria-label="Conversation">
+    <div class="cm-inner" id="chat-inner">
+      <section class="cm-empty" id="chat-empty" hidden>
+        <span class="cm-mark" aria-hidden="true"></span>
+        <h1>Ask me anything about the DM automation</h1>
+        <p>Products, pricing, Instagram and WhatsApp, voice notes, setup — ask the way you'd ask a person. English or Hinglish is fine.</p>
+        <ul>
+          <li><strong>Pricing</strong>"What's the cheapest one that qualifies leads?"</li>
+          <li><strong>Capabilities</strong>"Does any plan understand voice notes?"</li>
+          <li><strong>Your situation</strong>"I get loads of DMs but people ghost after the price"</li>
+          <li><strong>Next steps</strong>"How long does setup take?"</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="cm-foot">
+    <div class="cm-foot-in">
+      <button type="button" class="cm-jump" id="chat-jump" hidden>↓ New message</button>
+      <div class="cm-chips" id="chat-chips" aria-label="Suggested questions"></div>
+      <form class="cm-form" id="chat-form" autocomplete="off">
+        <label for="chat-input" class="cm-vh">Type your question</label>
+        <textarea id="chat-input" rows="1" placeholder="Ask about pricing, products, setup…" enterkeyhint="send" maxlength="600"></textarea>
+        <button type="submit" class="cm-send" id="chat-send" aria-label="Send message" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </form>
+      <p class="cm-note">Private: runs entirely in your browser — nothing is sent to an AI service. The chat is forgotten when you close this tab.</p>
+    </div>
+  </footer>
+  <div class="cm-vh" id="chat-live" aria-live="polite" role="status"></div>
 </div>
 
-
-
 <script src="site-data.js"></script>
-<script src="main.js"></script>
-<script src="ui.js"></script>
-<script src="script.js"></script>
-<script>
-(function () {
-  var log   = document.getElementById("chat-log");
-  var chips = document.getElementById("chat-chips");
-  var form  = document.getElementById("chat-form");
-  var input = document.getElementById("chat-input");
-  var BOT   = window.AAA_CHAT;
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-  function fmt(s){
-    return esc(s)
-      .replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>")
-      .replace(/_(.+?)_/g,"<em>$1</em>");
-  }
-
-  function add(text, who){
-    var d = document.createElement("div");
-    d.className = "msg " + who;
-    d.innerHTML = fmt(text);
-    log.appendChild(d);
-    log.scrollTop = log.scrollHeight;
-  }
-
-  function typing(on){
-    var t = document.getElementById("typing");
-    if (on && !t){
-      t = document.createElement("div");
-      t.className = "chat-typing"; t.id = "typing";
-      t.innerHTML = "<span></span><span></span><span></span>";
-      log.appendChild(t);
-      log.scrollTop = log.scrollHeight;
-    } else if (!on && t){ t.remove(); }
-  }
-
-  function ask(text){
-    add(text, "user");
-    typing(true);
-    setTimeout(function(){
-      typing(false);
-      add(BOT ? BOT.respond(text)
-              : "The assistant didn't load. Message Ayush on WhatsApp: +91 94772 93867", "bot");
-    }, reduce ? 0 : 480);
-  }
-
-  form.addEventListener("submit", function(e){
-    e.preventDefault();
-    var v = input.value.trim();
-    if (!v) return;
-    input.value = "";
-    ask(v);
-  });
-
-  if (BOT){
-    BOT.suggestions.forEach(function(s){
-      var b = document.createElement("button");
-      b.type = "button"; b.className = "chat-chip"; b.textContent = s;
-      b.addEventListener("click", function(){ ask(s); });
-      chips.appendChild(b);
-    });
-    add(BOT.respond("hi"), "bot");
-  } else {
-    add("The assistant didn't load properly. You can reach Ayush directly on WhatsApp: +91 94772 93867", "bot");
-  }
-})();
-</script>
+<script src="chat-engine.js"></script>
+<script src="chat-ui.js"></script>
 </body>
 </html>
