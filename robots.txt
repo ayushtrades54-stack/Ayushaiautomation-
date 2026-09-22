@@ -1,0 +1,15 @@
+# Ayush AI Automation — robots.txt
+
+User-agent: *
+Allow: /
+
+# Private / internal resources — not for indexing
+Disallow: /ai-setup.html
+Disallow: /FreePlanSetupForm.html
+Disallow: /StarterPlanSetupForm.html
+Disallow: /GrowthPlanSetupForm.html
+Disallow: /ComboPlanSetupForm.html
+Disallow: /thankyou.html
+Disallow: /admin.html
+
+Sitemap: https://www.ayushaiautomation.in/sitemap.xml
