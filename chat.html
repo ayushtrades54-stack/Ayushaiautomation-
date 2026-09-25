@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
   <meta name="theme-color" content="#070b16">
   <title>Ask the Assistant | Ayush AI Automation</title>
@@ -120,7 +118,7 @@ body{padding-top:0}
       </a>
       <div class="cm-id">
         <span class="cm-mark" aria-hidden="true"><span class="cm-status"></span></span>
-        <div><strong>Ayush AI Assistant</strong><small>Answers from this website · runs in your browser</small></div>
+        <div><strong>Ayush AI Assistant</strong><small>Answers from this website's own information</small></div>
       </div>
       <button type="button" class="cm-new" id="chat-new" aria-label="Start a new chat">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg><span>New chat</span>
@@ -155,14 +153,14 @@ body{padding-top:0}
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         </button>
       </form>
-      <p class="cm-note">Private: runs entirely in your browser — nothing is sent to an AI service. The chat is forgotten when you close this tab.</p>
+      <p class="cm-note">Your messages are processed by an AI service to generate replies. The chat is forgotten when you close this tab.</p>
     </div>
   </footer>
   <div class="cm-vh" id="chat-live" aria-live="polite" role="status"></div>
 </div>
 
 <script src="site-data.js"></script>
-<script src="chat-engine.js"></script>
-<script src="chat-ui.js"></script>
+<script src="chat-ai/client/config.js"></script>
+<script src="chat-ai/client/chat-client.js"></script>
 </body>
 </html>
