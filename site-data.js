@@ -225,7 +225,7 @@ var SITE_DATA = (function () {
       bestFor:
         "Coaches with steady DM volume who want serious leads separated from " +
         "browsers before they spend time on a call.",
-      price:  { monthly: 2499, setup: 3999, setupOffer: 3499 },
+      price:  { monthly: 3999, setup: 4999, setupOffer: 2999 },
       offer:  { eligible: true, active: null },
       demoUrl: "",
       guarantee: true,                     // guarantee attaches to Pro only
@@ -269,7 +269,7 @@ var SITE_DATA = (function () {
       bestFor:
         "Higher-volume or higher-ticket coaches whose audience sends voice " +
         "notes and who want nurturing that reads as personal.",
-      price:  { monthly: 3999, setup: 5499, setupOffer: 4499 },
+      price:  { monthly: 5499, setup: 6999, setupOffer: 4499 },
       offer:  { eligible: true, active: null },
       demoUrl: "",
       features: [
@@ -304,7 +304,7 @@ var SITE_DATA = (function () {
       bestFor:
         "Coaches who sell primarily over WhatsApp, or who want a WhatsApp " +
         "counterpart to an existing Instagram system.",
-      price:  { monthly: 2499, setup: 3999, setupOffer: 3499 },
+      price:  { monthly: 3999, setup: 5999, setupOffer: 3499 },
       offer:  { eligible: true, active: null },
       demoUrl: "",
       features: [
@@ -346,7 +346,7 @@ var SITE_DATA = (function () {
         "lead qualified on Instagram carries on WhatsApp without starting over.",
       bestFor:
         "Coaches whose funnel is discover on Instagram, close on WhatsApp.",
-      price:  { monthly: 4499, setup: 6499, setupOffer: 5999 },
+      price:  { monthly: 5999, setup: 7999, setupOffer: 5999 },
       offer:  { eligible: true, active: null },
       demoUrl: "",
       features: [
@@ -385,7 +385,7 @@ var SITE_DATA = (function () {
       bestFor:
         "Established coaches who want the most capable version of the " +
         "cross-channel system.",
-      price:  { monthly: 5499, setup: 6999, setupOffer: 6499 },
+      price:  { monthly: 7499, setup: 8999, setupOffer: 6499 },
       offer:  { eligible: true, active: null },
       demoUrl: "",
       features: [
