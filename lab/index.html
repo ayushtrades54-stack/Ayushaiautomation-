@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <title>The Lab — Free Tools for Fitness Coaches | Ayush AI Automation</title>
+  <link rel="canonical" href="https://www.ayushaiautomation.in/lab/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Lab | Ayush AI Automation">
+  <meta property="og:url" content="https://www.ayushaiautomation.in/lab/index.html">
+  <meta property="og:description" content="Free interactive tools for fitness coaches: Instagram ROI Calculator, Automation Health Score, and a DM automation resource library.">
+  <meta property="og:image" content="https://www.ayushaiautomation.in/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free interactive tools for fitness coaches: Instagram ROI Calculator, Automation Health Score, and a DM automation resource library.">
+  
+  
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../ai-system.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ayushaiautomation.in/" },
+          { "@type": "ListItem", "position": 2, "name": "The Lab", "item": "https://www.ayushaiautomation.in/lab/index.html" }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Instagram ROI Calculator",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://www.ayushaiautomation.in/lab/index.html#roi-calculator",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+        "description": "Free calculator for fitness coaches estimating revenue lost to missed and unfollowed Instagram DMs."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Automation Health Score",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://www.ayushaiautomation.in/lab/index.html#health-score",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+        "description": "Free 8-question assessment scoring a fitness coach's Instagram DM response, follow-up, conversion and automation setup."
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-root="../" data-bg="live">
+
+<canvas id="automation-bg"></canvas>
+
+<!-- Navbar (identical to main site) -->
+<header class="navbar"><div class="nav-container"><a href="../index.html" class="brand" style="text-decoration:none;display:flex;align-items:center;gap:10px;"><img src="../logo.png" alt="Ayush AI Automation" class="logo"><span class="brand-name">Ayush AI Automation</span></a><button class="hamburger" type="button" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="navMenu" style="background:none;border:none;font:inherit;color:inherit;cursor:pointer;">&#9776;</button><nav class="nav-menu" id="navMenu" aria-label="Main"><a href="../index.html">Home</a><a href="../services.html">Services</a><a href="../pricing.html">Pricing</a><a href="../coaches.html">For Coaches</a><a href="../process.html">Process</a><a href="../demo.html">Demo</a><a href="../faq.html">FAQ</a><a href="../about.html">About</a><a href="../lab/index.html" class="active" aria-current="page">Lab</a><a href="../book.html" class="nav-cta">Book a Call</a></nav></div></header>
+
+<!-- Lab Hero -->
+<section class="page-hero lab-hero">
+  <canvas id="hero-bg"></canvas>
+  <div style="position:relative; z-index:1;">
+    <div style="display:inline-block; background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.35); border-radius: 30px; padding: 6px 18px; font-size: 0.82rem; font-weight: 600; color: #93c5fd; letter-spacing: 0.5px; margin-bottom: 22px; text-transform: uppercase;">
+      Free Tools — No Signup Required
+    </div>
+    <h1>The Lab — Free Tools for Fitness Coaches</h1>
+    <p>Interactive tools built for fitness coaches — see your real numbers, check your automation health, and grab ready-to-use DM resources.</p>
+  </div>
+</section>
+
+<!-- Tool Picker -->
+<section class="lab-tool-nav">
+  <a href="#roi-calculator" class="ai-card lab-tool-card">
+    <div class="ai-mark ai-mark--tool" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+    </div>
+    <h3>Instagram ROI Calculator</h3>
+    <p>See what slow or missed DM replies could realistically be costing you every month.</p>
+  </a>
+  <a href="#health-score" class="ai-card lab-tool-card">
+    <div class="ai-mark ai-mark--tool" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
+    </div>
+    <h3>Automation Health Score</h3>
+    <p>An 8-question assessment that scores your current DM setup and shows what to fix first.</p>
+  </a>
+  <a href="#resource-library" class="ai-card lab-tool-card">
+    <div class="ai-mark ai-mark--tool" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    </div>
+    <h3>Resource Library</h3>
+    <p>Free guide, free trial, free audit and more — searchable in one place.</p>
+  </a>
+  <a href="#proof-gallery" class="ai-card lab-tool-card">
+    <div class="ai-mark ai-mark--tool" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+    </div>
+    <h3>Proof &amp; Assets</h3>
+    <p>Real screenshots and agent replies — searchable, updated directly in code.</p>
+  </a>
+</section>
+
+<!-- ============================================= -->
+<!-- TOOL 1: INSTAGRAM ROI CALCULATOR -->
+<!-- ============================================= -->
+<section id="roi-calculator" class="lab-section">
+  <div class="ai-center" style="margin-bottom:36px;">
+    <h2>Instagram ROI Calculator</h2>
+    <p class="ai-lede">Enter your real numbers. See what unanswered and slow-followed-up DMs are actually costing you every month.</p>
+  </div>
+
+  <div class="lab-grid">
+    <div class="card lab-form-card">
+      <div class="form-group">
+        <label for="dmVolume">DMs you receive per month</label>
+        <input type="number" id="dmVolume" placeholder="e.g. 150" min="0">
+        <span class="lab-field-error" id="err-dmVolume"></span>
+      </div>
+      <div class="form-group">
+        <label for="replyRate">% of DMs you currently reply to</label>
+        <input type="number" id="replyRate" placeholder="e.g. 60" min="0" max="100">
+        <span class="lab-field-error" id="err-replyRate"></span>
+      </div>
+      <div class="form-group">
+        <label for="closeRate">Your close rate on booked calls (%)</label>
+        <input type="number" id="closeRate" placeholder="e.g. 10" min="0" max="100">
+        <span class="lab-field-error" id="err-closeRate"></span>
+      </div>
+      <div class="form-group">
+        <label for="clientValue">Average client value (₹/month)</label>
+        <input type="number" id="clientValue" placeholder="e.g. 8000" min="0">
+        <span class="lab-field-error" id="err-clientValue"></span>
+      </div>
+      <div class="form-group">
+        <label for="hoursSpent">Hours/week you spend on manual DM replies</label>
+        <input type="number" id="hoursSpent" placeholder="e.g. 10" min="0" max="168">
+        <span class="lab-field-error" id="err-hoursSpent"></span>
+      </div>
+      <div class="form-group">
+        <label for="followupHabit">When a lead replies once, then goes quiet — what happens?</label>
+        <select id="followupHabit">
+          <option value="never" selected>Nothing, they're gone</option>
+          <option value="sometimes">I follow up sometimes, if I remember</option>
+          <option value="always">I already have a real follow-up system</option>
+        </select>
+        <span class="lab-field-error" id="err-followupHabit"></span>
+      </div>
+      <div class="lab-validation-summary" id="validationSummary" style="display:none;"></div>
+      <button class="btn-primary" onclick="calculateROI()" style="width:100%; justify-content:center;">Calculate My ROI</button>
+    </div>
+
+    <div class="card lab-results-card" id="roiResults">
+      <h3 style="text-align:center; margin-bottom:24px;">Your Results</h3>
+      <div class="lab-stat-grid" id="roiStatGrid">
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statMissed">0</div>
+          <div class="lab-stat-label">Missed Conversations / Month</div>
+          <div class="lab-stat-explain" id="exp-statMissed"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statRecoverable">0</div>
+          <div class="lab-stat-label">Recoverable Conversations / Month</div>
+          <div class="lab-stat-explain" id="exp-statRecoverable"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statBookings">0</div>
+          <div class="lab-stat-label">Recoverable Booked Calls / Month</div>
+          <div class="lab-stat-explain" id="exp-statBookings"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statQuietLeads">0</div>
+          <div class="lab-stat-label">Quiet Leads Lost / Month</div>
+          <div class="lab-stat-explain" id="exp-statQuietLeads"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statLeadsLost">₹0</div>
+          <div class="lab-stat-label">Estimated Revenue Lost / Month</div>
+          <div class="lab-stat-explain" id="exp-statLeadsLost"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statPotential">₹0</div>
+          <div class="lab-stat-label">Revenue Recovered / Month (Automation)</div>
+          <div class="lab-stat-explain" id="exp-statPotential"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statTime">0 hrs</div>
+          <div class="lab-stat-label">Hours Saved / Week</div>
+          <div class="lab-stat-explain" id="exp-statTime"></div>
+        </div>
+        <div class="lab-stat">
+          <div class="lab-stat-value" id="statYearly">₹0</div>
+          <div class="lab-stat-label">Yearly Opportunity Value</div>
+          <div class="lab-stat-explain" id="exp-statYearly"></div>
+        </div>
+      </div>
+      <p style="text-align:center; color:var(--text-soft); font-size:0.85rem; margin-top:20px;" id="roiHelperText">Fill the form and click Calculate to see your numbers.</p>
+      <p class="ai-card-note" style="text-align:center;">These are business estimates based on the values you entered and standard industry assumptions (shown above) — not a guarantee of results.</p>
+      <div class="btn-container" style="margin-top:20px;">
+        <a href="../book.html" class="btn-primary">Book a Free Strategy Call</a>
+        <span id="roiWhatsAppWrap"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- TOOL 2: AUTOMATION HEALTH SCORE -->
+<!-- ============================================= -->
+<section id="health-score" class="lab-section">
+  <div class="ai-center" style="margin-bottom:36px;">
+    <h2>Automation Health Score</h2>
+    <p class="ai-lede">8 quick questions. Get a full breakdown of where your DM system is strong — and where it's leaking leads.</p>
+  </div>
+
+  <div class="card lab-quiz-card" id="quizCard">
+    <div class="lab-progress-track">
+      <div class="lab-progress-fill" id="quizProgress"></div>
+    </div>
+    <div id="quizBody"></div>
+  </div>
+
+  <div class="card lab-quiz-results" id="quizResults" style="display:none;">
+    <h3 style="text-align:center;">Your Automation Health Report</h3>
+    <div class="lab-score-badge" id="scoreLevel">—</div>
+    <div class="lab-score-bars" id="scoreBars"></div>
+    <div class="lab-report-grid">
+      <div>
+        <h4 style="color:#86efac;display:flex;align-items:center;gap:7px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Strengths</h4>
+        <ul id="strengthsList"></ul>
+      </div>
+      <div>
+        <h4 style="color:#fca5a5;display:flex;align-items:center;gap:7px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>Weaknesses</h4>
+        <ul id="weaknessesList"></ul>
+      </div>
+    </div>
+    <div>
+      <h4 style="color:var(--primary-light);display:flex;align-items:center;gap:7px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg>Recommendations</h4>
+      <ul id="recommendationsList"></ul>
+    </div>
+    <div id="productFit"></div>
+    <div class="btn-container" style="margin-top:24px;">
+      <a href="../book.html" class="btn-primary">Fix These With a Free Strategy Call</a>
+      <button class="btn-secondary" onclick="restartQuiz()">Retake Assessment</button>
+      <span id="quizShareWrap"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- TOOL 3: RESOURCE LIBRARY -->
+<!-- ============================================= -->
+<section id="resource-library" class="lab-section">
+  <div class="ai-center" style="margin-bottom:30px;">
+    <h2>Resource Library</h2>
+    <p class="ai-lede">Free guide, free trial, free audit and more — all in one place, and searchable.</p>
+  </div>
+
+  <div class="lab-library-controls">
+    <input type="text" id="librarySearch" placeholder="Search resources..." oninput="renderLibrary()">
+    <div class="lab-filter-pills" id="filterPills"></div>
+  </div>
+
+  <div class="lab-library-grid" id="libraryGrid"></div>
+</section>
+
+<!-- ============================================= -->
+<!-- TOOL 4: PROOF / ASSET GALLERY -->
+<!-- ============================================= -->
+<section id="proof-gallery" class="lab-section">
+  <div class="ai-center" style="margin-bottom:30px;">
+    <h2>Proof &amp; Assets</h2>
+    <p class="ai-lede">Real screenshots and agent replies — click any image to view it larger.</p>
+  </div>
+
+  <div class="lab-library-controls">
+    <input type="text" id="proofSearch" placeholder="Search assets..." oninput="renderProofGallery()">
+    <div class="lab-filter-pills" id="proofFilterPills"></div>
+  </div>
+
+  <div class="lab-library-grid" id="proofGrid"></div>
+</section>
+
+<!-- Lightbox for Proof & Assets -->
+<div id="proofLightbox" class="lab-lightbox" onclick="if(event.target===this) closeProofLightbox()" style="display:none;">
+  <button type="button" class="lab-lightbox-close" onclick="closeProofLightbox()" aria-label="Close">&times;</button>
+  <figure class="lab-lightbox-figure">
+    <img id="proofLightboxImg" src="" alt="">
+    <figcaption id="proofLightboxCaption"></figcaption>
+  </figure>
+</div>
+
+<!-- Footer (identical to main site) -->
+<footer class="footer">
+<div class="footer-content">
+<nav class="footer-discovery" aria-label="Resources and comparisons"><div class="footer-col"><p class="footer-col-title">Compare</p><ul><li><a href="../resources/comparisons.html#manychat">vs ManyChat</a></li><li><a href="../resources/comparisons.html#ai-reply-tools">vs Cheap AI Reply Tools</a></li><li><a href="../resources/comparisons.html#instant-dm-tools">vs Instant DM Tools</a></li><li><a href="../resources/comparisons.html#rule-based-automation">vs Rule-Based Automation</a></li><li><a href="../resources/comparisons.html#human-setter-va">vs Human Setter / VA</a></li><li><a href="../resources/comparisons.html#managed-vs-ai">Managed vs AI Agent</a></li><li><a href="../resources/comparisons.html#why-ai-fits">Why AI Automation Fits Your Business</a></li></ul></div><div class="footer-col"><p class="footer-col-title">How It Works</p><ul><li><a href="../resources/how-it-works.html#what-we-build">AI DM Automation</a></li><li><a href="../resources/how-it-works.html#qualification">Lead Qualification</a></li><li><a href="../resources/how-it-works.html#lead-management">Lead Management</a></li><li><a href="../resources/how-it-works.html#voice-notes">Voice Notes</a></li><li><a href="../resources/how-it-works.html#follow-ups">AI Follow-Ups</a></li><li><a href="../resources/how-it-works.html#human-handoff">Human Handoff</a></li><li><a href="../resources/how-it-works.html#hot-lead-alerts">Hot Lead Alerts</a></li><li><a href="../resources/channels.html#comment-to-dm">Comment → DM</a></li></ul></div><div class="footer-col"><p class="footer-col-title">Channels</p><ul><li><a href="../resources/channels.html#instagram">Instagram DM Automation</a></li><li><a href="../resources/channels.html#whatsapp">WhatsApp AI Automation</a></li><li><a href="../resources/channels.html#instagram-whatsapp">Instagram + WhatsApp</a></li></ul></div><div class="footer-col"><p class="footer-col-title">Products</p><ul><li><a href="../resources/products.html#basic">Basic</a></li><li><a href="../resources/products.html#pro">Pro</a></li><li><a href="../resources/products.html#business">Business</a></li><li><a href="../resources/products.html#whatsapp-personal-assistant">WhatsApp Personal Assistant</a></li><li><a href="../resources/products.html#fusion">Fusion</a></li><li><a href="../resources/products.html#fusion-max">Fusion Max</a></li></ul></div><div class="footer-col"><p class="footer-col-title">Learn</p><ul><li><a href="../resources/learn.html#fit-framework">F.I.T. Framework</a></li><li><a href="../resources/learn.html#ai-vs-managed">AI Agent vs Managed Automation</a></li><li><a href="../resources/learn.html#glossary">Glossary</a></li><li><a href="../resources/learn.html#dm-handling-guide">DM Handling Guide</a></li><li><a href="../resources/learn.html#when-automation-makes-sense">When Automation Makes Sense</a></li></ul></div><div class="footer-col"><p class="footer-col-title">Proof</p><ul><li><a href="../resources/case-studies.html">Case Studies</a></li><li><a href="../resources/case-studies.html#client-stories">Client Stories</a></li></ul></div></nav>
+<h3 class="footer-heading">Ayush AI Automation</h3>
+<p class="footer-tag"><strong>AI Agents</strong> &amp; <strong>DM Automation</strong> for Fitness Coaches</p>
+<p class="footer-sub">We design, build and manage Instagram and WhatsApp DM conversation systems for fitness coaches, built on the <a href="../resources/learn.html#fit-framework" style="color:var(--primary-light);font-weight:600;">F.I.T. DM Funnel Framework</a> &mdash; the first DM automation framework designed specifically for fitness coaches.</p>
+<div class="footer-contact"><a href="mailto:ayushaiautomation.in@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>ayushaiautomation.in@gmail.com</a><a href="tel:+919477293867"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>+91 94772 93867</a></div>
+<div class="footer-socials"><a href="https://wa.me/919477293867?text=Hey%2C%20I%20came%20from%20your%20website!%20I%20have%20a%20question." class="social-icon" target="_blank" rel="noopener" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a><a href="https://instagram.com/ayush.automation" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a><a href="https://www.linkedin.com/in/ayush-ai-automation-333a123a1" class="social-icon linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></div>
+<div class="footer-links"><a href="../index.html">Home</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../services.html">Services</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../pricing.html">Pricing</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../faq.html">FAQ</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../about.html">About</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../book.html">Book a Call</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../privacy.html">Privacy Policy</a><span style="color:var(--text-soft);" aria-hidden="true">|</span><a href="../terms.html">Terms &amp; Conditions</a></div>
+<p class="footer-fit">The #1 and only agency providing fitness coaches with the F.I.T. Framework.</p>
+<div class="footer-bottom">&copy; 2026 Ayush AI Automation. All rights reserved.</div>
+</div>
+</footer>
+<div data-floats></div>
+
+
+<script src="../site-data.js"></script>
+<script src="../main.js"></script>
+<script src="../ui.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
