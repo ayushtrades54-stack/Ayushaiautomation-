@@ -625,44 +625,22 @@ function renderLibrary() {
 }
 
 /* =========================================================
-   TOOL 4: PROOF / ASSET GALLERY
+   TOOL 4: BEHIND THE SCENES
    ---------------------------------------------------------
-   To add a screenshot, agent reply, or any other public asset:
-   just add one object to LAB_PROOF below — nothing else needs
-   touching. Drop the image file in /lab/proof/ and point
-   `image` at it (a relative path from /lab/, e.g. "proof/my-shot.png").
-
-   Fields:
-     title       — short label shown under the image
-     image       — path to the image, relative to /lab/
-     category    — used for the filter pills (any string; new
-                   categories just appear automatically)
-     description — one or two lines of honest context. If this
-                   asset implies a RESULT (bookings, revenue, a
-                   specific number), it needs to be a real,
-                   verifiable one — don't caption a demo screenshot
-                   as an outcome.
-     keywords    — optional extra search terms
+   The screenshot list itself lives directly in index.html
+   (window.LAB_SNAPSHOTS, right above the script.js include) so
+   it's easy to find and edit — add one object per screenshot,
+   nothing here needs touching.
 ========================================================= */
-const LAB_PROOF = [
-  // Example — replace or remove, then add your own below:
-  // {
-  //   title: "Comment → DM opening a conversation",
-  //   image: "proof/comment-to-dm-01.png",
-  //   category: "Comment→DM",
-  //   description: "A public Instagram comment automatically triggers a private DM from the agent.",
-  //   keywords: ["instagram", "comment", "dm", "trigger"],
-  // },
-];
 
 let activeProofCategory = "All";
 
 function getProofItems() {
-  return LAB_PROOF;
+  return window.LAB_SNAPSHOTS || [];
 }
 
 function getProofCategories() {
-  return ["All", ...new Set(getProofItems().map((p) => p.category))];
+  return ["All", ...new Set(getProofItems().map((p) => p.category).filter(Boolean))];
 }
 
 function renderProofFilterPills() {
@@ -684,6 +662,7 @@ function setProofCategory(cat) {
 
 function buildProofSearchIndex(item) {
   return [item.title, item.description, item.category, ...(item.keywords || [])]
+    .filter(Boolean)
     .join(" ")
     .toLowerCase();
 }
@@ -703,19 +682,19 @@ function renderProofGallery() {
   if (!filtered.length) {
     grid.innerHTML = `<div class="lab-empty-state">${
       getProofItems().length === 0
-        ? "No assets added yet — add one to LAB_PROOF in script.js and it appears here automatically."
-        : "No assets match your search — try a different keyword or category."
+        ? "Nothing added yet — add one to the LAB_SNAPSHOTS list in index.html and it appears here automatically."
+        : "Nothing matches your search — try a different keyword or category."
     }</div>`;
     return;
   }
 
   grid.innerHTML = filtered
-    .map((p, i) => `
+    .map((p) => `
       <div class="ai-card lab-proof-card">
-        <button type="button" class="lab-proof-image-btn" onclick="openProofLightbox(${LAB_PROOF.indexOf(p)})" aria-label="View larger: ${p.title}">
+        <button type="button" class="lab-proof-image-btn" onclick="openProofLightbox(${window.LAB_SNAPSHOTS.indexOf(p)})" aria-label="View larger: ${p.title}">
           <img src="${p.image}" alt="${p.title}" loading="lazy" class="lab-proof-image">
         </button>
-        <span class="lab-resource-tag">${p.category}</span>
+        ${p.category ? `<span class="lab-resource-tag">${p.category}</span>` : ""}
         <h4>${p.title}</h4>
         <p>${p.description || ""}</p>
       </div>`)
@@ -723,7 +702,7 @@ function renderProofGallery() {
 }
 
 function openProofLightbox(index) {
-  const item = LAB_PROOF[index];
+  const item = (window.LAB_SNAPSHOTS || [])[index];
   if (!item) return;
   const overlay = document.getElementById("proofLightbox");
   document.getElementById("proofLightboxImg").src = item.image;
