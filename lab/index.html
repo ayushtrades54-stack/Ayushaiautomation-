@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
-
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <title>The Lab — Free Tools for Fitness Coaches | Ayush AI Automation</title>
   <link rel="canonical" href="https://www.ayushaiautomation.in/lab/index.html">
   <meta property="og:type" content="website">
@@ -94,12 +95,12 @@
     <h3>Resource Library</h3>
     <p>Free guide, free trial, free audit and more — searchable in one place.</p>
   </a>
-  <a href="#proof-gallery" class="ai-card lab-tool-card">
+  <a href="#behind-the-scenes" class="ai-card lab-tool-card">
     <div class="ai-mark ai-mark--tool" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
     </div>
-    <h3>Proof &amp; Assets</h3>
-    <p>Real screenshots and agent replies — searchable, updated directly in code.</p>
+    <h3>Behind the Scenes</h3>
+    <p>Screenshots from automations, agent chats and experiments — browse and explore.</p>
   </a>
 </section>
 
@@ -267,23 +268,23 @@
 </section>
 
 <!-- ============================================= -->
-<!-- TOOL 4: PROOF / ASSET GALLERY -->
+<!-- TOOL 4: BEHIND THE SCENES -->
 <!-- ============================================= -->
-<section id="proof-gallery" class="lab-section">
+<section id="behind-the-scenes" class="lab-section">
   <div class="ai-center" style="margin-bottom:30px;">
-    <h2>Proof &amp; Assets</h2>
-    <p class="ai-lede">Real screenshots and agent replies — click any image to view it larger.</p>
+    <h2>Behind the Scenes</h2>
+    <p class="ai-lede">Screenshots from automations, agent chats, workflows — anything worth a look. Click any image to view it larger.</p>
   </div>
 
   <div class="lab-library-controls">
-    <input type="text" id="proofSearch" placeholder="Search assets..." oninput="renderProofGallery()">
+    <input type="text" id="proofSearch" placeholder="Search..." oninput="renderProofGallery()">
     <div class="lab-filter-pills" id="proofFilterPills"></div>
   </div>
 
   <div class="lab-library-grid" id="proofGrid"></div>
 </section>
 
-<!-- Lightbox for Proof & Assets -->
+<!-- Lightbox for Behind the Scenes -->
 <div id="proofLightbox" class="lab-lightbox" onclick="if(event.target===this) closeProofLightbox()" style="display:none;">
   <button type="button" class="lab-lightbox-close" onclick="closeProofLightbox()" aria-label="Close">&times;</button>
   <figure class="lab-lightbox-figure">
@@ -312,6 +313,38 @@
 <script src="../site-data.js"></script>
 <script src="../main.js"></script>
 <script src="../ui.js"></script>
+
+<!-- ============================================================
+     BEHIND THE SCENES — screenshot list
+     ------------------------------------------------------------
+     Add screenshots here, one by one. Copy the block below, fill
+     it in, done — it shows up on the page automatically.
+
+     {
+       title: "Short label",        // required
+       image: "bts/my-shot.png",    // required — path to the image, relative to /lab/
+       category: "Workflow",        // optional — leave blank or remove this line
+       description: "A line or two about what this is.",  // optional
+       keywords: ["anything", "to", "help", "search"],     // optional
+     },
+
+     Put the actual image file in a "bts" folder next to this
+     index.html (so: /lab/bts/my-shot.png), then point `image` at
+     it as shown above.
+============================================================= -->
+<script>
+window.LAB_SNAPSHOTS = [
+  // Example — replace or delete this, then add your own below:
+  // {
+  //   title: "Comment → DM in action",
+  //   image: "bts/comment-to-dm-01.png",
+  //   category: "Workflow",
+  //   description: "A public Instagram comment automatically triggers a private DM from the agent.",
+  //   keywords: ["instagram", "comment", "dm"],
+  // },
+];
+</script>
+
 <script src="script.js"></script>
 </body>
 </html>
