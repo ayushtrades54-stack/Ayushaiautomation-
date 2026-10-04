@@ -188,7 +188,7 @@ var SITE_DATA = (function () {
         "qualification yet.",
       price:  { monthly: 1999, setup: 1999, setupOffer: 1499 },
       offer:  { eligible: true, active: null },
-      demoUrl: "",                         // paste demo URL when ready
+      demoUrl: "https://drive.google.com/file/d/1lSsvuwCPp1H1walAW5rpKL2ZnUgas81M/view?usp=drivesdk",                         // paste demo URL when ready
       features: [
         "Replies automatically to Instagram DMs, day or night",
         "Answers from your own knowledge base — pricing, programs, policies",
@@ -227,7 +227,7 @@ var SITE_DATA = (function () {
         "browsers before they spend time on a call.",
       price:  { monthly: 3999, setup: 4999, setupOffer: 2999 },
       offer:  { eligible: true, active: null },
-      demoUrl: "",
+      demoUrl: "https://drive.google.com/file/d/1cFL9kZ1Et4nR9fUzGsXu_KrejlNmCzMW/view?usp=drivesdk",
       guarantee: true,                     // guarantee attaches to Pro only
       features: [
         "Everything in Basic",
@@ -271,7 +271,7 @@ var SITE_DATA = (function () {
         "notes and who want nurturing that reads as personal.",
       price:  { monthly: 5499, setup: 6999, setupOffer: 4499 },
       offer:  { eligible: true, active: null },
-      demoUrl: "",
+      demoUrl: "https://drive.google.com/file/d/1iTNV87AOhahMMvfOdvC-4vlujOOJ6W8w/view?usp=drivesdk",
       features: [
         "Everything in Pro",
         "Voice notes understood and answered like typed messages",
@@ -306,7 +306,7 @@ var SITE_DATA = (function () {
         "counterpart to an existing Instagram system.",
       price:  { monthly: 3999, setup: 5999, setupOffer: 3499 },
       offer:  { eligible: true, active: null },
-      demoUrl: "",
+      demoUrl: "https://drive.google.com/file/d/1-QWzg6vl8KlG43pe4FqukDvZsmAz19im/view?usp=drivesdk",
       features: [
         "Replies automatically to WhatsApp enquiries",
         "Answers from your own knowledge base — programs, pricing, policies",
@@ -348,7 +348,7 @@ var SITE_DATA = (function () {
         "Coaches whose funnel is discover on Instagram, close on WhatsApp.",
       price:  { monthly: 5999, setup: 7999, setupOffer: 5999 },
       offer:  { eligible: true, active: null },
-      demoUrl: "",
+      demoUrl: "https://drive.google.com/file/d/11DFK4R9XUGDB254-U_Ce19D-ja6L9B6j/view?usp=drivesdk",
       features: [
         "Everything in Pro, on Instagram",
         "Everything in WhatsApp Personal Assistant, on WhatsApp",
@@ -387,7 +387,7 @@ var SITE_DATA = (function () {
         "cross-channel system.",
       price:  { monthly: 7499, setup: 8999, setupOffer: 6499 },
       offer:  { eligible: true, active: null },
-      demoUrl: "",
+      demoUrl: "https://drive.google.com/file/d/19BWxTqRO3SHPvFGwHJI1LjddaPie2sQ3/view?usp=drivesdk",
       features: [
         "Everything in Business, on Instagram",
         "Everything in WhatsApp Personal Assistant, on WhatsApp",
