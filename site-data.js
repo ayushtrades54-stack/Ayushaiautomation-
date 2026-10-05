@@ -408,11 +408,7 @@ var SITE_DATA = (function () {
   ];
 
 
-   {
-  id: "basic",
-  ...
-  demoUrl: "https://drive.google.com/file/d/1lSsvuwCPp1H1walAW5rpKL2ZnUgas81M/view?usp=drivesdk",   // ← put it here
-},
+
   /* ─────────────────────────────────────────────────────────────
      MANAGED AUTOMATION — preserved, unchanged pricing.
      Secondary to AI Agent Automation in emphasis, but a real,
