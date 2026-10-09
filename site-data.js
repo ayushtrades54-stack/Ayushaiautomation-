@@ -61,7 +61,7 @@ var SITE_DATA = (function () {
   var CONTACT = {
     brand:        "Ayush AI Automation",
     founder:      "Ayush",
-    email:        "ayushaiautomation.in@gmail.com",
+    email:        "ayush@ayushaiautomation.in",
     phoneDisplay: "+91 94772 93867",
     phoneRaw:     "919477293867",
     whatsapp:     "https://wa.me/919477293867",
