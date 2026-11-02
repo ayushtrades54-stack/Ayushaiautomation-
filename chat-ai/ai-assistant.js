@@ -58,7 +58,7 @@ const TOPICS = [
     keywords: ["contact", "email address", "phone number", "your whatsapp number", "get in touch", "reach you",
       "reach out", "linkedin", "instagram handle", "instagram id", "your instagram", "follow you", "social media",
       "talk to ayush", "talk to a person"],
-    text: "Direct contact: WhatsApp/phone +91 94772 93867, email ayushaiautomation.in@gmail.com, Instagram @ayush.automation, LinkedIn linkedin.com/in/ayush-ai-automation-333a123a1." },
+    text: "Direct contact: WhatsApp/phone +91 94772 93867, email connect@ayushaiautomation.in, Instagram @ayush.automation, LinkedIn linkedin.com/in/ayush-ai-automation-333a123a1." },
 
   { id: "audience", cta: "book",
     keywords: ["gym owner", "nutritionist", "personal trainer", "trainer", "dietitian", "coaches", "fitness coaches",
@@ -191,7 +191,7 @@ const TOPICS = [
   { id: "footer", cta: "privacy",
     keywords: ["footer", "the footer", "your footer", "website footer", "site footer", "footer links", "bottom of the page", "bottom of the site",
       "bottom of the website", "bottom of your website", "copyright"],
-    text: "The website footer shows: the heading 'Ayush AI Automation', the tagline 'AI Agents & DM Automation for Fitness Coaches' and the line 'We design, build and manage Instagram and WhatsApp DM conversation systems for fitness coaches, built on the F.I.T. DM Funnel Framework \u2014 the first DM automation framework designed specifically for fitness coaches.' Link columns: Compare (vs ManyChat, vs Cheap AI Reply Tools, vs Instant DM Tools, vs Rule-Based Automation, vs Human Setter/VA, Managed vs AI Agent, Why AI Automation Fits Your Business); How It Works (AI DM Automation, Lead Qualification, Lead Management, Voice Notes, AI Follow-Ups, Human Handoff, Hot Lead Alerts, Comment \u2192 DM); Channels (Instagram DM Automation, WhatsApp AI Automation, Instagram + WhatsApp); Products (Basic, Pro, Business, WhatsApp Personal Assistant, Fusion, Fusion Max); Learn (F.I.T. Framework, AI Agent vs Managed Automation, Glossary, DM Handling Guide, When Automation Makes Sense); Proof (Case Studies, Client Stories). Contact: email ayushaiautomation.in@gmail.com, phone +91 94772 93867, plus WhatsApp, Instagram (@ayush.automation) and LinkedIn links. Bottom row: Home, Services, Pricing, FAQ, About, Book a Call, Privacy Policy, Terms & Conditions; the line 'The #1 and only agency providing fitness coaches with the F.I.T. Framework.'; and '\u00a9 2026 Ayush AI Automation. All rights reserved.'" },
+    text: "The website footer shows: the heading 'Ayush AI Automation', the tagline 'AI Agents & DM Automation for Fitness Coaches' and the line 'We design, build and manage Instagram and WhatsApp DM conversation systems for fitness coaches, built on the F.I.T. DM Funnel Framework \u2014 the first DM automation framework designed specifically for fitness coaches.' Link columns: Compare (vs ManyChat, vs Cheap AI Reply Tools, vs Instant DM Tools, vs Rule-Based Automation, vs Human Setter/VA, Managed vs AI Agent, Why AI Automation Fits Your Business); How It Works (AI DM Automation, Lead Qualification, Lead Management, Voice Notes, AI Follow-Ups, Human Handoff, Hot Lead Alerts, Comment \u2192 DM); Channels (Instagram DM Automation, WhatsApp AI Automation, Instagram + WhatsApp); Products (Basic, Pro, Business, WhatsApp Personal Assistant, Fusion, Fusion Max); Learn (F.I.T. Framework, AI Agent vs Managed Automation, Glossary, DM Handling Guide, When Automation Makes Sense); Proof (Case Studies, Client Stories). Contact: email connect@ayushaiautomation.in, phone +91 94772 93867, plus WhatsApp, Instagram (@ayush.automation) and LinkedIn links. Bottom row: Home, Services, Pricing, FAQ, About, Book a Call, Privacy Policy, Terms & Conditions; the line 'The #1 and only agency providing fitness coaches with the F.I.T. Framework.'; and '\u00a9 2026 Ayush AI Automation. All rights reserved.'" },
 
   { id: "pages", cta: "services", cta2: "faq",
     keywords: ["sitemap", "site map", "website pages", "which pages", "what pages", "pages do you have", "pages on your site",
@@ -584,7 +584,7 @@ function limitReply(kind) {
    model cannot invent a booking, a time or a link. Everything else goes
    through retrieval + the model + the reply filter below.
    ═══════════════════════════════════════════════════════════════ */
-const OWN_EMAIL = "ayushaiautomation.in@gmail.com";
+const OWN_EMAIL = "connect@ayushaiautomation.in";
 const EMAIL_RE = /[a-z0-9._%+\-]+@[a-z0-9\-]+(?:\.[a-z0-9\-]+)+/gi;
 const wordCount = function (s) { return String(s).trim().split(/\s+/).filter(Boolean).length; };
 const digitCount = function (s) { return (String(s).match(/\d/g) || []).length; };

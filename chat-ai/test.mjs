@@ -567,7 +567,7 @@ console.log("\n13. MULTIPLE API KEYS (main + fallbacks)");
   check("'Ayush then confirms the time on WhatsApp' (true) survives", /Ayush then confirms/.test(sanitizeReply("Ayush then confirms the time with you on WhatsApp.").text));
   check("markdown links become plain labels", sanitizeReply("See [our pricing](https://x.com/p) now.").text === "See our pricing now.");
   check("bare domains/paths/emails are dropped", noUrl(sanitizeReply("Visit ayushaiautomation.in/pricing.html or mail me@x.io. Pro is great.").text));
-  check("Ayush's own listed email + LinkedIn are kept", sanitizeReply("Email ayushaiautomation.in@gmail.com or https://linkedin.com/in/ayush-ai-automation-333a123a1 anytime.").text.includes("ayushaiautomation.in@gmail.com") && sanitizeReply("Find him at linkedin.com/in/ayush-ai-automation-333a123a1.").text.includes("linkedin.com/in/ayush-ai-automation-333a123a1"));
+  check("Ayush's own listed email + LinkedIn are kept", sanitizeReply("Email connect@ayushaiautomation.in or https://linkedin.com/in/ayush-ai-automation-333a123a1 anytime.").text.includes("connect@ayushaiautomation.in") && sanitizeReply("Find him at linkedin.com/in/ayush-ai-automation-333a123a1.").text.includes("linkedin.com/in/ayush-ai-automation-333a123a1"));
   check("a made-up email is not kept", !/fake@/.test(sanitizeReply("Write to fake@scam.com for help. Pro is ₹2,499/month.").text));
   check("internal labels / prompt words never leak", !/REFERENCE|\[pricing\]/.test(sanitizeReply("According to the REFERENCE: [pricing] Pro is ₹2,499/month. Basic is cheaper.").text));
   check("<think> blocks are stripped", sanitizeReply("<think>secret plan</think>Pro is ₹2,499/month.").text === "Pro is ₹2,499/month.");
@@ -703,7 +703,7 @@ console.log("\n13. MULTIPLE API KEYS (main + fallbacks)");
   }
   console.log("\n15d. FILTER: honest sentences are left alone");
   for (const t of ["No worries! Pro is ₹2,499/month. It qualifies leads one at a time.", "We don't integrate with Zapier or n8n; Ayush runs the whole system for you.",
-    "You can reach Ayush on WhatsApp at +91 94772 93867 or at ayushaiautomation.in@gmail.com.", "There is no calendar integration. The booking link is sent once, only after qualification.",
+    "You can reach Ayush on WhatsApp at +91 94772 93867 or at connect@ayushaiautomation.in.", "There is no calendar integration. The booking link is sent once, only after qualification.",
     "Please don't share your email here — use the booking form instead.", "I can't book or hold a time from this chat. Ayush then confirms the call time on WhatsApp.",
     "I can confirm that Pro includes follow-ups.", "Business adds voice notes, and the replies are always text."]) {
     const r = sanitizeReply(t);
@@ -713,9 +713,9 @@ console.log("\n13. MULTIPLE API KEYS (main + fallbacks)");
   check("'according to the reference' never reaches the visitor", !/reference/i.test(sanitizeReply("According to the reference, Pro adds follow-ups. Basic does not.").text));
 
   console.log("\n15e. CONTACT DETAILS CAN STILL BE GIVEN WHEN ASKED");
-  stub({ okOn: "any", replyText: "You can message Ayush on WhatsApp at +91 94772 93867 or email ayushaiautomation.in@gmail.com." });
+  stub({ okOn: "any", replyText: "You can message Ayush on WhatsApp at +91 94772 93867 or email connect@ayushaiautomation.in." });
   const ct = await handleChat({ message: "what is your email address?", history: [], ip: "15.0.0.1" });
-  check("asking for the email returns Ayush's real email (prompt exception + filter allow-list)", ct.reply.includes("ayushaiautomation.in@gmail.com"), ct.reply);
+  check("asking for the email returns Ayush's real email (prompt exception + filter allow-list)", ct.reply.includes("connect@ayushaiautomation.in"), ct.reply);
   check("the prompt allows exactly that exception", /only exception/i.test(CFG.systemPrompt) && /contact details/i.test(CFG.reminder));
 
   console.log("\n15f. ROBUSTNESS");
